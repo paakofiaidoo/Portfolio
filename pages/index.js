@@ -9,17 +9,9 @@ export default function Home() {
 				<title>Paa-Kofi Aidoo</title>
 				<link rel="icon" href="/brand/cover.png" />
 			</Head>
-
 			<main className={styles.main}>
 				<Intro />
-				<About />
 			</main>
-
-			<footer className={styles.footer}>
-        <button className={styles.btn}>
-          <Link href="#intro">top</Link>
-        </button>
-      </footer>
 		</div>
 	);
 }
