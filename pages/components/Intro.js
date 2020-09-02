@@ -9,6 +9,49 @@ class Intro extends Component {
 		this.avatar = React.createRef();
 		this.state = {};
 	}
+	contacts = [
+		{
+			name: "Facebook",
+			src: "/contactIcons/facebook.svg",
+			href: "https://web.facebook.com/paakofi.aidoo",
+		},
+		{
+			name: "instagram",
+			src: "/contactIcons/instagram.svg",
+			href: "https://www.instagram.com/pk_aidoo",
+		},
+
+		{
+			name: "twitter",
+			src: "/contactIcons/twitter.svg",
+			href: "https://twitter.com/PaaKofiaidoo2",
+		},
+		{
+			name: "linkedin",
+			src: "/contactIcons/linkedin.svg",
+			href: "https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/",
+		},
+		{
+			name: "whatsapp",
+			src: "/contactIcons/whatsapp.svg",
+			href: "https://wa.me/233202396856",
+		},
+		{
+			name: "github",
+			src: "/contactIcons/github.svg",
+			href: "https://github.com/paakofiaidoo",
+		},
+		{
+			name: "Email",
+			src: "/contactIcons/mail.svg",
+			href: "mailto:paakofiaidoo17@gmail.com",
+		},
+		{
+			name: "call",
+			src: "/contactIcons/telephone.svg",
+			href: "tel:+233202396856",
+		},
+	];
 
 	componentDidMount() {
 		console.log(this.intro, this.avatar);
@@ -74,12 +117,11 @@ class Intro extends Component {
 			mouse.updatePosition(event);
 			updateTransformStyle(
 				(mouse.y / inner.offsetHeight / 2).toFixed(2),
-      (mouse.x / inner.offsetWidth / 2).toFixed(2)
+				(mouse.x / inner.offsetWidth / 2).toFixed(2)
 			);
 		};
 
 		var updateTransformStyle = function (x, y) {
-
 			var style =
 				"rotateX(" +
 				angleTransform(x) +
@@ -90,7 +132,7 @@ class Intro extends Component {
 			setStyle(style);
 		};
 		let angleTransform = (val) => {
-			val = parseFloat(val)*40 ;
+			val = parseFloat(val) * 40;
 			if (val < 0) {
 				return val;
 			} else {
@@ -118,79 +160,23 @@ class Intro extends Component {
 						alt="profile pic"
 						className={styles.avatar}
 						ref={this.avatar}
-                        style={this.state}
-                        load="lazy"
+						style={this.state}
+						load="lazy"
 					/>
 					<div className={styles.details}>
 						<ul>
-							<li>
-								<Link href="https://web.facebook.com/paakofi.aidoo">
-									<img
-										src="/facebook.svg"
-										alt="facebook"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://www.instagram.com/pk_aidoo">
-									<img
-										src="/instagram.svg"
-										alt="instagram"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://twitter.com/PaaKofiaidoo2">
-									<img
-										src="/twitter.svg"
-										alt="twitter"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/">
-									<img
-										src="/linkedin.svg"
-										alt="linkedin"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://wa.me/233202396856">
-									<img
-										src="/whatsapp.svg"
-										alt="whatsapp"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://github.com/paakofiaidoo">
-									<img
-										src="/github.svg"
-										alt="github"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
-							<li>
-								<Link href="mailto:paakofiaidoo17@gmail.com">
-									<img src="/mail.svg" alt="email" className={styles.contact} />
-								</Link>
-							</li>
-							<li>
-								<Link href="tel:+233202396856">
-									<img
-										src="/telephone.svg"
-										alt="call"
-										className={styles.contact}
-									/>
-								</Link>
-							</li>
+							{this.contacts.map((contact, index) => (
+								<li key={index}>
+									<Link href={contact.href}>
+										<img
+											src={contact.src}
+											alt={contact.name}
+											title={contact.name}
+											className={styles.contact}
+										/>
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
 				</div>
