@@ -4,7 +4,7 @@
 	display: flex;
 	z-index: 3;
 	overflow: hidden;
-	perspective: 15rem;
+	perspective: 50vw;
 }
 .intro div {
 	margin: auto;
@@ -60,7 +60,7 @@
 }
 .contact:hover {
 	filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.7));
-	animation: shadowPlay 1s 0s infinite both;
+	animation: shadowPlay 2s 0s infinite both;
 }
 
 @media only screen and (min-width: 760px) {

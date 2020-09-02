@@ -7,7 +7,7 @@ const Home = () => {
 		<div className={styles.container}>
 			<Head>
 				<title>Paa-Kofi Aidoo</title>
-				<link rel="icon" href="/brand/cover.png" />
+				<link rel="icon" href="/brand/logo.svg" height='100%' width='100%' />
 			</Head>
 			<main className={styles.main}>
 				<div className={styles.overlay}>
