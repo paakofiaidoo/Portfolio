@@ -1,5 +1,6 @@
 .container {
 	min-height: 100vh;
+	min-width: 100vw;
 	padding: 0 0.5rem;
 	display: flex;
 	flex-direction: column;
@@ -9,6 +10,8 @@
 
 .main {
 	flex: 1;
+	min-height: 100vh;
+	min-width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -22,7 +25,7 @@
 .overlay {
 	background-color: rgba(16, 18, 32, 0.5);
 	background-blend-mode: overlay;
-	height: 100%;
-	width: 100%;
+	height: max-content;
+	width: max-content;
 	z-index: 2;
 }
