@@ -1,25 +1,24 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Intro from "./components/Intro"
+import Intro from "./components/Intro";
+import Browser from "./components/Browser";
 
 const Home = () => {
 	return (
 		<div className={styles.container}>
 			<Head>
 				<title>Paa-Kofi Aidoo</title>
-				<link rel="icon" href="/brand/logo.svg" height='100%' width='100%' />
+				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
 			</Head>
 			<main className={styles.main}>
 				<div className={styles.overlay}>
-					<Intro />
+					<Browser>
+						<Intro />
+					</Browser>
 				</div>
 			</main>
 		</div>
 	);
 };
-
-
-	
-
 
 export default Home;
