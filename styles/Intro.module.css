@@ -1,10 +1,10 @@
 .intro {
 	height: 100vh;
 	width: 100vw;
-
 	display: flex;
 	z-index: 3;
 	overflow: hidden;
+	perspective: 15rem;
 }
 .intro div {
 	margin: auto;
@@ -77,6 +77,11 @@
 	.details ul {
 		margin: auto;
 		width: 100%;
+	}
+	.avatar {
+	
+		animation: none ;
+		
 	}
 }
 
