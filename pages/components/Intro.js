@@ -166,14 +166,14 @@ class Intro extends Component {
 						<ul>
 							{this.contacts.map((contact, index) => (
 								<li key={index}>
-									<Link href={contact.href}>
+									<a target='_blank' href={contact.href}>
 										<img
 											src={contact.src}
 											alt={contact.name}
 											title={contact.name}
 											className={styles.contact}
 										/>
-									</Link>
+									</a >
 								</li>
 							))}
 						</ul>
