@@ -24,9 +24,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build 
-    - run: npm run export
+    - run: yarn ci
+    - run: yarn run build 
+    - run: yarn run export
       
       
     - name: Deploy 🚀
