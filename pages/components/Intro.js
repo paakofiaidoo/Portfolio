@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import styles from "../../styles/Intro.module.css";
 
 class Intro extends Component {
@@ -124,72 +123,72 @@ class Intro extends Component {
 					<div className={styles.details}>
 						<ul>
 							<li>
-								<Link href="https://web.facebook.com/paakofi.aidoo">
+								<a  target="_blank" href="https://web.facebook.com/paakofi.aidoo">
 									<img
 										src="/facebook.svg"
 										alt="facebook"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="https://www.instagram.com/pk_aidoo">
+								<a  target="_blank" href="https://www.instagram.com/pk_aidoo">
 									<img
 										src="/instagram.svg"
 										alt="instagram"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="https://twitter.com/PaaKofiaidoo2">
+								<a  target="_blank" href="https://twitter.com/PaaKofiaidoo2">
 									<img
 										src="/twitter.svg"
 										alt="twitter"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/">
+								<a  target="_blank" href="https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/">
 									<img
 										src="/linkedin.svg"
 										alt="linkedin"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="https://wa.me/233202396856">
+								<a  target="_blank" href="https://wa.me/233202396856">
 									<img
 										src="/whatsapp.svg"
 										alt="whatsapp"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="https://github.com/paakofiaidoo">
+								<a  target="_blank" href="https://github.com/paakofiaidoo">
 									<img
 										src="/github.svg"
 										alt="github"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="mailto:paakofiaidoo17@gmail.com">
+								<a  target="_blank" href="mailto:paakofiaidoo17@gmail.com">
 									<img src="/mail.svg" alt="email" className={styles.contact} />
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link href="tel:+233202396856">
+								<a  target="_blank" href="tel:+233202396856">
 									<img
 										src="/telephone.svg"
 										alt="call"
 										className={styles.contact}
 									/>
-								</Link>
+								</a>
 							</li>
 						</ul>
 					</div>
