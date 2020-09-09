@@ -11,11 +11,9 @@ const Home = () => {
 				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
 			</Head>
 			<main className={styles.main}>
-				<div className={styles.overlay}>
-					<Browser>
-						<Intro />
-					</Browser>
-				</div>
+				<Browser>
+					<Intro />
+				</Browser>
 			</main>
 		</div>
 	);
