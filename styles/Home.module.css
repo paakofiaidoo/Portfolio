@@ -22,10 +22,3 @@
 	background-position: center;
 }
 
-.overlay {
-	background-color: rgba(16, 18, 32, 0.5);
-	background-blend-mode: overlay;
-	height: max-content;
-	width: max-content;
-	z-index: 2;
-}
