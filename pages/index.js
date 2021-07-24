@@ -1,22 +1,15 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Layout from "./components/Layout";
 import Intro from "./components/Intro";
 import Browser from "./components/Browser";
 
 const Home = () => {
-	return (
-		<div className={styles.container}>
-			<Head>
-				<title>Paa-Kofi Aidoo</title>
-				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
-			</Head>
-			<main className={styles.main}>
-				<Browser>
-					<Intro />
-				</Browser>
-			</main>
-		</div>
-	);
+  return (
+    <Layout>
+      <Browser>
+        <Intro />
+      </Browser>
+    </Layout>
+  );
 };
 
 export default Home;
