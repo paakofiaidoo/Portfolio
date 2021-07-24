@@ -1,0 +1,17 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  justify-content: flex-start;
+  height: 3rem;
+  background-color: rgba(#000, 0.4);
+  .links {
+    display: flex;
+    align-items: center;
+    &Icon {
+      height: 1rem;
+      width: 1rem;
+      margin: 2px;
+    }
+  }
+}

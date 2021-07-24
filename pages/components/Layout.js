@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
         <meta name="description" content="My portfolio website" />
       </Head>
       <main className={`main ${styles.main}`}>{children}</main>
+      <Nav/>
     </>
   );
 };
