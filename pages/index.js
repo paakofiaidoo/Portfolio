@@ -89,7 +89,7 @@ const Home = () => {
 
     return { x: e.clientX, y: e.clientY };
   };
-  const dragFun = (e) => {};
+  const dragFun = (e) => { };
   return (
     <Layout open={open} apps={apps} onMove={MouseMove}>
       {indexes.map((app, i) => (
