@@ -11,6 +11,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/contact.svg",
       index: 0,
+      content: Intro,
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/competence.svg",
       index: 0,
+      content: Intro,
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/man.svg",
       index: 0,
+      content: Intro,
     },
     {
       id: 4,
@@ -32,6 +35,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/project.svg",
       index: 0,
+      content: Intro,
     },
     {
       id: 5,
@@ -39,6 +43,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/resume.svg",
       index: 0,
+      content: Intro,
     },
   ]);
   const [indexes, setIndexes] = useState([]);
@@ -48,7 +53,7 @@ const Home = () => {
         if (!isActive) {
           isActive = true;
           setIndexes((cur) => {
-            return [...cur, id];
+            return [...cur, { id, title, isActive, icon }];
           });
         }
       }
@@ -70,11 +75,14 @@ const Home = () => {
     });
     setApps(newApps);
   };
+  console.log(indexes);
   return (
     <Layout open={open} apps={apps}>
-      <Application close={close}>
-        <Intro />
-      </Application>
+      {indexes.map((app, i) => (
+        <Application close={close} app={app} layer={i}>
+          <Intro />
+        </Application>
+      ))}
     </Layout>
   );
 };
