@@ -2,7 +2,7 @@ import Nav from "./Nav";
 import Head from "next/head";
 import styles from "../../styles/Layout.module.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, apps, open }) => {
   return (
     <>
       <Head>
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <meta name="description" content="My portfolio website" />
       </Head>
       <main className={`main ${styles.main}`}>{children}</main>
-      <Nav/>
+      <Nav links={apps} open={open} />
     </>
   );
 };
