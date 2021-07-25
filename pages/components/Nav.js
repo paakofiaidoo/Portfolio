@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../../styles/Nav.module.scss";
 import { useState } from "react";
 const Nav = ({ links, open }) => {
+
   return (
     <nav className={`navbar  ${styles.navbar}`}>
       <div className={`links  ${styles.links}`}>
