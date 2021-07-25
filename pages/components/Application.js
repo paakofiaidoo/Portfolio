@@ -1,15 +1,9 @@
-import React, { useState } from "react";
 import styles from "../../styles/Application.module.scss";
 
 function Application({ children, close, layer, app }) {
-  const [window, setWindow] = useState({ isActive: true });
+  const { title, icon, id } = app;
 
-  const setWindowActive = (state) => {
-    setWindow({ isActive: state });
-  };
-  const { title, icon } = app;
-
-  const Window = (content) => {
+  const Window = (children) => {
     return (
       <div className={styles.app} style={{ zIndex: layer + 2 }}>
         <div className={styles.titleBar}>
@@ -20,22 +14,18 @@ function Application({ children, close, layer, app }) {
 
           <span
             className={styles.cancel}
-            onClick={setWindowActive.bind(this, false)}
+            onClick={() => {
+              close(id);
+            }}
           ></span>
         </div>
-        <div className={styles.content}>{content}</div>
+        <div className={styles.content}>{children}</div>
       </div>
     );
   };
   const Icon = () => {
     return (
-      <div
-        onClick={() => {
-          setWindowActive(true);
-          close(layer);
-        }}
-        className={styles.background}
-      >
+      <div onClick={() => {}} className={styles.background}>
         <div className={styles.overlay}>
           <img src={icon} alt={title} className={`icon ${styles.backIcon}`} />
           <p>{title}</p>
@@ -44,7 +34,7 @@ function Application({ children, close, layer, app }) {
     );
   };
 
-  return window.isActive ? Window(children) : Icon();
+  return Window(children);
 }
 
 export default Application;
