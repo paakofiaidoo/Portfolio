@@ -44,20 +44,19 @@ const Nav = () => {
         styles.navbar
       }`}
     >
-      <span className={`logo ${styles.logo}`}>
-        <Image
-          className={`icon`}
-          src="/brand/vector/default-monochrome.svg"
-          alt="karibe Logo"
-          width={60}
-          height={60}
-        />{" "}
-      </span>
-
       <div className={`links  ${styles.links}`}>
         <>
+          <li className={`${isActive ? styles.isActive : ""}`}>
+            <Image
+              className={`icon`}
+              src="/brand/vector/default-monochrome.svg"
+              alt="karibe Logo"
+              width={60}
+              height={60}
+            />
+          </li>
           {nav.map(({ title, icon, isActive }, i) => (
-            <li>
+            <li className={`${isActive ? styles.isActive : ""}`}>
               <img src={icon} className={styles.linksIcon} alt={title} />
               <a href="#">{title}</a>
             </li>
