@@ -1,6 +1,6 @@
 import Layout from "./components/Layout";
 import Intro from "./components/Intro";
-import Browser from "./components/Browser";
+import Browser from "./components/Application";
 
 const Home = () => {
   return (
