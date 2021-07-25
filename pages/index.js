@@ -67,6 +67,7 @@ const Home = () => {
         if (isActive) {
           isActive = false;
           setIndexes((cur) => {
+            console.log(cur.filter(({ id }) => id !== idn));
             return cur.filter(({ id }) => id !== idn);
           });
         }
