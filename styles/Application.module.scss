@@ -1,0 +1,123 @@
+@media only screen and (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+}
+
+.overlay {
+  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(250, 250, 250, 0.5));
+  background-blend-mode: luminosity;
+  z-index: 2;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 760px) {
+  .app {
+    height: 90vh;
+    width: 90vw;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    //background-color: #666;
+    overflow: hidden;
+    box-shadow: 0px 0px 0.1em #fff;
+    animation: grow 0.5s ease-in-out;
+  }
+  .titleBar {
+    height: 2.5em;
+    width: 100%;
+    background-color: rgba(#111, 1);
+    margin-top: 0;
+    padding: 0px 10px;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    color: #fff;
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+    }
+  }
+
+  .navIcon {
+    height: 1.5rem;
+    margin: 0px 10px;
+  }
+
+  .content {
+    height: Calc(100% - 2.5em);
+  }
+  .cancel {
+    justify-self: end;
+    flex: 0.1;
+    margin: 0;
+    padding: 0.5em;
+    cursor: pointer;
+    position: relative;
+  }
+  .cancel::before,
+  .cancel::after {
+    content: "";
+    width: 3px;
+    height: 1.5rem;
+    background: red;
+    position: absolute;
+    right: 50%;
+    top: 25%;
+  }
+  .cancel::after {
+    transform: rotate(45deg);
+  }
+  .cancel::before {
+    transform: rotate(-45deg);
+  }
+  .cancel:hover,
+  .cancel:focus {
+    background: red;
+  }
+  .cancel:hover::before,
+  .cancel:hover::after {
+    opacity: 0.8;
+    background: #fff;
+    transition: opacity 250ms linear;
+  }
+
+  .background {
+    color: #fff;
+    font-weight: 600;
+    animation: shrink 0.3s linear;
+  }
+  .background p {
+    margin: 3px;
+  }
+  .backIcon {
+    height: auto;
+    width: auto;
+    margin: 5px;
+    filter: drop-shadow(0px 0px 5px rgba(37, 187, 168, 0.7));
+  }
+  .background:hover {
+    filter: drop-shadow(0px 0px 5px rgba(37, 187, 168, 0.7));
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+    overflow: hidden;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
