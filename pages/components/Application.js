@@ -1,30 +1,21 @@
 import React, { useState } from "react";
 import styles from "../../styles/Application.module.scss";
 
-function Application(props) {
+function Application({ children, close, layer, app }) {
   const [window, setWindow] = useState({ isActive: true });
 
   const setWindowActive = (state) => {
     setWindow({ isActive: state });
   };
+  const { title, icon } = app;
 
-  const menu = {
-    id: 1,
-    title: "contact",
-    isActive: true,
-    icon: "/navIcons/contact.svg",
-  };
   const Window = (content) => {
     return (
-      <div className={styles.app}>
+      <div className={styles.app} style={{ zIndex: layer + 2 }}>
         <div className={styles.titleBar}>
-          <li  className={styles.title}>
-            <img
-              src={menu.icon}
-              className={`icon ${styles.icon}`}
-              alt={menu.title}
-            />
-            {menu.title}
+          <li className={styles.title}>
+            <img src={icon} className={`icon ${styles.icon}`} alt={app.title} />
+            {title}
           </li>
 
           <span
@@ -39,22 +30,21 @@ function Application(props) {
   const Icon = () => {
     return (
       <div
-        onClick={setWindowActive.bind(this, true)}
+        onClick={() => {
+          setWindowActive(true);
+          close(layer);
+        }}
         className={styles.background}
       >
         <div className={styles.overlay}>
-          <img
-            src="/brand/logo.svg"
-            alt="Paa-Kofi Aidoo"
-            className={styles.backIcon}
-          />
-          <p>Paa-Kofi Aidoo</p>
+          <img src={icon} alt={title} className={`icon ${styles.backIcon}`} />
+          <p>{title}</p>
         </div>
       </div>
     );
   };
 
-  return window.isActive ? Window(props.children) : Icon();
+  return window.isActive ? Window(children) : Icon();
 }
 
 export default Application;
