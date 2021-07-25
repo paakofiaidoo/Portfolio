@@ -138,7 +138,6 @@ class Intro extends Component {
 
     //--------------------------------------------------------
     let setStyle = (newStyle) => {
-      console.log(newStyle);
       this.setState({ transform: newStyle });
     };
 
