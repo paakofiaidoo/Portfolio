@@ -7,10 +7,9 @@ const Home = () => {
   const [apps, setApps] = useState([
     {
       id: 1,
-      title: "contact",
+      title: "about me",
       isActive: false,
-      icon: "/navIcons/contact.svg",
-      index: 0,
+      icon: "/navIcons/man.svg",
       content: Intro,
     },
     {
@@ -18,31 +17,20 @@ const Home = () => {
       title: "skills",
       isActive: false,
       icon: "/navIcons/competence.svg",
-      index: 0,
       content: Intro,
     },
     {
       id: 3,
-      title: "about me",
+      title: "projects",
       isActive: false,
-      icon: "/navIcons/man.svg",
-      index: 0,
+      icon: "/navIcons/project.svg",
       content: Intro,
     },
     {
       id: 4,
-      title: "projects",
+      title: "contact",
       isActive: false,
-      icon: "/navIcons/project.svg",
-      index: 0,
-      content: Intro,
-    },
-    {
-      id: 5,
-      title: "resume",
-      isActive: false,
-      icon: "/navIcons/resume.svg",
-      index: 0,
+      icon: "/navIcons/contact.svg",
       content: Intro,
     },
   ]);
@@ -67,7 +55,6 @@ const Home = () => {
         if (isActive) {
           isActive = false;
           setIndexes((cur) => {
-            console.log(cur.filter(({ id }) => id !== idn));
             return cur.filter(({ id }) => id !== idn);
           });
         }
@@ -76,7 +63,7 @@ const Home = () => {
     });
     setApps(newApps);
   };
-  console.log(indexes);
+
   return (
     <Layout open={open} apps={apps}>
       {indexes.map((app, i) => (
