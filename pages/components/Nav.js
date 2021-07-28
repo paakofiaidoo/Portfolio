@@ -1,8 +1,9 @@
 import Image from "next/image";
 import styles from "../../styles/Nav.module.scss";
-import { useState } from "react";
-const Nav = ({ links, open }) => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
+const Nav = ({ links, open }) => {
   return (
     <nav className={`navbar  ${styles.navbar}`}>
       <div className={`links  ${styles.links}`}>
@@ -16,12 +17,13 @@ const Nav = ({ links, open }) => {
               height={60}
             />
           </li>
-          {links.map(({ title, icon, isActive, id, index }, i) => (
+          {links.map(({ title, icon, isActive, id, index }) => (
             <li
               className={`${isActive ? styles.isActive : ""}`}
               onClick={() => {
                 open(id);
               }}
+              key={index}
             >
               <img src={icon} className={styles.linksIcon} alt={title} />
               <a href="#">{title}</a>
@@ -29,6 +31,11 @@ const Nav = ({ links, open }) => {
           ))}
         </>
       </div>
+      <FontAwesomeIcon
+        className={`icon`}
+        title="Download Resume"
+        icon={faDownload}
+      />
     </nav>
   );
 };
