@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0;
   color: #fff;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 3rem;
   background-color: rgba(#000, 0.4);
   padding: 0;
@@ -37,6 +37,11 @@
       height: 1rem;
       width: 1rem;
       margin-right: 2px;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    a {
+      display: none;
     }
   }
 }
