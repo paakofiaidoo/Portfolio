@@ -5,13 +5,13 @@
 	z-index: 3;
 	overflow: hidden;
 	perspective: 50vw;
-}
-.intro div {
+	flex-direction: column;
 	margin: auto;
 	align-content: center;
 	width: 100%;
 	padding: 10%;
 }
+
 .avatar {
 	height: auto;
 	width: 100%;
@@ -27,11 +27,10 @@
 	animation: shadowPlay 1s  0s infinite both ;
 } */
 .details {
+	width: max-content !important;
 	display: flex;
 	padding: 0px !important;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin: auto;
+	align-content: center;
 }
 
 .details ul {

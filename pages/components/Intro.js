@@ -149,31 +149,29 @@ class Intro extends Component {
   render() {
     return (
       <div id="intro" className={styles.intro} ref={this.intro}>
-        <div>
-          <img
-            src="/brand/vector/default-monochrome.svg"
-            alt="profile pic"
-            className={styles.avatar}
-            ref={this.avatar}
-            style={this.state}
-            load="lazy"
-          />
-          <div className={styles.details}>
-            <ul>
-              {this.contacts.map((contact, index) => (
-                <li key={index}>
-                  <a target="_blank" href={contact.href}>
-                    <img
-                      src={contact.src}
-                      alt={contact.name}
-                      title={contact.name}
-                      className={styles.contact}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <img
+          src="/brand/vector/default-monochrome.svg"
+          alt="profile pic"
+          className={styles.avatar}
+          ref={this.avatar}
+          style={this.state}
+          load="lazy"
+        />
+        <div className={styles.details}>
+          <ul>
+            {this.contacts.map((contact, index) => (
+              <li key={index}>
+                <a target="_blank" href={contact.href}>
+                  <img
+                    src={contact.src}
+                    alt={contact.name}
+                    title={contact.name}
+                    className={styles.contact}
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     );
