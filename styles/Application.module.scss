@@ -35,6 +35,7 @@
     overflow: hidden;
     justify-content: space-between;
     color: #fff;
+    align-items: center;
     .title {
       display: flex;
       justify-content: center;
@@ -50,40 +51,12 @@
 
   .content {
     height: Calc(100% - 2.5em);
+    color: #fff;
   }
-  .cancel {
-    justify-self: end;
-    flex: 0.1;
-    margin: 0;
-    padding: 0.5em;
-    cursor: pointer;
-    position: relative;
-  }
-  .cancel::before,
-  .cancel::after {
-    content: "";
-    width: 3px;
-    height: 1.5rem;
+  .close:hover,
+  .close:focus {
     background: red;
-    position: absolute;
-    right: 50%;
-    top: 25%;
-  }
-  .cancel::after {
-    transform: rotate(45deg);
-  }
-  .cancel::before {
-    transform: rotate(-45deg);
-  }
-  .cancel:hover,
-  .cancel:focus {
-    background: red;
-  }
-  .cancel:hover::before,
-  .cancel:hover::after {
-    opacity: 0.8;
-    background: #fff;
-    transition: opacity 250ms linear;
+    color: #111;
   }
 
   .background {
