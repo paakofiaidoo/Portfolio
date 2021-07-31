@@ -2,6 +2,10 @@ import Layout from "./components/Layout";
 import Intro from "./components/Intro";
 import Application from "./components/Application";
 import { useState } from "react";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 const Home = () => {
   const [apps, setApps] = useState([
@@ -10,65 +14,95 @@ const Home = () => {
       title: "about me",
       isActive: false,
       icon: "/navIcons/man.svg",
-      content: Intro,
+      content: <About />,
     },
     {
       id: 2,
       title: "skills",
       isActive: false,
       icon: "/navIcons/competence.svg",
-      content: Intro,
+      content: <Skills />,
     },
     {
       id: 3,
       title: "projects",
       isActive: false,
       icon: "/navIcons/project.svg",
-      content: Intro,
+      content: <Projects />,
     },
     {
       id: 4,
       title: "contact",
       isActive: false,
       icon: "/navIcons/contact.svg",
-      content: Intro,
+      content: <Contact />,
     },
   ]);
+  const [mousePosition, setMousePosition] = useState({ curX: 0, curY: 0 });
   const [indexes, setIndexes] = useState([]);
+  const [position, setPosition] = useState({
+    top: 0,
+    left: 0,
+    dragEvent: false,
+  });
+  const { left, top, dragEvent } = position;
   const open = (idn) => {
-    const newApps = apps.map(({ id, isActive, title, icon }) => {
+    const newApps = apps.map((app) => {
+      const newApp = { ...app };
+      const { isActive, id } = newApp;
       if (id === idn) {
         if (!isActive) {
-          isActive = true;
+          newApp.isActive = true;
           setIndexes((cur) => {
-            return [...cur, { id, title, isActive, icon }];
+            return [...cur, newApp];
           });
         }
       }
-      return { id, title, isActive, icon };
+      return newApp;
     });
     setApps(newApps);
   };
   const close = (idn) => {
-    const newApps = apps.map(({ id, isActive, title, icon }) => {
+    const newApps = apps.map((app) => {
+      const newApp = { ...app };
+      const { isActive, id } = newApp;
       if (id === idn) {
         if (isActive) {
-          isActive = false;
+          newApp.isActive = false;
           setIndexes((cur) => {
             return cur.filter(({ id }) => id !== idn);
           });
         }
       }
-      return { id, title, isActive, icon };
+      return newApp;
     });
     setApps(newApps);
   };
+  const MouseMove = (e) => {
+    //console.log(e.clientX, e.clientY, position);
+    if (dragEvent) {
+      setPosition((pre) => {
+        pre.left = e.clientX;
+        pre.top = e.clientY;
+        return pre;
+      });
+    }
 
+    return { x: e.clientX, y: e.clientY };
+  };
+  const dragFun = (e) => {};
   return (
-    <Layout open={open} apps={apps}>
+    <Layout open={open} apps={apps} onMove={MouseMove}>
       {indexes.map((app, i) => (
-        <Application close={close} app={app} layer={i}>
-          <Intro />
+        <Application
+          close={close}
+          app={app}
+          layer={i}
+          key={i}
+          mousePosition={mousePosition}
+          style={{ top: `${top}px`, left: `${left}px` }}
+        >
+          <>{app.content}</>
         </Application>
       ))}
     </Layout>
