@@ -2,7 +2,7 @@ import Nav from "./Nav";
 import Head from "next/head";
 import styles from "../../styles/Layout.module.scss";
 
-const Layout = ({ children, apps, open }) => {
+const Layout = ({ children, apps, open, onMove }) => {
   return (
     <>
       <Head>
@@ -10,7 +10,14 @@ const Layout = ({ children, apps, open }) => {
         <link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
         <meta name="description" content="My portfolio website" />
       </Head>
-      <main className={`main ${styles.main}`}>{children}</main>
+      <main
+        className={`main ${styles.main}`}
+        onMouseMove={(e) => {
+          onMove(e);
+        }}
+      >
+        {children}
+      </main>
       <Nav links={apps} open={open} />
     </>
   );
