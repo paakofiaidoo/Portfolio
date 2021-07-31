@@ -17,13 +17,13 @@ const Nav = ({ links, open }) => {
               height={60}
             />
           </li>
-          {links.map(({ title, icon, isActive, id, index }) => (
+          {links.map(({ title, icon, isActive, id }, i) => (
             <li
               className={`${isActive ? styles.isActive : ""}`}
               onClick={() => {
                 open(id);
               }}
-              key={index}
+              key={i}
             >
               <img src={icon} className={styles.linksIcon} alt={title} />
               <a href="#">{title}</a>
