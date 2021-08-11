@@ -40,6 +40,7 @@
     }
   }
   @media screen and (max-width: 680px) {
+    background-color: transparent;
     a {
       display: none;
     }
@@ -47,11 +48,12 @@
       justify-content: center;
       margin: auto;
       li {
+        width: auto;
+        background-color: rgba(#000, 0.4);
+        border-radius: 3rem;
+        margin: 5px;
         &:nth-child(1) {
           order: 3;
-          width: auto;
-          background-color: rgba(#000, 0.4);
-          border-radius: 3rem;
         }
         &:nth-child(2) {
           order: 1;
