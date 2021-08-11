@@ -1,9 +1,21 @@
-@media only screen and (max-width: 760px) {
-  .nav {
-    display: none;
+.titleBar {
+  height: 2.5em;
+  width: 100%;
+  background-color: rgba(#111, 1);
+  margin-top: 0;
+  padding: 0px 10px;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
   }
 }
-
 .overlay {
   background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(250, 250, 250, 0.5));
   background-blend-mode: luminosity;
@@ -11,37 +23,31 @@
   border-radius: 10px;
   flex-direction: column;
 }
+@media only screen and (max-width: 760px) {
+  .app {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(#fff, 0.7);
+    border: 1px solid black;
+    flex-direction: column;
+    position: absolute;
+  }
+  .titleBar {
+    background-color: rgba(#111, 0.8);
+  }
+}
 
 @media only screen and (min-width: 760px) {
   .app {
     height: 90vh;
     width: 90vw;
     border: 1px solid black;
-    display: flex;
     flex-direction: column;
     //background-color: #666;
     overflow: hidden;
     box-shadow: 0px 0px 0.1em #fff;
     animation: grow 0.5s ease-in-out;
     position: absolute;
-  }
-  .titleBar {
-    height: 2.5em;
-    width: 100%;
-    background-color: rgba(#111, 1);
-    margin-top: 0;
-    padding: 0px 10px;
-    display: flex;
-    overflow: hidden;
-    justify-content: space-between;
-    color: #fff;
-    align-items: center;
-    .title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-transform: capitalize;
-    }
   }
 
   .navIcon {
