@@ -31,11 +31,11 @@ const Nav = ({ links, open }) => {
           ))}
         </>
       </div>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         className={`icon`}
         title="Download Resume"
         icon={faDownload}
-      />
+      /> */}
     </nav>
   );
 };
