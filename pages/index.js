@@ -1,6 +1,5 @@
 import Layout from "./components/Layout";
-import Intro from "./components/Intro";
-import Application from "./components/Application";
+import Application from "./atoms/Application";
 import { useState } from "react";
 import About from "./components/About";
 import Skills from "./components/Skills";

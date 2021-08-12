@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "../atoms/Nav";
 import Head from "next/head";
 import styles from "../../styles/Layout.module.scss";
 
