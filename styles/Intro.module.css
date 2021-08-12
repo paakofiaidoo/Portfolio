@@ -7,9 +7,11 @@
 	perspective: 50vw;
 	flex-direction: column;
 	margin: auto;
-	align-content: center;
+	align-items: center;
 	width: 100%;
 	padding: 10%;
+	justify-content: center;
+	align-items: center;
 }
 
 .avatar {
@@ -27,19 +29,18 @@
 	animation: shadowPlay 1s  0s infinite both ;
 } */
 .details {
-	width: max-content !important;
 	display: flex;
 	padding: 0px !important;
-	align-content: center;
+	align-items: center;
 }
 
 .details ul {
 	margin: auto;
-	width: 90vw;
+	width: 100%;
 	height: auto;
 	padding: 0;
-	align-self: center;
-	justify-self: center;
+	align-items: center;
+	justify-content: center;
 	display: flex;
 	flex-wrap: wrap;
 	flex-flow: wrap;
