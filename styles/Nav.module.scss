@@ -19,9 +19,7 @@
       margin: 0;
       padding: 1rem;
       cursor: pointer;
-      * {
-        margin: auto;
-      }
+     
       &:hover {
         background-color: rgba(#fff, 0.1);
       }
@@ -36,7 +34,7 @@
     &Icon {
       height: 1rem;
       width: 1rem;
-      margin-right: 2px;
+      margin-right: 3px;
     }
   }
   @media screen and (max-width: 680px) {
