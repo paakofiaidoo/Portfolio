@@ -16,19 +16,14 @@
     text-transform: capitalize;
   }
 }
-.overlay {
-  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(250, 250, 250, 0.5));
-  background-blend-mode: luminosity;
-  z-index: 2;
-  border-radius: 10px;
-  flex-direction: column;
-}
+
 .app {
   height: calc(100vh - 3rem);
   width: 100vw;
   border: 1px solid black;
   flex-direction: column;
-  background-color: #666;
+  background-color: rgba(#ddd, 0.99);
+  color: #111;
   overflow: hidden;
   box-shadow: 0px 0px 0.1em #fff;
   animation: grow 0.5s ease-in-out;
@@ -42,19 +37,13 @@
   .titleBar {
     background-color: rgba(#111, 0.8);
   }
+  .content {
+    padding: 5%;
+  }
 }
 
 @media only screen and (min-width: 760px) {
   .app {
-    height: calc(100vh - 3rem);
-    width: 100vw;
-    border: 1px solid black;
-    flex-direction: column;
-    background-color: #666;
-    overflow: hidden;
-    box-shadow: 0px 0px 0.1em #fff;
-    animation: grow 0.5s ease-in-out;
-    position: absolute;
   }
 
   .navIcon {
@@ -63,8 +52,8 @@
   }
 
   .content {
+    padding: 10%;
     height: Calc(100% - 2.5em);
-    color: #fff;
   }
   .close:hover,
   .close:focus {
@@ -72,20 +61,6 @@
     color: #111;
   }
 
-  .background {
-    color: #fff;
-    font-weight: 600;
-    animation: shrink 0.3s linear;
-  }
-  .background p {
-    margin: 3px;
-  }
-  .backIcon {
-    filter: drop-shadow(0px 0px 5px rgba(37, 187, 168, 0.7));
-  }
-  .background:hover {
-    filter: drop-shadow(0px 0px 5px rgba(37, 187, 168, 0.7));
-  }
 }
 
 @keyframes grow {

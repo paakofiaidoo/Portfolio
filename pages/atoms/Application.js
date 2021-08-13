@@ -21,15 +21,15 @@ function Application({ style, children, close, layer, app, mousePosition }) {
         style={{ zIndex: layer + 2, ...style }}
       >
         <div
-          onDrag={(e) => {
-            console.log(style);
-          }}
-          onDragEnd={(e) => {
-            console.log("end");
-          }}
-          onDragStart={(e) => {
-            console.log("start");
-          }}
+          // onDrag={(e) => {
+          //   console.log(style);
+          // }}
+          // onDragEnd={(e) => {
+          //   console.log("end");
+          // }}
+          // onDragStart={(e) => {
+          //   console.log("start");
+          // }}
           className={styles.titleBar}
           draggable
         >
@@ -48,16 +48,6 @@ function Application({ style, children, close, layer, app, mousePosition }) {
           />
         </div>
         <div className={styles.content}>{children}</div>
-      </div>
-    );
-  };
-  const Icon = () => {
-    return (
-      <div onClick={() => {}} className={styles.background}>
-        <div className={styles.overlay}>
-          <img src={icon} alt={title} className={`icon ${styles.backIcon}`} />
-          <p>{title}</p>
-        </div>
       </div>
     );
   };
