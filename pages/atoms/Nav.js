@@ -15,6 +15,7 @@ const Nav = ({ links, open }) => {
               alt="Paa-Kofi Aidoo logo"
               width={60}
               height={60}
+              title="Click to download Resume"
             />
           </li>
           {links.map(({ title, icon, isActive, id }, i) => (
