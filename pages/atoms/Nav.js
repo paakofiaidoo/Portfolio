@@ -3,7 +3,7 @@ import styles from "../../styles/Nav.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ links, open }) => {
+const Nav = ({ links =[], open }) => {
   return (
     <nav className={`navbar  ${styles.navbar}`}>
       <div className={`links  ${styles.links}`}>
