@@ -1,10 +1,10 @@
 import Layout from "./components/Layout";
 import Application from "./atoms/Application";
 import { useState } from "react";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import About from "./apps/About";
+import Skills from "./apps/Skills";
+import Projects from "./apps/Projects";
+import Contact from "./apps/Contact";
 
 const Home = () => {
   const [apps, setApps] = useState([
@@ -28,6 +28,13 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/project.svg",
       content: <Projects />,
+    },
+    {
+      id: 2,
+      title: "recommendation",
+      isActive: false,
+      icon: "/navIcons/competence.svg",
+      content: <Skills />,
     },
     {
       id: 4,
