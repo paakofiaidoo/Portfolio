@@ -5,6 +5,14 @@ import About from "./apps/About";
 import Skills from "./apps/Skills";
 import Projects from "./apps/Projects";
 import Contact from "./apps/Contact";
+import {
+  faUserAstronaut,
+  faThumbsUp,
+  faProjectDiagram,
+  faAddressBook,
+  faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
+import {} from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
   const [apps, setApps] = useState([
@@ -13,6 +21,7 @@ const Home = () => {
       title: "about me",
       isActive: false,
       icon: "/navIcons/man.svg",
+      fa: faUserAstronaut,
       content: <About />,
     },
     {
@@ -21,20 +30,15 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/competence.svg",
       content: <Skills />,
+      fa: faLaptopCode,
     },
     {
       id: 3,
       title: "projects",
       isActive: false,
       icon: "/navIcons/project.svg",
+      fa: faProjectDiagram,
       content: <Projects />,
-    },
-    {
-      id: 2,
-      title: "recommendation",
-      isActive: false,
-      icon: "/navIcons/competence.svg",
-      content: <Skills />,
     },
     {
       id: 4,
@@ -42,6 +46,7 @@ const Home = () => {
       isActive: false,
       icon: "/navIcons/contact.svg",
       content: <Contact />,
+      fa: faAddressBook,
     },
   ]);
   const [mousePosition, setMousePosition] = useState({ curX: 0, curY: 0 });
