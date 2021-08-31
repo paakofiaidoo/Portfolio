@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../../styles/Nav.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -50,11 +49,6 @@ const Nav = ({ links = [], open }) => {
           ))}
         </>
       </div>
-      {/* <FontAwesomeIcon
-        className={`icon`}
-        title="Download Resume"
-        icon={faDownload}
-      /> */}
     </nav>
   );
 };
