@@ -5,7 +5,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Application({ style, children, close, layer, app={}, mousePosition }) {
   const { title, icon, id } = app;
-  console.log(children);
   const [mouse, setMouse] = useState({ initX: 0, initY: 0, dragEvent: false });
 
   const inputEl = useRef();
