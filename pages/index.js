@@ -7,7 +7,6 @@ import Projects from "./apps/Projects";
 import Contact from "./apps/Contact";
 import {
   faUserAstronaut,
-  faThumbsUp,
   faProjectDiagram,
   faAddressBook,
   faLaptopCode,
@@ -66,6 +65,10 @@ const Home = () => {
           newApp.isActive = true;
           setIndexes((cur) => {
             return [...cur, newApp];
+          });
+        } else {
+          setIndexes((cur) => {
+            return [...cur.filter(({ id }) => id !== idn), newApp];
           });
         }
       }
