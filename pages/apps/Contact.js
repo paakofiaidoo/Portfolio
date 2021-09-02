@@ -1,5 +1,15 @@
 import React, { Component } from "react";
 import styles from "../../styles/Intro.module.css";
+import {
+  faGithub,
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Intro extends Component {
   constructor(props) {
@@ -13,42 +23,50 @@ class Intro extends Component {
       name: "Facebook",
       src: "/contactIcons/facebook.svg",
       href: "https://web.facebook.com/paakofi.aidoo",
+      fa: faFacebook,
     },
     {
       name: "instagram",
       src: "/contactIcons/instagram.svg",
       href: "https://www.instagram.com/pk_aidoo",
+      fa: faInstagram,
     },
 
     {
       name: "twitter",
       src: "/contactIcons/twitter.svg",
       href: "https://twitter.com/PaaKofiaidoo2",
+      fa: faTwitter,
     },
     {
       name: "linkedin",
       src: "/contactIcons/linkedin.svg",
       href: "https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/",
+      fa: faLinkedin,
     },
     {
       name: "whatsapp",
       src: "/contactIcons/whatsapp.svg",
       href: "https://wa.me/233202396856",
+      fa: faWhatsapp,
     },
     {
       name: "github",
       src: "/contactIcons/github.svg",
       href: "https://github.com/paakofiaidoo",
+      fa: faGithub,
     },
     {
       name: "Email",
       src: "/contactIcons/mail.svg",
       href: "mailto:paakofiaidoo17@gmail.com",
+      fa: faMailBulk,
     },
     {
       name: "call",
       src: "/contactIcons/telephone.svg",
       href: "tel:+233202396856",
+      fa: faPhone,
     },
   ];
 
@@ -158,20 +176,28 @@ class Intro extends Component {
           load="lazy"
         />
         <div className={styles.details}>
-          <ul>
-            {this.contacts.map((contact, index) => (
-              <li key={index}>
-                <a target="_blank" href={contact.href}>
+          {this.contacts.map(({ href, src, name, fa }, index) => (
+            <li key={index}>
+              <a target="_blank" href={href}>
+                {!fa ? (
                   <img
-                    src={contact.src}
-                    alt={contact.name}
-                    title={contact.name}
+                    src={src}
+                    alt={name}
+                    title={name}
                     className={styles.contact}
                   />
-                </a>
-              </li>
-            ))}
-          </ul>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={fa}
+                    className={styles.contact}
+                    color="#25BBA8"
+                    alt={name}
+                    title={name}
+                  />
+                )}
+              </a>
+            </li>
+          ))}
         </div>
       </div>
     );

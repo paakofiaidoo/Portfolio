@@ -3,11 +3,9 @@
   width: 100%;
   display: flex;
   z-index: 3;
-  overflow: hidden;
   perspective: 50vw;
   flex-direction: column;
   margin: auto;
-  align-items: center;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -18,23 +16,15 @@
   width: 100%;
   margin: auto;
   padding: 10rem 0px;
-  display: block;
-  align-self: center;
-  /* mix-blend-mode: difference; */
   animation: shadowPlay 3s 1s ease-in-out infinite both;
   filter: drop-shadow(3px 3px 1px rgba(250, 0, 0, 0.7))
     drop-shadow(-3px -3px 1px rgba(0, 0, 250, 0.7));
+  max-width: 780px;
 }
 /* .avatar:hover{
 	animation: shadowPlay 1s  0s infinite both ;
 } */
 .details {
-  display: flex;
-  padding: 0px !important;
-  align-items: center;
-}
-
-.details ul {
   margin: auto;
   width: 100%;
   height: auto;
@@ -43,21 +33,23 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  flex-flow: wrap;
 }
+
 .contact {
   height: 2rem;
   width: 2rem;
   margin: 10px;
-  flex: 1;
+
   /* background-color: #25bba8; */
-  align-self: center;
-  filter: drop-shadow(3px 3px 1px rgba(250, 0, 0, 0.7))
-    drop-shadow(-3px -3px 1px rgba(0, 0, 250, 0.7));
+
+  /* filter: drop-shadow(3px 3px 1px rgba(250, 0, 0, 0.7))
+    drop-shadow(-3px -3px 1px rgba(0, 0, 250, 0.7)); */
 }
 .contact:hover {
   filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.7));
   animation: shadowPlay 2s 0s infinite both;
+  transform: scale(1.2);
+  transition: transform 150ms ease-in;
 }
 
 @media only screen and (min-width: 760px) {
@@ -70,13 +62,11 @@
   }
   .avatar {
     padding: 0;
+    animation: none;
   }
-  .details ul {
+  .details {
     margin: auto;
     width: 100%;
-  }
-  .avatar {
-    animation: none;
   }
 }
 
