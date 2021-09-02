@@ -24,11 +24,12 @@
   flex-direction: column;
   background-color: rgba(#ddd, 0.99);
   color: #111;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0px 0px 0.1em #fff;
   animation: grow 0.5s ease-in-out;
   position: absolute;
 }
+
 @media only screen and (max-width: 760px) {
   .app {
     background-color: rgba(#ddd, 0.99);
@@ -60,7 +61,6 @@
     background: red;
     color: #111;
   }
-
 }
 
 @keyframes grow {
