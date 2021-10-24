@@ -37,49 +37,39 @@ const Projects = () => {
   ];
   return (
     <>
-      <div className={stylesCos.slide}>
 
-
-        <div id={stylesCos.phoneShadow}></div>
-        <div id={stylesCos.phone}>
-          <div id={stylesCos.back}></div>
-          <div id={stylesCos.front}></div>
-          <div id={stylesCos.camera}></div>
-          <div id={stylesCos.button}></div>
-          <div id={stylesCos.display}>
-            <span className={stylesCos.upperbefore}><img src="/projects/karibe.png" alt="" /></span>
-
-          </div>
-        </div>
-        <div className={stylesCos.laptop}>
-          <div className={stylesCos.upper}>
-            <span className={stylesCos.upperbefore}><img src="/projects/karibe.png" alt="" /></span>
-          </div>
-          <div className={stylesCos.lower}></div>
-        </div>
-      </div>
-      {/* <AwesomeSlider
+      <AwesomeSlider
         fillParent
         cssModule={[styles]}
-        customContent={<Test />}>
+      >
         {projects.map(({ name, href, description, img }) => {
           return (
-            <div className="slide">
-              <div>
-                <img className="img" src={img} alt={name} />
-                <img src="/projects/karibe.png" alt="" />
+            <div className={stylesCos.slide}>
+              <div id={stylesCos.phone}>
+                <div id={stylesCos.back}></div>
+                <div id={stylesCos.front}></div>
+                <div id={stylesCos.camera}></div>
+                <div id={stylesCos.button}></div>
+                <div id={stylesCos.display}>
+                  <span className={stylesCos.upperbefore}>
+                    <img className={`${stylesCos.scrollMin}`} src="/projects/karibe.png" alt="" />
+                  </span>
+                </div>
+              </div>
+              <div className={stylesCos.laptop}>
+                <div className={stylesCos.upper}>
+                  <span className={` ${stylesCos.upperbefore}`}>
+                    <img className={`${stylesCos.scroll}`} src="/projects/karibe.png" alt="" />
+                  </span>
+                </div>
+                <div className={stylesCos.lower}></div>
               </div>
 
-              <div data-type="caption">
-                <p>
-                  <h1>{name}</h1>
-                  <p>{description}</p>
-                  <a href={href}>View projects</a></p>
-              </div>
+              
             </div>
           );
         })}
-      </AwesomeSlider> */}
+      </AwesomeSlider>
     </>
   );
 };
