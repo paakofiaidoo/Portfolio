@@ -33,6 +33,7 @@ const Nav = ({ links = [], open }) => {
               }}
               key={i}
             >
+
               {fa ? (
                 <FontAwesomeIcon
                   className={` ${styles.linksIcon}`}

@@ -11,7 +11,7 @@ import {
   faAddressBook,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/free-brands-svg-icons";
+import { } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
   const [apps, setApps] = useState([
@@ -104,9 +104,9 @@ const Home = () => {
 
     return { x: e.clientX, y: e.clientY };
   };
-  const dragFun = (e) => {};
+  const dragFun = (e) => { };
   return (
-    <Layout open={open} apps={apps} onMove={MouseMove}>
+    <Layout open={open} apps={apps}>
       {indexes.map((app, i) => (
         <Application
           close={close}

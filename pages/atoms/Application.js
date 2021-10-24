@@ -14,9 +14,9 @@ function Application({ style, children, close, layer, app={}, mousePosition }) {
       <div
         className={styles.app}
         ref={inputEl}
-        onMove={(e) => {
-          console.log(e.clientY);
-        }}
+        // onMove={(e) => {
+        //   console.log(e.clientY);
+        // }}
         style={{ zIndex: layer + 2, ...style }}
       >
         <div
