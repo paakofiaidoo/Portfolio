@@ -13,9 +13,9 @@ const Layout = ({ children, apps, open, onMove }) => {
       <div className={`${styles.body}`}>
         <main
           className={`main ${styles.main}`}
-          onMouseMove={(e) => {
-            onMove(e);
-          }}
+          // onMouseMove={(e) => {
+          //   onMove(e);
+          // }}
         >
           {children}
         </main>
