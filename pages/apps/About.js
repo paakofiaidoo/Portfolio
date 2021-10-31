@@ -28,7 +28,7 @@ const About = () => {
 
 	return (
 		<div className={`${styles.about}`}>
-			<div className={`${styles.intro}`}>
+			<div className={`${styles.intro} card`}>
 				<Image
 					src="/brand/profile.png"
 					alt="picture of me"
@@ -41,9 +41,9 @@ const About = () => {
 					<p className={`${styles.sub}`}>Front-end web developer</p>
 				</h2>
 			</div>
-			<div className={`${styles.info}`}>
+			<div className={`${styles.info} card2`}>
 				{about.map(({ fa, details }) => (
-					<p className={`${styles.text}`}>
+					<p className={`${styles.text} `}>
 						<FontAwesomeIcon icon={fa} className={`icon`} />
 						{details}
 					</p>

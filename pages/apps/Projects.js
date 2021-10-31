@@ -8,7 +8,8 @@ const Projects = () => {
       name: "artisanHR",
       href: "https://artsan-hr.herokuapp.com",
       description: "",
-      img: "/projects/artisan-hr.png",
+      img: { phone: "/projects/artisan-hr.png", desktop: "" },
+      scroll: true,
     },
     {
       name: "karibe",
@@ -37,12 +38,8 @@ const Projects = () => {
   ];
   return (
     <>
-
-      <AwesomeSlider
-        fillParent
-        cssModule={[styles]}
-      >
-        {projects.map(({ name, href, description, img }) => {
+      <AwesomeSlider fillParent cssModule={[styles]}>
+        {projects.map(({ name, href, description, imgDesk, imgMob, scroll = false }) => {
           return (
             <div className={stylesCos.slide}>
               <div id={stylesCos.phone}>
@@ -52,20 +49,24 @@ const Projects = () => {
                 <div id={stylesCos.button}></div>
                 <div id={stylesCos.display}>
                   <span className={stylesCos.upperbefore}>
-                    <img className={`${stylesCos.scrollMin}`} src="/projects/karibe.png" alt="" />
+                    <img className={`${scroll ? stylesCos.scrollMin : ""}`} src="/projects/karibe.png" alt="" />
                   </span>
                 </div>
               </div>
               <div className={stylesCos.laptop}>
                 <div className={stylesCos.upper}>
                   <span className={` ${stylesCos.upperbefore}`}>
-                    <img className={`${stylesCos.scroll}`} src="/projects/karibe.png" alt="" />
+                    <img className={`${scroll ? stylesCos.scroll : ""}`} src="/projects/karibe.png" alt="" />
                   </span>
                 </div>
                 <div className={stylesCos.lower}></div>
               </div>
-
-              
+              <div data-type="caption">
+                <p>
+                  <h3>{name}</h3>:<span>{description}</span>
+                  <a href={href}>View projects</a>
+                </p>
+              </div>
             </div>
           );
         })}
