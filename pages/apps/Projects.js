@@ -38,37 +38,39 @@ const Projects = () => {
   ];
   return (
     <>
-      <AwesomeSlider fillParent cssModule={[styles]}>
+      <AwesomeSlider fillParent bullets={false} organicArrows mobileTouch cssModule={[styles]}>
         {projects.map(({ name, href, description, imgDesk, imgMob, scroll = false }) => {
           return (
-            <div className={stylesCos.slide}>
-              <div id={stylesCos.phone}>
-                <div id={stylesCos.back}></div>
-                <div id={stylesCos.front}></div>
-                <div id={stylesCos.camera}></div>
-                <div id={stylesCos.button}></div>
-                <div id={stylesCos.display}>
-                  <span className={stylesCos.upperbefore}>
-                    <img className={`${scroll ? stylesCos.scrollMin : ""}`} src="/projects/karibe.png" alt="" />
-                  </span>
-                </div>
-              </div>
-              <div className={stylesCos.laptop}>
-                <div className={stylesCos.upper}>
-                  <span className={` ${stylesCos.upperbefore}`}>
-                    <img className={`${scroll ? stylesCos.scroll : ""}`} src="/projects/karibe.png" alt="" />
-                  </span>
-                </div>
-                <div className={stylesCos.lower}></div>
-              </div>
-              <div data-type="caption">
-                <p>
-                  <h3>{name}</h3>:<span>{description}</span>
-                  <a href={href}>View projects</a>
-                </p>
-              </div>
-            </div>
-          );
+						<div className={stylesCos.slide}>
+							<div className={stylesCos.img}>
+								<div id={stylesCos.phone}>
+									<div id={stylesCos.back}></div>
+									<div id={stylesCos.front}></div>
+									<div id={stylesCos.camera}></div>
+									<div id={stylesCos.button}></div>
+									<div id={stylesCos.display}>
+										<span className={stylesCos.upperbefore}>
+											<img className={`${scroll ? stylesCos.scrollMin : ""}`} src="/projects/karibe.png" alt="" />
+										</span>
+									</div>
+								</div>
+								<div className={stylesCos.laptop}>
+									<div className={stylesCos.upper}>
+										<span className={` ${stylesCos.upperbefore}`}>
+											<img className={`${scroll ? stylesCos.scroll : ""}`} src="/projects/karibe.png" alt="" />
+										</span>
+									</div>
+									<div className={stylesCos.lower}></div>
+								</div>
+							</div>
+							<div data-type="caption">
+								<p>
+									<h3>{name}</h3>:<span>{description}</span>
+									<a href={href}>View projects</a>
+								</p>
+							</div>
+						</div>
+					);
         })}
       </AwesomeSlider>
     </>

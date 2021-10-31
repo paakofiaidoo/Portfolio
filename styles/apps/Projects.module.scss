@@ -177,7 +177,7 @@ $loader-bar-height: 6px;
 			display: none;
 		}
 		@media all and (max-width: 520px) {
-			visibility: hidden;
+			//visibility: hidden;
 		}
 	}
 	&__bar {
