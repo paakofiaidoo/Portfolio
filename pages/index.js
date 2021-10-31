@@ -11,9 +11,9 @@ import {
   faAddressBook,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
-import { } from "@fortawesome/free-brands-svg-icons";
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props);
   const [apps, setApps] = useState([
     {
       id: 1,
@@ -48,14 +48,8 @@ const Home = () => {
       fa: faAddressBook,
     },
   ]);
-  const [mousePosition, setMousePosition] = useState({ curX: 0, curY: 0 });
   const [indexes, setIndexes] = useState([]);
-  const [position, setPosition] = useState({
-    top: 0,
-    left: 0,
-    dragEvent: false,
-  });
-  const { left, top, dragEvent } = position;
+
   const open = (idn) => {
     const newApps = apps.map((app) => {
       const newApp = { ...app };
@@ -92,19 +86,7 @@ const Home = () => {
     });
     setApps(newApps);
   };
-  const MouseMove = (e) => {
-    //console.log(e.clientX, e.clientY, position);
-    if (dragEvent) {
-      setPosition((pre) => {
-        pre.left = e.clientX;
-        pre.top = e.clientY;
-        return pre;
-      });
-    }
 
-    return { x: e.clientX, y: e.clientY };
-  };
-  const dragFun = (e) => { };
   return (
     <Layout open={open} apps={apps}>
       {indexes.map((app, i) => (
@@ -113,8 +95,6 @@ const Home = () => {
           app={app}
           layer={i}
           key={i}
-          mousePosition={mousePosition}
-          style={{ top: `${top}px`, left: `${left}px` }}
         >
           <>{app.content}</>
         </Application>
@@ -122,5 +102,27 @@ const Home = () => {
     </Layout>
   );
 };
+
+// export async function getStaticProps(context) {
+//   const url = !process.env.VERCEL_URL
+//     ? `http://localhost:3000/api/animations`
+//     : `https://${process.env.VERCEL_URL}/api/animations`;
+
+//   const res = await fetch(url);
+//   const data = await res.json();
+//   console.log(data);
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: {
+//       ... await data,
+//     }, // will be passed to the page component as props
+//   };
+// }
+
 
 export default Home;
