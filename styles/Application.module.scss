@@ -1,81 +1,83 @@
 .titleBar {
-  height: 2.5em;
-  width: 100%;
-  background-color: rgb(56, 56, 56);
-  margin-top: 0;
-  padding: 0px 10px;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  align-items: center;
-  position: fixed;
-  z-index: 5;
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-  }
+	height: 2.5em;
+	width: 100%;
+	background-color: rgb(56, 56, 56);
+	margin-top: 0;
+	padding: 0px 10px;
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+	align-items: center;
+	position: fixed;
+	z-index: 5;
+	border-radius: 10px 10px 0px 0px;
+	.title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-transform: capitalize;
+	}
 }
 
 .app {
-  height: calc(100vh - 3rem);
-  width: 100vw;
-  border: 1px solid black;
-  flex-direction: column;
-  background-color: rgba(#ddd, 0.99);
-  color: #111;
-  overflow: auto;
-  box-shadow: 0px 0px 0.1em #fff;
-  animation: grow 0.5s ease-in-out;
-  position: absolute;
-  .content {
-    height: 100%;
-    height: Calc(100% - 2.5em);
-  }
+	height: calc(100vh - (3rem + 10px));
+	width: 100vw;
+	border: 1px solid black;
+	flex-direction: column;
+	background-color: rgba(#ddd, 0.99);
+	color: #111;
+	overflow: auto;
+	box-shadow: 0px 0px 0.1em #fff;
+	animation: grow 0.5s ease-in-out;
+	position: absolute;
+	border-radius: 10px;
+	.content {
+		height: 100%;
+		height: Calc(100% - 2.5em);
+	}
 }
 
 @media only screen and (max-width: 760px) {
-  .app {
-    background-color: rgba(#ddd, 0.99);
-    border: 1px solid black;
-  }
+	.app {
+		background-color: rgba(#ddd, 0.99);
+		border: 1px solid black;
+	}
 
-  .content {
-    padding: 5%;
-  }
+	.content {
+		padding: 5%;
+	}
 }
 
 @media only screen and (min-width: 760px) {
-  .navIcon {
-    height: 1.5rem;
-    margin: 0px 10px;
-  }
+	.navIcon {
+		height: 1.5rem;
+		margin: 0px 10px;
+	}
 
-  .content {
-    padding: 10%;
-  }
-  .close:hover,
-  .close:focus {
-    background: red;
-    color: #111;
-  }
+	.content {
+		padding: 10%;
+	}
+	.close:hover,
+	.close:focus {
+		background: red;
+		color: #111;
+	}
 }
 
 @keyframes grow {
-  from {
-    transform: scale(0);
-    overflow: auto;
-  }
-  to {
-    transform: scale(1);
-  }
+	from {
+		transform: scale(0);
+		overflow: auto;
+	}
+	to {
+		transform: scale(1);
+	}
 }
 @keyframes shrink {
-  from {
-    transform: scale(2);
-  }
-  to {
-    transform: scale(1);
-  }
+	from {
+		transform: scale(2);
+	}
+	to {
+		transform: scale(1);
+	}
 }

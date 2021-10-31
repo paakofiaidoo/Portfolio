@@ -505,6 +505,12 @@ $loader-bar-height: 6px;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 	opacity: 1;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	* {
+		margin: 0;
+	}
 }
 @media all and (max-width: 600px) {
 	.awssld__content [data-type="caption"] p {
