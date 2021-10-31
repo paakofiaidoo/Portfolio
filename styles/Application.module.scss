@@ -24,13 +24,14 @@
 	width: 100vw;
 	border: 1px solid black;
 	flex-direction: column;
-	background-color: rgba(#ddd, 0.99);
+	//background-color: rgba(#ddd, 0.99);
 	color: #111;
 	overflow: auto;
 	box-shadow: 0px 0px 0.1em #fff;
 	animation: grow 0.5s ease-in-out;
 	position: absolute;
 	border-radius: 10px;
+
 	.content {
 		height: 100%;
 		height: Calc(100% - 2.5em);
@@ -39,12 +40,13 @@
 
 @media only screen and (max-width: 760px) {
 	.app {
-		background-color: rgba(#ddd, 0.99);
+		//background-color: rgba(#ddd, 0.99);
 		border: 1px solid black;
 	}
 
 	.content {
 		padding: 5%;
+		padding-top: 10%;
 	}
 }
 

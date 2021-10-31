@@ -186,17 +186,28 @@ img {
 	margin-bottom: 1rem;
 }
 .card {
+	border-radius: 2rem;
+	padding: 1rem;
+}
+.card1 {
 	border-radius: 1rem;
 	border-radius: 27px;
-	background: #dddddd;
-	box-shadow: 50px 50px 100px #bcbcbc, -50px -50px 100px #fefefe;
+	// background: rgba(#dddddd, 0.2);
+	// box-shadow: 50px 50px 100px rgba(#bcbcbc, 0.2), -50px -50px 100px rgba(#fefefe, 0.2);
 }
 .card2 {
 	border-radius: 1rem;
-	background: #dddddd;
-	box-shadow: 5px 5px 24px #d0d0d0, -5px -5px 24px #eaeaea;
+	background: rgba(#dddddd, 0.2);
+	box-shadow: 5px 5px 24px rgba(#d0d0d0, 0.2), -5px -5px 24px rgba(#eaeaea, 0.2);
 	:hover {
-		background: linear-gradient(145deg, #c7c7c7, #ececec);
-		box-shadow: 5px 5px 24px #d0d0d0, -5px -5px 24px #eaeaea;
+		background: linear-gradient(145deg, rgba(#c7c7c7, 0.2), rgba(#ececec, 0.2));
+		box-shadow: 5px 5px 24px rgba(#d0d0d0, 0.2), -5px -5px 24px rgba(#eaeaea, 0.2);
 	}
+}
+.glass1 {
+	backdrop-filter: blur(6px) saturate(180%);
+	-webkit-backdrop-filter: blur(6px) saturate(180%);
+	background-color: rgba(17, 25, 40, 0.75);
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.125);
 }
