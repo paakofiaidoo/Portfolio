@@ -9,9 +9,8 @@ const Nav = ({ links = [], open }) => {
 		id: null,
 	});
 	const defaultOptions = {
-		loop: 3,
+		loop: true,
 		autoplay: true,
-		speed: "1s",
 		rendererSettings: {
 			preserveAspectRatio: "xMidYMid slice",
 		},
@@ -38,7 +37,7 @@ const Nav = ({ links = [], open }) => {
 						</a>
 					</li>
 
-					{links.map(({ title, isActive, id, fa, animation }, i) => (
+					{links.map(({ title, isActive, id, fa, animation, speed }, i) => (
 						<li
 							className={`${isActive ? styles.isActive : ""}`}
 							onClick={() => {
@@ -46,17 +45,15 @@ const Nav = ({ links = [], open }) => {
 							}}
 							key={i}
 							onMouseEnter={() => {
-								state.id === id
-									? ""
-									: setState((prev) => {
+								if (state.id !== id) {
+									setState((prev) => {
 										return { ...prev, id };
 									});
+								}
 							}}
 							onMouseLeave={() => {
-								console.log("yes");
-								setState((prev) => {
-									return {};
-								});
+
+								setState({});
 							}}>
 							{animation ? (
 								<div>
@@ -66,7 +63,8 @@ const Nav = ({ links = [], open }) => {
 										height={"100%"}
 										width={"100%"}
 										title={title}
-										isStopped={state.id !== id || isActive}
+										speed={speed ? speed : 1}
+										isStopped={state.id === id || isActive}
 										style={{ height: "2.5rem" }}
 									/>
 								</div>
