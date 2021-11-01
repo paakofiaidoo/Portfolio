@@ -1,0 +1,42 @@
+.card {
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	background-color: rgba(#fff, 0.1);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 2rem;
+	margin: 2rem;
+
+	.img {
+		margin: 1rem;
+	}
+	.title {
+		text-transform: capitalize;
+		margin: 1rem;
+	}
+	.text {
+		margin: 1rem;
+	}
+}
+.cardIn {
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.skills {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	gab: 2rem;
+	@media only screen and (max-width: 660px) {
+		flex-direction: column;
+	}
+}

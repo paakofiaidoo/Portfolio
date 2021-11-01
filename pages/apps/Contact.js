@@ -10,6 +10,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Lottie from "react-lottie";
+import fb from "../../public/animations/facebookicon.json";
+import email from "../../public/animations/emailnumber.json";
 
 class Intro extends Component {
   constructor(props) {
@@ -17,6 +20,7 @@ class Intro extends Component {
     this.intro = React.createRef();
     this.avatar = React.createRef();
     this.state = {};
+    this.hover = null
   }
   contacts = [
     {
@@ -24,6 +28,7 @@ class Intro extends Component {
       src: "/contactIcons/facebook.svg",
       href: "https://web.facebook.com/paakofi.aidoo",
       fa: faFacebook,
+      animation: fb,
     },
     {
       name: "instagram",
@@ -61,6 +66,7 @@ class Intro extends Component {
       src: "/contactIcons/mail.svg",
       href: "mailto:paakofiaidoo17@gmail.com",
       fa: faMailBulk,
+      animation: email,
     },
     {
       name: "call",
@@ -69,7 +75,13 @@ class Intro extends Component {
       fa: faPhone,
     },
   ];
-
+  defaultOptions = {
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   componentDidMount() {
     this.intreact();
   }
@@ -129,19 +141,11 @@ class Intro extends Component {
 
     var update = function (event) {
       mouse.updatePosition(event);
-      updateTransformStyle(
-        (mouse.y / inner.offsetHeight / 2).toFixed(2),
-        (mouse.x / inner.offsetWidth / 2).toFixed(2)
-      );
+      updateTransformStyle((mouse.y / inner.offsetHeight / 2).toFixed(2), (mouse.x / inner.offsetWidth / 2).toFixed(2));
     };
 
     var updateTransformStyle = function (x, y) {
-      var style =
-        "rotateX(" +
-        angleTransform(x) +
-        "deg) rotateY(" +
-        angleTransform(y) +
-        "deg)";
+      var style = "rotateX(" + angleTransform(x) + "deg) rotateY(" + angleTransform(y) + "deg)";
       newStyle = style;
       setStyle(style);
     };
@@ -176,24 +180,32 @@ class Intro extends Component {
           load="lazy"
         />
         <div className={styles.details}>
-          {this.contacts.map(({ href, src, name, fa }, index) => (
+          {this.contacts.map(({ href, src, name, fa, animation }, index) => (
             <li key={index}>
               <a target="_blank" href={href}>
-                {!fa ? (
-                  <img
-                    src={src}
-                    alt={name}
-                    title={name}
-                    className={styles.contact}
-                  />
+                {animation ? (
+                  <div className={`anim ${styles.contact}`} style={{ width: "5rem" }}
+                    onMouseEnter={() => {
+                      if (this.hover !== index) {
+                        this.hover = index;
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      this.hover = null
+                    }}
+                  >
+                    <Lottie
+                      options={{ ...this.defaultOptions, animationData: animation }}
+                      height={"100%"}
+                      width={"100%"}
+                      title={name}
+                      //speed={speed ? speed : 1}
+                      isStopped={this.hover === index}
+                      style={{ height: "2.5rem", overflow: "visible" }}
+                    />
+                  </div>
                 ) : (
-                  <FontAwesomeIcon
-                    icon={fa}
-                    className={styles.contact}
-                    color="#25BBA8"
-                    alt={name}
-                    title={name}
-                  />
+                  <FontAwesomeIcon icon={fa} className={styles.contact} color="#25BBA8" alt={name} title={name} />
                 )}
               </a>
             </li>

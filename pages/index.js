@@ -11,8 +11,7 @@ import skills from "../public/animations/dumbleiconfitnesshealth.json";
 import projects from "../public/animations/balanceloop.json";
 import contact from "../public/animations/contact.json";
 
-const Home = (props) => {
-	console.log(props);
+const Home = () => {
 	const [apps, setApps] = useState([
 		{
 			id: 1,
