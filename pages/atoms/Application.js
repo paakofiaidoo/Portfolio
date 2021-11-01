@@ -4,7 +4,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Lottie from "react-lottie";
 
 function Application({ style, children, close, layer, app = {} }) {
-  const { title, icon, id, animation } = app;
+  const { title, icon, id, animation, fa } = app;
   const defaultOptions = {
     loop: true,
     autoplay: true,
