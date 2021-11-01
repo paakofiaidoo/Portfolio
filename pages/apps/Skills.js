@@ -23,7 +23,6 @@ const Skills = () => {
                 options={{ ...defaultOptions, animationData: web }}
                 height={"100%"}
                 width={"100%"}
-                title={name}
                 style={{ overflow: "visible" }}
               />
             </div>
@@ -39,7 +38,6 @@ const Skills = () => {
                 options={{ ...defaultOptions, animationData: react }}
                 height={"100%"}
                 width={"100%"}
-                title={name}
                 style={{ overflow: "visible" }}
               />
             </div>
@@ -59,7 +57,6 @@ const Skills = () => {
                 options={{ ...defaultOptions, animationData: web }}
                 height={"100%"}
                 width={"100%"}
-                title={name}
                 style={{ overflow: "visible" }}
               />
             </div>
@@ -75,7 +72,6 @@ const Skills = () => {
                 options={{ ...defaultOptions, animationData: react }}
                 height={"100%"}
                 width={"100%"}
-                title={name}
                 style={{ overflow: "visible" }}
               />
             </div>
