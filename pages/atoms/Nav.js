@@ -15,7 +15,26 @@ const Nav = ({ links = [], open }) => {
 			preserveAspectRatio: "xMidYMid slice",
 		},
 	};
-
+	const interactivity = {
+		mode: "cursor",
+		actions: [
+		  {
+			visibility: [0, 0.2],
+			type: "stop",
+			frames: [0],
+		  },
+		  {
+			visibility: [0.2, 0.45],
+			type: "seek",
+			frames: [0, 45],
+		  },
+		  {
+			visibility: [0.45, 1.0],
+			type: "loop",
+			frames: [45, 60],
+		  },
+		],
+	  };
 	return (
 		<nav className={`navbar  ${styles.navbar}`}>
 			<div className={`links  ${styles.links}`}>
@@ -56,9 +75,8 @@ const Nav = ({ links = [], open }) => {
 								setState({});
 							}}>
 							{animation ? (
-								<div>
+								<div className={`anim `}>
 									<Lottie
-										className={` ${styles.linksIcon}`}
 										options={{ ...defaultOptions, animationData: animation }}
 										height={"100%"}
 										width={"100%"}
@@ -66,6 +84,7 @@ const Nav = ({ links = [], open }) => {
 										speed={speed ? speed : 1}
 										isStopped={state.id === id || isActive}
 										style={{ height: "2.5rem" }}
+										interactivity={interactivity}
 									/>
 								</div>
 							) : (
