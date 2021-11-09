@@ -11,8 +11,14 @@ import {
 import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Lottie from "react-lottie";
-import fb from "../../public/animations/facebookicon.json";
+import fb from "../../public/animations/facebook3dbutton.json";
 import email from "../../public/animations/emailnumber.json";
+import instagram from "../../public/animations/instagrambuttonflat3d.json";
+import twitter from "../../public/animations/twitterbutton3dflat.json";
+import linkedin from "../../public/animations/linkedin.json";
+import whatsapp from "../../public/animations/whatsapp.json";
+import github from "../../public/animations/githubtest.json";
+//import call from "../../public/animations/con.json"
 
 class Intro extends Component {
   constructor(props) {
@@ -20,7 +26,7 @@ class Intro extends Component {
     this.intro = React.createRef();
     this.avatar = React.createRef();
     this.state = {};
-    this.hover = null
+    this.hover = null;
   }
   contacts = [
     {
@@ -35,31 +41,35 @@ class Intro extends Component {
       src: "/contactIcons/instagram.svg",
       href: "https://www.instagram.com/pk_aidoo",
       fa: faInstagram,
+      animation: instagram,
     },
-
     {
       name: "twitter",
       src: "/contactIcons/twitter.svg",
       href: "https://twitter.com/PaaKofiaidoo2",
       fa: faTwitter,
+      animation: twitter,
     },
     {
       name: "linkedin",
       src: "/contactIcons/linkedin.svg",
       href: "https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/",
       fa: faLinkedin,
+      animation: linkedin,
     },
     {
       name: "whatsapp",
       src: "/contactIcons/whatsapp.svg",
       href: "https://wa.me/233202396856",
       fa: faWhatsapp,
+      animation: whatsapp,
     },
     {
       name: "github",
       src: "/contactIcons/github.svg",
       href: "https://github.com/paakofiaidoo",
       fa: faGithub,
+      animation: github,
     },
     {
       name: "Email",
@@ -73,6 +83,7 @@ class Intro extends Component {
       src: "/contactIcons/telephone.svg",
       href: "tel:+233202396856",
       fa: faPhone,
+      //animation:call
     },
   ];
   defaultOptions = {
@@ -180,38 +191,46 @@ class Intro extends Component {
           load="lazy"
         />
         <div className={styles.details}>
-          {this.contacts.map(({ href, src, name, fa, animation }, index) => (
-            <li key={index}>
-              <a target="_blank" href={href}>
-                {animation ? (
-                  <div className={`anim ${styles.contact}`} style={{ width: "5rem" }}
-                    onMouseEnter={() => {
-                      if (this.hover !== index) {
-                        this.hover = index;
-                      }
-                    }}
-                    onMouseLeave={() => {
-                      this.hover = null
-                    }}
-                  >
-                    <Lottie
-                      options={{ ...this.defaultOptions, animationData: animation }}
-                      height={"100%"}
-                      width={"100%"}
-                      title={name}
-                      //speed={speed ? speed : 1}
-                      isStopped={this.hover === index}
-                      style={{ height: "2.5rem", overflow: "visible" }}
-                    />
-                  </div>
-                ) : (
-                  <FontAwesomeIcon icon={fa} className={styles.contact} color="#25BBA8" alt={name} title={name} />
-                )}
-              </a>
-            </li>
-          ))}
+          <div className={styles.contactName}>
+            {this.contacts.slice(0, 3).map(({ href, src, name, fa, animation }, index) => {
+              return this.Icon(index, href, animation, name, fa);
+            })}
+            {console.log(this.contacts.slice(0, 3), this.contacts.slice(4, 6), this.contacts.slice(6))}
+          </div>
+          <div className={styles.contactName}>
+            {this.contacts.slice(3, 6).map(({ href, src, name, fa, animation }, index) => {
+              return this.Icon(index, href, animation, name, fa);
+            })}
+          </div>
+          <div className={styles.contactName}>
+            {this.contacts.slice(6).map(({ href, src, name, fa, animation }, index) => {
+              return this.Icon(index, href, animation, name, fa);
+            })}
+          </div>
         </div>
       </div>
+    );
+  }
+
+  Icon(index, href, animation, name, fa) {
+    return (
+      <li key={index}>
+        <a target="_blank" href={href}>
+          {animation ? (
+            <Lottie
+              options={{ ...this.defaultOptions, animationData: animation }}
+              height={"100%"}
+              width={"6rem"}
+              title={name}
+              className={styles.contact}
+              isPaused={this.hover === index}
+              style={{ overflow: "visible" }}
+            />
+          ) : (
+            <FontAwesomeIcon icon={fa} className={styles.contact} color="#25BBA8" alt={name} title={name} />
+          )}
+        </a>
+      </li>
     );
   }
 }
