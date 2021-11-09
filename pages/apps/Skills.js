@@ -7,6 +7,7 @@ import styles from "../../styles/apps/Skills.module.scss";
 import web from "../../public/animations/pentagramskillsofdeth.json";
 import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
+import electronics from "../../public/animations/circuit.json";
 
 const defaultOptions = {
 	loop: true,
@@ -41,23 +42,12 @@ const Skills = ({ services = [] }) => {
 			animation: pro,
 		},
 		{
-			title: "web",
+			title: "electronics",
 			content: "lorem",
 			icon: "",
-			animation: web,
+			animation: electronics,
 		},
-		{
-			title: "web",
-			content: "lorem",
-			icon: "",
-			animation: react,
-		},
-		{
-			title: "web",
-			content: "lorem",
-			icon: "",
-			animation: pro,
-		},
+
 	];
 	return (
 		<div className={`${styles.skills}`}>
