@@ -49,10 +49,11 @@ const Skills = ({ services = [] }) => {
 		},
 
 	];
+
 	return (
 		<div className={`${styles.skills}`}>
 			<div className={`${styles.options} `}>
-				{services.map(({ title, animation, content, fa, icon }, i) => {
+				{services.map(({ title, animation, content }, i) => {
 					return (
 						<>
 							<div
