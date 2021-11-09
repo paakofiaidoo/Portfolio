@@ -12,13 +12,13 @@ import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Lottie from "react-lottie";
 import fb from "../../public/animations/facebook3dbutton.json";
-import email from "../../public/animations/emailnumber.json";
+import email from "../../public/animations/emailtitle.json";
 import instagram from "../../public/animations/instagrambuttonflat3d.json";
 import twitter from "../../public/animations/twitterbutton3dflat.json";
 import linkedin from "../../public/animations/linkedin.json";
 import whatsapp from "../../public/animations/whatsapp.json";
 import github from "../../public/animations/githubtest.json";
-//import call from "../../public/animations/con.json"
+import call from "../../public/animations/phone-ringing.json"
 
 class Intro extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ class Intro extends Component {
       src: "/contactIcons/telephone.svg",
       href: "tel:+233202396856",
       fa: faPhone,
-      //animation:call
+      animation: call
     },
   ];
   defaultOptions = {
