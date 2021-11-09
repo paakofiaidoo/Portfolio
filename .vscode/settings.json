@@ -12,5 +12,6 @@
 		"univers"
 	],
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"diffEditor.codeLens": true
 }
