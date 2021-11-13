@@ -1,10 +1,10 @@
-import Layout from "./components/Layout";
-import Application from "./atoms/Application";
+import Layout from "../src/components/Layout";
+import Application from "../src/atoms/Application";
 import { useState } from "react";
-import About from "./apps/About";
-import Skills from "./apps/Skills";
-import Projects from "./apps/Projects";
-import Contact from "./apps/Contact";
+import About from "../src/apps/About";
+import Skills from "../src/apps/Skills";
+import Projects from "../src/apps/Projects";
+import Contact from "../src/apps/Contact";
 import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import avatar from "../public/animations/user.json";
 import skills from "../public/animations/dumbleiconfitnesshealth.json";
