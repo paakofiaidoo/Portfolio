@@ -3,4 +3,5 @@ module.exports = {
     loader: 'imgix',
     path: `${process.env.HOST}:3000` || 'localhost:3000',
   },
+  assetPrefix: isProd ? process.env.HOST : '',
 }
