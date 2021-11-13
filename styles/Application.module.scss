@@ -1,14 +1,16 @@
 .titleBar {
 	height: 2.5em;
 	width: 100%;
-	background-color: rgba(#111, 1);
+	background-color: rgb(56, 56, 56);
 	margin-top: 0;
 	padding: 0px 10px;
 	display: flex;
-	overflow: hidden;
 	justify-content: space-between;
 	color: #fff;
 	align-items: center;
+	position: fixed;
+	z-index: 5;
+	border-radius: 10px 10px 0px 0px;
 	.title {
 		display: flex;
 		justify-content: center;
@@ -69,7 +71,7 @@
 @keyframes grow {
 	from {
 		transform: scale(0);
-		overflow: hidden;
+		overflow: auto;
 	}
 	to {
 		transform: scale(1);
