@@ -1,7 +1,9 @@
 module.exports = {
   images: {
     loader: 'imgix',
-    path: `${process.env.HOST}:3000` || 'localhost:3000',
+    path: process.env.NEXT_PUBLIC_BASE_PATH || 'localhost:3000',
+
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? process.env.HOST : '',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
 }
