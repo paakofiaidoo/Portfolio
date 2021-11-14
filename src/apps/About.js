@@ -10,7 +10,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import styles from "../../styles/apps/About.module.scss";
-//import Lottie from "react-lottie";
 import anim from "../../public/animations/avatar.json"
 const About = () => {
 	const about = [
@@ -18,12 +17,14 @@ const About = () => {
 		{ fa: faHouseUser, details: "Fijai, Ghana" },
 		{
 			fa: faSchool,
-			details: " BSc Physics (electronics option) 3rd year undergrad, KNUST, Kumasi, Ghana",
+			details: "BSc Physics (electronics option) 3rd year undergrad, KNUST, Kumasi, Ghana",
 		},
 		{ fa: faHeart, details: "coding, philosophy, movies(marvel), gaming" },
-		{ fa: faUserTag, details: "introvet,..." },
-		{ fa: faQuoteLeft, details: " live for the pursuit of knowledge" },
+		
+		{ fa: faQuoteLeft, details: "live for the pursuit of knowledge" },
 		{ fa: faBullseye, details: "goals,.." },
+		{ fa: faUserTag, details: `i am 
+		` },
 	];
 	const defaultOptions = {
 		loop: true,
