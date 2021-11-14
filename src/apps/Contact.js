@@ -183,7 +183,7 @@ class Intro extends Component {
     return (
       <div id="intro" className={styles.intro} ref={this.intro}>
         <img
-          src="/brand/vector/default-monochrome.svg"
+          src="./brand/vector/default-monochrome.svg"
           alt="profile pic"
           className={styles.avatar}
           ref={this.avatar}
@@ -215,7 +215,7 @@ class Intro extends Component {
   Icon(index, href, animation, name, fa) {
     return (
       <li key={index}>
-        <a target="_blank" href={href}>
+        <a target="_blank" href={href} rel="noreferrer">
           {animation ? (
             <Lottie
               options={{ ...this.defaultOptions, animationData: animation }}

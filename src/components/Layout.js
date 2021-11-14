@@ -10,7 +10,7 @@ const Layout = ({ children, apps, open }) => {
 				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
 				<meta name="description" content="My portfolio website" />
 			</Head>
-			<div className={`${styles.body}`}>
+			<div className={`${styles.body}`} style={{ backgroundImage: "url('./img/man-and-space.jpg')" }} >
 				<main className={`main ${styles.main}`}>{children}</main>
 				<Nav links={apps} open={open} />
 			</div>
