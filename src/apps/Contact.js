@@ -18,7 +18,7 @@ import twitter from "../../public/animations/twitterbutton3dflat.json";
 import linkedin from "../../public/animations/linkedin.json";
 import whatsapp from "../../public/animations/whatsapp.json";
 import github from "../../public/animations/githubtest.json";
-import call from "../../public/animations/phone-ringing.json"
+import call from "../../public/animations/phone-ringing.json";
 
 class Intro extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ class Intro extends Component {
       src: "/contactIcons/telephone.svg",
       href: "tel:+233202396856",
       fa: faPhone,
-      animation: call
+      animation: call,
     },
   ];
   defaultOptions = {
@@ -98,17 +98,17 @@ class Intro extends Component {
   }
 
   intreact = () => {
-    var container = this.intro.current;
-    var inner = this.avatar.current;
+    let container = this.intro.current;
+    let inner = this.avatar.current;
     let newStyle = "rotateX(0.05deg) rotateY(-0.24deg)";
 
-    var mouse = {
+    let mouse = {
       _x: 0,
       _y: 0,
       x: 0,
       y: 0,
       updatePosition: function (event) {
-        var e = event || window.event;
+        let e = event || window.event;
         this.x = e.clientX - this._x;
         this.y = (e.clientY - this._y) * -1;
       },
@@ -126,23 +126,23 @@ class Intro extends Component {
 
     //----------------------------------------------------
 
-    var counter = 0;
-    var refreshRate = 10;
-    var isTimeToUpdate = function () {
+    let counter = 0;
+    let refreshRate = 10;
+    let isTimeToUpdate = function () {
       return counter++ % refreshRate === 0;
     };
 
     //----------------------------------------------------
 
-    var onMouseEnterHandler = function (event) {
+    let onMouseEnterHandler = function (event) {
       update(event);
     };
 
-    var onMouseLeaveHandler = function () {
+    let onMouseLeaveHandler = function () {
       inner.style = "";
     };
 
-    var onMouseMoveHandler = function (event) {
+    let onMouseMoveHandler = function (event) {
       if (isTimeToUpdate()) {
         update(event);
       }
@@ -150,13 +150,21 @@ class Intro extends Component {
 
     //----------------------------------------------------
 
-    var update = function (event) {
+    let update = function (event) {
       mouse.updatePosition(event);
-      updateTransformStyle((mouse.y / inner.offsetHeight / 2).toFixed(2), (mouse.x / inner.offsetWidth / 2).toFixed(2));
+      updateTransformStyle(
+        (mouse.y / inner.offsetHeight / 2).toFixed(2),
+        (mouse.x / inner.offsetWidth / 2).toFixed(2)
+      );
     };
 
-    var updateTransformStyle = function (x, y) {
-      var style = "rotateX(" + angleTransform(x) + "deg) rotateY(" + angleTransform(y) + "deg)";
+    let updateTransformStyle = function (x, y) {
+      let style =
+        "rotateX(" +
+        angleTransform(x) +
+        "deg) rotateY(" +
+        angleTransform(y) +
+        "deg)";
       newStyle = style;
       setStyle(style);
     };
@@ -183,7 +191,7 @@ class Intro extends Component {
     return (
       <div id="intro" className={styles.intro} ref={this.intro}>
         <img
-          src="./brand/vector/default-monochrome.svg"
+          src="/brand/vector/default-monochrome.svg"
           alt="profile pic"
           className={styles.avatar}
           ref={this.avatar}
@@ -192,20 +200,25 @@ class Intro extends Component {
         />
         <div className={styles.details}>
           <div className={styles.contactName}>
-            {this.contacts.slice(0, 3).map(({ href, src, name, fa, animation }, index) => {
-              return this.Icon(index, href, animation, name, fa);
-            })}
-            {console.log(this.contacts.slice(0, 3), this.contacts.slice(4, 6), this.contacts.slice(6))}
+            {this.contacts
+              .slice(0, 3)
+              .map(({ href, src, name, fa, animation }, index) => {
+                return this.Icon(index, href, animation, name, fa);
+              })}
           </div>
           <div className={styles.contactName}>
-            {this.contacts.slice(3, 6).map(({ href, src, name, fa, animation }, index) => {
-              return this.Icon(index, href, animation, name, fa);
-            })}
+            {this.contacts
+              .slice(3, 6)
+              .map(({ href, src, name, fa, animation }, index) => {
+                return this.Icon(index, href, animation, name, fa);
+              })}
           </div>
           <div className={styles.contactName}>
-            {this.contacts.slice(6).map(({ href, src, name, fa, animation }, index) => {
-              return this.Icon(index, href, animation, name, fa);
-            })}
+            {this.contacts
+              .slice(6)
+              .map(({ href, src, name, fa, animation }, index) => {
+                return this.Icon(index, href, animation, name, fa);
+              })}
           </div>
         </div>
       </div>
@@ -227,7 +240,13 @@ class Intro extends Component {
               style={{ overflow: "visible" }}
             />
           ) : (
-            <FontAwesomeIcon icon={fa} className={styles.contact} color="#25BBA8" alt={name} title={name} />
+            <FontAwesomeIcon
+              icon={fa}
+              className={styles.contact}
+              color="#25BBA8"
+              alt={name}
+              title={name}
+            />
           )}
         </a>
       </li>
