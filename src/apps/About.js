@@ -19,11 +19,12 @@ const About = () => {
 			fa: faSchool,
 			details: "BSc Physics (electronics option) 3rd year undergrad, KNUST, Kumasi, Ghana",
 		},
-		{ fa: faHeart, details: "coding, philosophy, movies(marvel), gaming" },
-		
+		{ fa: faHeart, details: "Coding, Philosophy (Ontology and Epistemology), movies & animations, gaming" },
 		{ fa: faQuoteLeft, details: "live for the pursuit of knowledge" },
-		{ fa: faBullseye, details: "goals,.." },
-		{ fa: faUserTag, details: `i am 
+		{ fa: faBullseye, details: "i live to solve problems " },
+		{
+			fa: faUserTag, details: `i am highly self driven person, 
+			a thinker
 		` },
 	];
 	const defaultOptions = {
@@ -37,7 +38,7 @@ const About = () => {
 	return (
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
-				<Image src="/brand/profile.png" alt="picture of me" height={300} width={300} className={`${styles.pic}`} />
+				<img src="/brand/profile.png" alt="picture of me" className={`${styles.pic}`} />
 				<h2 className={`${styles.name}`}>
 					Aidoo Paa-Kofi Anderson
 					<p className={`${styles.sub}`}>Front-end web developer</p>

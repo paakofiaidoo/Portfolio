@@ -11,6 +11,7 @@
 	position: fixed;
 	z-index: 5;
 	border-radius: 10px 10px 0px 0px;
+
 	.title {
 		display: flex;
 		justify-content: center;
@@ -60,7 +61,9 @@
 
 	.content {
 		padding: 10%;
+		padding-top: 5%;
 	}
+
 	.close:hover,
 	.close:focus {
 		background: red;
@@ -73,14 +76,17 @@
 		transform: scale(0);
 		overflow: auto;
 	}
+
 	to {
 		transform: scale(1);
 	}
 }
+
 @keyframes shrink {
 	from {
 		transform: scale(2);
 	}
+
 	to {
 		transform: scale(1);
 	}

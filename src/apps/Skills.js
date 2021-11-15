@@ -84,15 +84,17 @@ const Skills = ({ services = [] }) => {
 					);
 				})}
 			</div>
+			<h2 className={`${styles.title}`}>Recommendations</h2>
+			<Recommendations />
 		</div>
 	);
 };
-const Slider = (defaultOptions) => {
+const Recommendations = (defaultOptions) => {
 	return (
 		<div className={`${styles.card}`}>
 			<AwesomeSlider bullets organicArrows cssModule={[Slidestyles]}>
 				<div className={`${styles.cardIn}`}>
-					<div className={`anim ${styles.img}`}>
+					<div className={`icon ${styles.avatar}`}>
 						<Lottie
 							options={{ ...defaultOptions, animationData: web }}
 							height={"100%"}
@@ -100,23 +102,25 @@ const Slider = (defaultOptions) => {
 							style={{ overflow: "visible" }}
 						/>
 					</div>
-					<h2 className={`${styles.title}`}> front end</h2>
+					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
 						magnam accusamus harum, perferendis consectetur est nostrum voluptate laudantium ex doloribus veritatis,
 						incidunt officiis assumenda in.
+
 					</p>
+					<a href="/#">link to contact</a>
 				</div>
 				<div className={`${styles.cardIn}`}>
-					<div className={`anim ${styles.img}`}>
+					<div className={`icon ${styles.avatar}`}>
 						<Lottie
-							options={{ ...defaultOptions, animationData: react }}
+							options={{ ...defaultOptions, animationData: web }}
 							height={"100%"}
 							width={"100%"}
 							style={{ overflow: "visible" }}
 						/>
 					</div>
-					<h2 className={`${styles.title}`}> front end</h2>
+					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
 						magnam accusamus harum, perferendis consectetur est nostrum voluptate laudantium ex doloribus veritatis,
