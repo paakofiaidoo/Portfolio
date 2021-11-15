@@ -1,6 +1,6 @@
 .card {
-  height: fit-content;
-  max-height: 50vh;
+  height: min-content;
+  max-height: 25rem;
   width: 100%;
   flex-direction: column;
   //background-color: rgba(#000, 0.1);
@@ -13,7 +13,7 @@
   .avatar {
     margin: 1rem;
     width: 10rem;
-    height: 10rem;
+    height: 10rem !important;
     border-radius: 50%;
     background-color: #16346b;
   }
@@ -29,6 +29,9 @@
   }
   a {
     text-transform: capitalize;
+  }
+  .slider div {
+    height: 25rem;
   }
 }
 

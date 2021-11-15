@@ -8,6 +8,7 @@ import web from "../../public/animations/pentagramskillsofdeth.json";
 import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
 import electronics from "../../public/animations/circuit.json";
+import { faUser } from "@fortawesome/free-solid-svg-icons"
 
 const defaultOptions = {
 	loop: true,
@@ -21,29 +22,35 @@ const Skills = ({ services = [] }) => {
 	const [active, setActive] = useState(0);
 	services = [
 		{
-			title: "web",
-			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quam debitis totam veritatis aspernatur facilis, velit porro saepe et eligendi a molestiae ullam quasi rem aliquam nihil, odit aut minus?",
-			icon: "",
+			title: "web skills",
+			content: `HTML
+CSS / SCSS
+JAVASCRIPT
+Prototyping UI with Adobe XD
+`,
 			animation: web,
 		},
 		{
-			title: "web",
-			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quam debitis totam veritatis aspernatur facilis, velit porro saepe et eligendi a molestiae ullam quasi rem aliquam nihil, odit aut minus?",
-			icon: "",
+			title: "frame works and libraries",
+			content: `React
+Next.js
+Svelte`,
 			animation: react,
 		},
 		{
-			title: "web",
-			content:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quam debitis totam veritatis aspernatur facilis, velit porro saepe et eligendi a molestiae ullam quasi rem aliquam nihil, odit aut minus?",
-			icon: "",
+			title: "programing stack",
+			content: `C++
+Python
+Java
+			`,
 			animation: pro,
 		},
 		{
 			title: "electronics",
-			content: "lorem",
+			content: `Arduino
+Digital Circuitry
+Working with sensors and actuators
+IOT`,
 			icon: "",
 			animation: electronics,
 		},
@@ -60,6 +67,7 @@ const Skills = ({ services = [] }) => {
 								className={`${styles.option} ${i === active ? styles.active : ""}`}
 								key={i}
 								onClick={(e) => {
+									console.log("click");
 									setActive(i);
 								}}>
 								<Lottie
@@ -76,7 +84,7 @@ const Skills = ({ services = [] }) => {
 
 									<div className={`${styles.info} `}>
 										<div className={`${styles.main} `}>{title}</div>
-										<div className={`${styles.sub} `}>{content}</div>
+										<pre className={`${styles.sub} `}>{content}</pre>
 									</div>
 								</div>
 							</div>
@@ -92,15 +100,10 @@ const Skills = ({ services = [] }) => {
 const Recommendations = (defaultOptions) => {
 	return (
 		<div className={`${styles.card}`}>
-			<AwesomeSlider bullets organicArrows cssModule={[Slidestyles]}>
+			<AwesomeSlider organicArrows bullets={false} className={`${styles.slider}`} cssModule={[Slidestyles]} style={{ maxHeight: "25rem", }} >
 				<div className={`${styles.cardIn}`}>
 					<div className={`icon ${styles.avatar}`}>
-						<Lottie
-							options={{ ...defaultOptions, animationData: web }}
-							height={"100%"}
-							width={"100%"}
-							style={{ overflow: "visible" }}
-						/>
+						<FontAwesomeIcon icon={faUser} />
 					</div>
 					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
@@ -112,14 +115,7 @@ const Recommendations = (defaultOptions) => {
 					<a href="/#">link to contact</a>
 				</div>
 				<div className={`${styles.cardIn}`}>
-					<div className={`icon ${styles.avatar}`}>
-						<Lottie
-							options={{ ...defaultOptions, animationData: web }}
-							height={"100%"}
-							width={"100%"}
-							style={{ overflow: "visible" }}
-						/>
-					</div>
+					<img className={`icon ${styles.avatar}`} src="/navIcons/man.svg" />
 					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
