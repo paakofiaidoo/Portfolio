@@ -46,6 +46,7 @@ Java
 Git
 Googling
 Building of Chrome extensions
+Basic Networking
 			`,
 			animation: pro,
 		},

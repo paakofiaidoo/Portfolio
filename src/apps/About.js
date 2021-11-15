@@ -32,7 +32,7 @@ I work well with persons with different backgrounds and personalities in both re
 	return (
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
-				<img src="/brand/me.jpg" alt="picture of me" className={`${styles.pic}`} />
+				<img src="./brand/me.jpg" alt="picture of me" className={`${styles.pic}`} />
 				<h2 className={`${styles.name}`}>
 					Aidoo Paa-Kofi Anderson
 					<p className={`${styles.sub}`}>Web developer, Electronics hobbist</p>

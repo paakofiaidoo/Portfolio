@@ -18,23 +18,23 @@ const Nav = ({ links = [], open }) => {
 	const interactivity = {
 		mode: "cursor",
 		actions: [
-		  {
-			visibility: [0, 0.2],
-			type: "stop",
-			frames: [0],
-		  },
-		  {
-			visibility: [0.2, 0.45],
-			type: "seek",
-			frames: [0, 45],
-		  },
-		  {
-			visibility: [0.45, 1.0],
-			type: "loop",
-			frames: [45, 60],
-		  },
+			{
+				visibility: [0, 0.2],
+				type: "stop",
+				frames: [0],
+			},
+			{
+				visibility: [0.2, 0.45],
+				type: "seek",
+				frames: [0, 45],
+			},
+			{
+				visibility: [0.45, 1.0],
+				type: "loop",
+				frames: [45, 60],
+			},
 		],
-	  };
+	};
 	return (
 		<nav className={`navbar  ${styles.navbar}`}>
 			<div className={`links  ${styles.links}`}>
@@ -42,7 +42,7 @@ const Nav = ({ links = [], open }) => {
 					<li>
 						<a
 							style={{ display: "flex" }}
-							href="/brand/cover.png"
+							href="/resume/paa-kofi resume.pdf"
 							target="_blank"
 							download
 							title="Click to download Resume">

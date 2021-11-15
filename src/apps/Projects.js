@@ -8,7 +8,7 @@ const Projects = () => {
       name: "artisanHR",
       href: "https://artsan-hr.herokuapp.com",
       description: "artisan service center",
-      img: { imgDesk: "/projects/artisan-hr.png", imgMob: "/projects/artsan-hr-mob.jpg" },
+      img: { imgDesk: "./projects/artisan-hr.png", imgMob: "./projects/artsan-hr-mob.jpg" },
       scrollDesk: true,
       scrollMob: false,
     },
@@ -16,7 +16,7 @@ const Projects = () => {
       name: "karibe valley farms",
       href: "karibe-valley-farms.vercel.app",
       description: "website for karibe-valley-farms",
-      img: { imgDesk: "/projects/karibe.png", imgMob: "/projects/karibe-mobi.png" },
+      img: { imgDesk: "./projects/karibe.png", imgMob: "./projects/karibe-mobi.png" },
       scrollDesk: true,
       scrollMob: false,
     },
@@ -30,19 +30,19 @@ const Projects = () => {
       name: "Special relativity calculator",
       href: "https://github.com/paakofiaidoo/Special-reletivity-app",
       description: "a calculator to for problems in special relativity built with C++",
-      img: { imgDesk: "/projects/special relativity.png", imgMob: "" },
+      img: { imgDesk: "./projects/special relativity.png", imgMob: "" },
       noMobile: true
     }, {
       name: "nonimous",
       href: "https://github.com/paakofiaidoo/nonymous-chat",
       description: "live web messenger with web socket ",
-      img: { imgDesk: "/projects/nonymous-chat.png", imgMob: "" },
+      img: { imgDesk: "./projects/nonymous-chat.png", imgMob: "" },
     },
     , {
       name: "codepen",
       href: "https://codepen.io/paakofiaidoo",
       description: " this contains my playground of works",
-      img: { imgDesk: "/projects/codepen.jpeg", imgMob: "/projects/codepenMobi.jpeg" },
+      img: { imgDesk: "./projects/codepen.jpeg", imgMob: "./projects/codepenMobi.jpeg" },
     }
   ];
   //https://codepen.io/paakofiaidoo

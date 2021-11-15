@@ -191,7 +191,7 @@ class Intro extends Component {
     return (
       <div id="intro" className={styles.intro} ref={this.intro}>
         <img
-          src="/brand/vector/default-monochrome.svg"
+          src="./brand/vector/default-monochrome.svg"
           alt="profile pic"
           className={styles.avatar}
           ref={this.avatar}
@@ -202,21 +202,21 @@ class Intro extends Component {
           <div className={styles.contactName}>
             {this.contacts
               .slice(0, 3)
-              .map(({ href, src, name, fa, animation }, index) => {
+              .map(({ href, name, fa, animation }, index) => {
                 return this.Icon(index, href, animation, name, fa);
               })}
           </div>
           <div className={styles.contactName}>
             {this.contacts
               .slice(3, 6)
-              .map(({ href, src, name, fa, animation }, index) => {
+              .map(({ href, name, fa, animation }, index) => {
                 return this.Icon(index, href, animation, name, fa);
               })}
           </div>
           <div className={styles.contactName}>
             {this.contacts
               .slice(6)
-              .map(({ href, src, name, fa, animation }, index) => {
+              .map(({ href, name, fa, animation }, index) => {
                 return this.Icon(index, href, animation, name, fa);
               })}
           </div>
