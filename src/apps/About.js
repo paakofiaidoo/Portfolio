@@ -27,18 +27,10 @@ I am always looking for new ways to improve myself and my work.
 I work well with persons with different backgrounds and personalities in both remote and physical work environments.
 ` },
 	];
-	const defaultOptions = {
-		loop: true,
-		autoplay: true,
-		animationData: anim,
-		rendererSettings: {
-			preserveAspectRatio: "xMidYMid slice"
-		}
-	};
 	return (
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
-				<img src="/brand/profile.png" alt="picture of me" className={`${styles.pic}`} />
+				<img src="/brand/me.jpg" alt="picture of me" className={`${styles.pic}`} />
 				<h2 className={`${styles.name}`}>
 					Aidoo Paa-Kofi Anderson
 					<p className={`${styles.sub}`}>Web developer, Electronics hobbist</p>
