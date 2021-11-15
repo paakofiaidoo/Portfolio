@@ -107,7 +107,7 @@ const Recommendations = (defaultOptions) => {
 		<div className={`${styles.card}`}>
 			<AwesomeSlider organicArrows bullets={false} className={`${styles.slider}`} cssModule={[Slidestyles]} style={{ maxHeight: "25rem", }} >
 				<div className={`${styles.cardIn}`}>
-					<img className={`icon ${styles.avatar}`} src="/navIcons/man.svg" />
+					<img className={`icon ${styles.avatar}`} src="./navIcons/man.svg" />
 					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
@@ -118,7 +118,7 @@ const Recommendations = (defaultOptions) => {
 					<a href="/#">link to contact</a>
 				</div>
 				<div className={`${styles.cardIn}`}>
-					<img className={`icon ${styles.avatar}`} src="/navIcons/man.svg" />
+					<img className={`icon ${styles.avatar}`} src="./navIcons/man.svg" />
 					<h2 className={`${styles.title}`}> Name of person, title</h2>
 					<p className={`${styles.text}`}>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
