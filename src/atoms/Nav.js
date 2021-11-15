@@ -42,7 +42,7 @@ const Nav = ({ links = [], open }) => {
 					<li>
 						<a
 							style={{ display: "flex" }}
-							href="/resume/paa-kofi resume.pdf"
+							href="./resume/Paa-Kofi Aidoo resume.pdf"
 							target="_blank"
 							download
 							title="Click to download Resume">
