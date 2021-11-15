@@ -33,6 +33,11 @@
       display: flex;
       align-items: center;
       width: 100%;
+      font-family: monospace;
+      svg {
+        min-width: 2rem !important;
+        height: 2rem !important;
+      }
     }
   }
   span {

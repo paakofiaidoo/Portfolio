@@ -81,7 +81,7 @@ class Intro extends Component {
     {
       name: "call",
       src: "/contactIcons/telephone.svg",
-      href: "tel:+233202396856",
+      href: "tel:+233553214812",
       fa: faPhone,
       animation: call,
     },

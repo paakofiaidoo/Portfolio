@@ -27,6 +27,7 @@ const Skills = ({ services = [] }) => {
 CSS / SCSS
 JAVASCRIPT
 Prototyping UI with Adobe XD
+(Design practices: Responsive web design)
 `,
 			animation: web,
 		},
@@ -38,10 +39,13 @@ Svelte`,
 			animation: react,
 		},
 		{
-			title: "programing stack",
+			title: "programing stack and other skills",
 			content: `C++
 Python
 Java
+Git
+Googling
+Building of Chrome extensions
 			`,
 			animation: pro,
 		},
