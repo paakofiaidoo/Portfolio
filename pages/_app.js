@@ -37,12 +37,14 @@ function MyApp({ Component, pageProps }) {
   }, [ip]);
 
   useEffect(() => {
-    console.log("run", getStrapiURL("/visitors"), process.env.NODE_ENV);
+    console.log("run", getStrapiURL("/visitors"), process.env.REST_URL);
 
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV !== 'development') {
       axios.post((getStrapiURL("/visitors")), {
-        location: location,
-        browser: browser,
+        data: {
+          location: location,
+          browser: browser,
+        }
       })
         .then(res => {
           console.log(res);
