@@ -38,3 +38,4 @@ yarn-error.log*
 .env.development
 .env
 yarn.lock
+.env
