@@ -1,14 +1,14 @@
 import Lottie from "react-lottie";
 import { useState } from "react";
 import AwesomeSlider from "react-awesome-slider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slidestyles from "../../styles/apps/SkillsSlider.module.scss";
 import styles from "../../styles/apps/Skills.module.scss";
 import web from "../../public/animations/pentagramskillsofdeth.json";
 import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
 import electronics from "../../public/animations/circuit.json";
-import { faUser } from "@fortawesome/free-solid-svg-icons"
+// import { faUser } from "@fortawesome/free-solid-svg-icons"
 
 const defaultOptions = {
 	loop: true,
@@ -24,38 +24,38 @@ const Skills = ({ services = [] }) => {
 		{
 			title: "web skills",
 			content: `HTML
-CSS / SCSS
-JAVASCRIPT
-Prototyping UI with Adobe XD
-(Design practices: Responsive web design)
+				CSS / SCSS
+				JAVASCRIPT
+				Prototyping UI with Adobe XD
+				(Design practices: Responsive web design)
 `,
 			animation: web,
 		},
 		{
 			title: "frame works and libraries",
 			content: `React
-Next.js
-Svelte`,
+				Next.js
+				Svelte`,
 			animation: react,
 		},
 		{
 			title: "programing stack and other skills",
 			content: `C++
-Python
-Java
-Git
-Googling
-Building of Chrome extensions
-Basic Networking
+				Python
+				Java
+				Git
+				Googling
+				Building of Chrome extensions
+				Basic Networking
 			`,
 			animation: pro,
 		},
 		{
 			title: "electronics",
 			content: `Arduino
-Digital Circuitry
-Working with sensors and actuators
-IOT`,
+				Digital Circuitry
+				Working with sensors and actuators
+				IOT`,
 			icon: "",
 			animation: electronics,
 		},
@@ -89,7 +89,9 @@ IOT`,
 
 									<div className={`${styles.info} `}>
 										<div className={`${styles.main} `}>{title}</div>
-										<pre className={`${styles.sub} `}>{content}</pre>
+										<p className={`${styles.sub} `}>{content.split("\n").map((text) => {
+											return <p>{text}</p>
+										})}</p>
 									</div>
 								</div>
 							</div>
@@ -107,26 +109,16 @@ const Recommendations = (defaultOptions) => {
 		<div className={`${styles.card}`}>
 			<AwesomeSlider organicArrows bullets={false} className={`${styles.slider}`} cssModule={[Slidestyles]} style={{ maxHeight: "25rem", }} >
 				<div className={`${styles.cardIn}`}>
-					<img className={`icon ${styles.avatar}`} src="./navIcons/man.svg" />
-					<h2 className={`${styles.title}`}> Name of person, title</h2>
+					<img className={`icon ${styles.avatar}`} src="https://media-exp1.licdn.com/dms/image/C4D03AQELPVaWYZVk4Q/profile-displayphoto-shrink_800_800/0/1606950045787?e=1644451200&v=beta&t=smx0c1NehMvszdeLBgljEhI7PW0PTs-8qjoQIl1cb-8" />
+					<h2 className={`${styles.title}`}>Felix Awortwe Kwamena, <span>Junior Python Developer</span></h2>
 					<p className={`${styles.text}`}>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
-						magnam accusamus harum, perferendis consectetur est nostrum voluptate laudantium ex doloribus veritatis,
-						incidunt officiis assumenda in.
+						I know only some few good Developers and Anderson is  a part of it .
+						He knows what to do and when to do it , I am happy to be connected to such a Determined Dev, I know you deserve more
 
 					</p>
-					<a href="/#">link to contact</a>
+					<a href="https://www.linkedin.com/in/felix-awortwe-kwamena-%F0%9F%87%AC%F0%9F%87%AD-4644a7140/">link to contact</a>
 				</div>
-				<div className={`${styles.cardIn}`}>
-					<img className={`icon ${styles.avatar}`} src="./navIcons/man.svg" />
-					<h2 className={`${styles.title}`}> Name of person, title</h2>
-					<p className={`${styles.text}`}>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem cumque exercitationem facilis soluta
-						magnam accusamus harum, perferendis consectetur est nostrum voluptate laudantium ex doloribus veritatis,
-						incidunt officiis assumenda in.
-					</p>
-					<a href="/#">link to contact</a>
-				</div>
+				
 			</AwesomeSlider>
 		</div>
 	);
