@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
   }, [ip]);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV !== 'development') {
       // console.log("development");
       if (location && browser && !send) {
         // console.log("send");
