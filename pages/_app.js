@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { detect } from 'detect-browser';
 import { getStrapiURL } from './api';
 
+let send = false
 function MyApp({ Component, pageProps }) {
   //get user ip address
   const [ip, setIp] = useState('');
@@ -18,10 +19,9 @@ function MyApp({ Component, pageProps }) {
     axios.get('https://api.ipify.org?format=json')
       .then(res => {
         setIp(res.data.ip);
-        console.log(res.data.ip);
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
       })
   }, []);
 
@@ -29,29 +29,32 @@ function MyApp({ Component, pageProps }) {
     axios.get('https://ipapi.co/' + ip + '/json/')
       .then(res => {
         setLocation(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
       })
   }, [ip]);
 
   useEffect(() => {
-    console.log("run", getStrapiURL("/visitors"), process.env.REST_URL);
-
-    if (process.env.NODE_ENV !== 'development') {
-      axios.post((getStrapiURL("/visitors")), {
-        data: {
-          location: location,
-          browser: browser,
-        }
-      })
-        .then(res => {
-          console.log(res);
+    if (process.env.NODE_ENV === 'development') {
+      // console.log("development");
+      if (location && browser && !send) {
+        // console.log("send");
+        axios.post((getStrapiURL("/visitors")), {
+          data: {
+            location: location,
+            browser: browser,
+          }
         })
-        .catch(err => {
-          console.log(err);
-        })
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => {
+            console.log(err);
+          })
+        send = true;
+      }
 
     }
   }, [location, browser]);
