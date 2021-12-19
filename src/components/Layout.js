@@ -11,7 +11,15 @@ const Layout = ({ children, apps, open }) => {
 				<meta name="description" content="My portfolio website" />
 				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 			</Head>
-			<div className={`${styles.body}`} style={{ backgroundImage: "url('./img/man-and-space.jpg')" }} >
+
+			{/* style={{ backgroundImage: "url('./img/man-and-space.jpg')" }}  */}
+			<div className={`${styles.body}`} >
+				<video autoPlay muted loop className={`${styles.myVideo}`}  >
+					<source src="./videos/Space.mp4" type="video/mp4" />
+					<source src="./videos/Mountain.mp4" type="video/mp4" />
+					<source src="./videos/Nebula Blue.mp4" type="video/mp4" />
+					<source src="./videos/Nebula.mp4" type="video/mp4" />
+				</video>
 				<main className={`main ${styles.main}`}>{children}</main>
 				<Nav links={apps} open={open} />
 			</div>
