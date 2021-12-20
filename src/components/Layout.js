@@ -10,6 +10,7 @@ const Layout = ({ children, apps, open }) => {
 				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
 				<meta name="description" content="My portfolio website" />
 				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				<script src="./particle.js"></script>
 			</Head>
 
 			{/* style={{ backgroundImage: "url('./img/man-and-space.jpg')" }}  */}
