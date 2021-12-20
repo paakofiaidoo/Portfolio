@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../../styles/Intro.module.css";
+import styles from "../../styles/apps/Contact.module.scss";
 import {
   faGithub,
   faFacebook,
@@ -19,6 +19,7 @@ import linkedin from "../../public/animations/linkedin.json";
 import whatsapp from "../../public/animations/whatsapp.json";
 import github from "../../public/animations/githubtest.json";
 import call from "../../public/animations/phone-ringing.json";
+import Particles from "../components/Particles";
 
 class Intro extends Component {
   constructor(props) {
@@ -94,7 +95,7 @@ class Intro extends Component {
     },
   };
   componentDidMount() {
-    this.intreact();
+    // this.intreact();
   }
 
   intreact = () => {
@@ -190,14 +191,15 @@ class Intro extends Component {
   render() {
     return (
       <div id="intro" className={styles.intro} ref={this.intro}>
-        <img
+        {/* <img
           src="./brand/vector/default-monochrome.svg"
           alt="profile pic"
           className={styles.avatar}
           ref={this.avatar}
           style={this.state}
           load="lazy"
-        />
+        /> */}
+        <Particles className={styles.avatar} style={this.state} />
         <div className={styles.details}>
           <div className={styles.contactName}>
             {this.contacts

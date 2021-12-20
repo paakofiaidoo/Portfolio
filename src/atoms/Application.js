@@ -21,12 +21,11 @@ function Application({ style, children, close, layer, app = {} }) {
             {animation ? (
               <div>
                 <Lottie
-                  className={` ${styles.linksIcon}`}
+                  className={`icon ${styles.icon} ${styles.linksIcon}`}
                   options={{ ...defaultOptions, animationData: animation }}
                   height={"100%"}
                   width={"100%"}
                   title={title}
-                  className={`icon ${styles.icon}`}
                   style={{ height: "2.5rem" }}
                 />
               </div>
@@ -45,7 +44,7 @@ function Application({ style, children, close, layer, app = {} }) {
             }}
           />
         </div>
-        <div className={styles.content}>{children}</div>
+        <div id="content" className={styles.content}>{children}</div>
       </div>
     );
   };
