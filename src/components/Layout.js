@@ -7,10 +7,12 @@ const Layout = ({ children, apps, open }) => {
 		<>
 			<Head>
 				<title>Paa-Kofi Aidoo</title>
+				<meta charset="utf-8"></meta>
 				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
-				<meta name="description" content="My portfolio website" />
+				<meta name="description" content="Aidoo Paa-Kofi Anderson; Web developer, Electronics hobbist" />
 				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 				<script src="./particle.js"></script>
+				<meta name="robots" content="noindex,nofollow"></meta>
 			</Head>
 
 			{/* style={{ backgroundImage: "url('./img/man-and-space.jpg')" }}  */}
