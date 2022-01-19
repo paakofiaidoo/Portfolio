@@ -27,19 +27,19 @@ export const Recommendations = () => {
 	return (
 		<div className={`${styles.card}`}>
 			<AwesomeSlider organicArrows bullets={false} className={`${styles.slider}`} cssModule={[Slidestyles]} style={{ maxHeight: "25rem", }}>
-				{recommendations.map(({ text, name, image, role, company, link }) => (<div className={`${styles.cardIn}`}>
-					<img className={`icon ${styles.avatar}`} src={image} />
-					<h2 className={`${styles.title}`}>{name},
-						<br />
-						<span>{role}</span>,
-						<span> {company}</span>
-					</h2>
-					<p className={`${styles.text}`}>
-						{text}
-					</p>
-					<a href={link}>link to contact</a>
-				</div>))}
-
+				{recommendations.map(({ text, name, image, role, company, link }, i) => (
+					<div className={`${styles.cardIn}`} key={i}>
+						<img className={`icon ${styles.avatar}`} src={image} />
+						<h2 className={`${styles.title}`}>{name},
+							<br />
+							<span>{role}</span>,
+							<span> {company}</span>
+						</h2>
+						<p className={`${styles.text}`}>
+							{text}
+						</p>
+						<a href={link}>link to contact</a>
+					</div>))}
 			</AwesomeSlider>
 		</div>
 	);

@@ -33,15 +33,14 @@ I work well with persons with different backgrounds and personalities in both re
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
 				<img src="./brand/me.jpg" alt="picture of me" className={`${styles.pic}`} />
-				<h2 className={`${styles.name}`}>
+				<title className={`${styles.name}`}>
 					Aidoo Paa-Kofi Anderson
 					<p className={`${styles.sub}`}>Web developer, Electronics hobbist</p>
-				</h2>
+				</title>
 			</div>
 			<div className={`${styles.info} `}>
-
-				{about.map(({ fa, details }) => (
-					<div className={`${styles.text} `}>
+				{about.map(({ fa, details }, i) => (
+					<div className={`${styles.text} `} key={i} >
 						<FontAwesomeIcon fixedWidth icon={fa} className={`icon`} />
 						<p>{details.split("\n").map((text) => {
 							return <p>{text}</p>

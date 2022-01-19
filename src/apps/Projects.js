@@ -69,7 +69,6 @@ const Projects = () => {
 
 export default Projects;
 const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, scrollMob, noMobile, i) => {
-  console.log(scrollMob, scrollDesk);
   return (
     <div className={stylesCos.slide} key={i}>
       <div className={stylesCos.img}>
