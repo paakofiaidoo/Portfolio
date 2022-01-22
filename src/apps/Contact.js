@@ -54,7 +54,7 @@ class Intro extends Component {
     {
       name: "linkedin",
       src: "/contactIcons/linkedin.svg",
-      href: "https://www.linkedin.com/in/paa-kofi-aidoo-a98036183/",
+      href: "https://www.linkedin.com/in/paakofiaidoo/",
       fa: faLinkedin,
       animation: linkedin,
     },
