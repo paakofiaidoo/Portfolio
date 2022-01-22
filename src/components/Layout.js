@@ -7,7 +7,7 @@ const Layout = ({ children, apps, open }) => {
 		<>
 			<Head>
 				<title>Paa-Kofi Aidoo</title>
-				<meta charset="utf-8"></meta>
+				<meta charSet="utf-8"></meta>
 				<link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
 				<meta name="description" content="Aidoo Paa-Kofi Anderson; Web developer, Electronics hobbist" />
 				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
@@ -16,14 +16,14 @@ const Layout = ({ children, apps, open }) => {
 			</Head>
 
 			{/* style={{ backgroundImage: "url('./img/man-and-space.jpg')" }}  */}
-			<head style={{ display: "none" }} >
+			<h1 style={{ display: "none" }} >
 				René Descartes said, "cogito, ergo sum",  (Latin: “I think, therefore I am),
 				so firstly I am thinking thing and a good thinker if I might add, I prioritize a good mental well being .
 				I am a passionate person who loves to learn and seek to apply knowledge in to solutions.
 				I sleep and wake up with technology on my mind always trying to be in step with the latest technology
 				I am always looking for new ways to improve myself and my work.
 				I work well with persons with different backgrounds and personalities in both remote and physical work environments.
-			</head>
+			</h1>
 			<div className={`${styles.body}`} >
 				<video autoPlay muted loop className={`${styles.myVideo}`}  >
 					<source src="./videos/Space.mp4" type="video/mp4" />
