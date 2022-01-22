@@ -53,6 +53,12 @@
 	margin-top: -2rem;
 }
 
+.mobile{
+	display:block;
+}
+.desktop{
+	display:none;
+}
 @media only screen and (min-width: 760px) {
 	.contact {
 		height: 3rem;
@@ -69,6 +75,13 @@
 		margin: auto;
 		width: 100%;
 	}
+	.mobile {
+		display: none;
+	}
+	.desktop{
+		display:block;
+	}
+
 }
 
 @keyframes shadowPlay {
