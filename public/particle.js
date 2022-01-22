@@ -1,15 +1,14 @@
 
 
 window.some = function () {
+  console.log(window.innerWidth)
   var canvasInteractive = document.getElementById('canvas-interactive');
   var canvasReference = document.getElementById('canvas-reference');
+  // let desktop = document.getElementsByClassName('desktop')
   // var content = document.getElementById("content")
-  if (canvasInteractive && canvasReference) {
+  if (canvasInteractive && canvasReference && window.innerWidth >= 760) {
     var contextInteractive = canvasInteractive.getContext('2d');
     var contextReference = canvasReference.getContext('2d');
-
-
-
     var image = document.getElementById('defaktoLogo');
     // var width = canvasInteractive.width = canvasReference.width = content.offsetWidth;
     // var height = canvasInteractive.height = canvasReference.height = content.offsetHeight;
