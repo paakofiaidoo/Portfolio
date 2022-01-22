@@ -7,8 +7,23 @@
   flex-direction: column;
   //justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
 }
 .main {
   position: fixed;
   top: 0;
+}
+.myVideo {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  
 }
