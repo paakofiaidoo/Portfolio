@@ -33,12 +33,12 @@ I work well with persons with different backgrounds and personalities in both re
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
 				<img src="./brand/me2.jpg" alt="picture of me" className={`${styles.pic}`} />
-				<title className={`${styles.name}`}>
+				<header className={`${styles.name}`}>
 					Aidoo Paa-Kofi Anderson
 					<p className={`${styles.sub}`}>Physics undergrad, Web developer, Electronics hobbist</p>
-				</title>
+				</header>
 			</div>
-			<div className={`${styles.info} `}>
+			<info className={`${styles.info} `}>
 				{about.map(({ fa, details }, i) => (
 					<div className={`${styles.text} `} key={i} >
 						<FontAwesomeIcon fixedWidth icon={fa} className={`icon`} />
@@ -47,7 +47,7 @@ I work well with persons with different backgrounds and personalities in both re
 						})}</p>
 					</div>
 				))}
-			</div>
+			</info>
 			<span>click on logo in taskbar to download resume</span>
 		</div>
 	);
