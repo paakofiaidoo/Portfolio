@@ -7,7 +7,7 @@ export const Recommendations = () => {
 		{
 			name: "Felix Awortwe Kwamena",
 			role: "Junior Python Developer",
-			image: "https://res.cloudinary.com/dzqbzqgjw/image/upload/v1599087361/felix_awortwe_kwamena_qjqjqz.png",
+			image: "/recommendations/felix.jpg",
 			text: `I know only some few good Developers and Anderson is  a part of it .
 			He knows what to do and when to do it , I am happy to be connected to such a Determined Dev, I know you deserve more`,
 			link: "https://www.linkedin.com/in/felix-awortwe-kwamena-%F0%9F%87%AC%F0%9F%87%AD-4644a7140/"
@@ -16,11 +16,11 @@ export const Recommendations = () => {
 			name: "Edem Morny",
 			role: "CEO",
 			company: "Amatsii",
-			image: "https://res.cloudinary.com/dzqbzqgjw/image/upload/v1599087361/felix_awortwe_kwamena_qjqjqz.png",
+			image: "/recommendations/edem.jpg",
 			text: `Paa-Kofi is a passionate software developer who has a keen interest in learning and building his skill set up. He's not afraid to take up new challenges,
 			and applies himself diligently to the task at hand. He also helps other developers whenever he can, with the goal of ensuring that his team is capable of 
 			delivering as expected. He's an invaluable member of any team, and i'm glad for our ongoing association with him.`,
-			link: "https://www.linkedin.com/in/felix-awortwe-kwamena-%F0%9F%87%AC%F0%9F%87%AD-4644a7140/"
+			link: "https://www.linkedin.com/in/edemmorny/"
 		}
 
 	]
