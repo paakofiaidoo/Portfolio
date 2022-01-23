@@ -16,7 +16,7 @@ const About = () => {
 		{ fa: faCalendarDay, details: "21 years" },
 		{ fa: faHouseUser, details: "Fijai, Ghana" },
 		{ fa: faLanguage, details: "English, Akan(Fanti)" },
-		{ fa: faSchool, details: "BSc Physics (electronics option) 4rd year undergrad, KNUST, Kumasi, Ghana", },
+		{ fa: faSchool, details: "BSc Physics (electronics option) 4th year undergrad, KNUST, Kumasi, Ghana", },
 		{ fa: faHeart, details: "Coding, Philosophy (Ontology and Epistemology), Movies & Animations, Gaming" },
 		{ fa: faQuoteLeft, details: "I live for the pursuit of knowledge" },
 		{ fa: faBullseye, details: "I live to solve problems \nI want to get a score for humanity in terms of knowledge and the life of the African" },
