@@ -40,20 +40,14 @@ const Nav = ({ links = [], open }) => {
 			<div className={`links  ${styles.links}`}>
 				<>
 					<li>
-						<a
-							style={{ display: "flex" }}
-							href="./resume/Paa-Kofi Aidoo resume.pdf"
-							target="_blank"
-							download
-							title="Click to download Resume">
-							<Image
-								className={`icon ${styles.linksIcon}`}
-								src="/brand/vector/default-monochrome.svg"
-								alt="Paa-Kofi Aidoo logo"
-								width={60}
-								height={60}
-							/>
-						</a>
+
+						<Image
+							className={`icon ${styles.linksIcon}`}
+							src="/brand/vector/default-monochrome.svg"
+							alt="Paa-Kofi Aidoo logo"
+							width={60}
+							height={60}
+						/>
 					</li>
 
 					{links.map(({ title, isActive, id, fa, animation, speed }, i) => (

@@ -3,22 +3,24 @@ import {
 	faBullseye,
 	faCalendarDay,
 	faHeart,
-	faQuoteLeft,
+	// faQuoteLeft,
 	faUserTag,
 	faHouseUser,
-	faLanguage
+	faLanguage,
+	faCertificate,
+	faFilePdf
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/apps/About.module.scss";
 import anim from "../../public/animations/avatar.json"
 const About = () => {
 	const about = [
+		{ fa: faCertificate, details: "Web developer, Electronics hobbist" },
 		{ fa: faCalendarDay, details: "21 years" },
 		{ fa: faHouseUser, details: "Fijai, Ghana" },
 		{ fa: faLanguage, details: "English, Akan(Fanti)" },
-		{ fa: faSchool, details: "BSc Physics (electronics option) 4th year undergrad, KNUST, Kumasi, Ghana", },
+		{ fa: faSchool, details: "BSc Physics (Electronics Option) 4th Year Undergrad, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana", },
 		{ fa: faHeart, details: "Coding, Philosophy (Ontology and Epistemology), Movies & Animations, Gaming" },
-		{ fa: faQuoteLeft, details: "I live for the pursuit of knowledge" },
 		{ fa: faBullseye, details: "I live to solve problems \nI want to get a score for humanity in terms of knowledge and the life of the African" },
 		{
 			fa: faUserTag, details: `René Descartes said, "cogito, ergo sum",  (Latin: “I think, therefore I am),	
@@ -34,8 +36,19 @@ I work well with persons with different backgrounds and personalities in both re
 			<div className={`${styles.intro} card`}>
 				<img src="./brand/me2.png" alt="picture of me" className={`${styles.pic}`} />
 				<header className={`${styles.name}`}>
-					Aidoo Paa-Kofi Anderson
-					<p className={`${styles.sub}`}>Physics undergrad, Web developer, Electronics hobbist</p>
+					<h2>Hi,</h2>
+					I am Paa-Kofi Aidoo
+					<br />
+					and I live for the pursuit of knowledge
+					<a className={`${styles.sub}`}
+						// style={{ display: "flex" }}
+						href="./resume/Paa-Kofi Aidoo resume.pdf"
+						target="_blank"
+						download
+						title="Click to download Resume">
+						<FontAwesomeIcon fixedWidth icon={faFilePdf} className={`icon`} />
+						<p>Download resume</p>
+					</a>
 				</header>
 			</div>
 			<info className={`${styles.info} `}>
@@ -48,7 +61,6 @@ I work well with persons with different backgrounds and personalities in both re
 					</div>
 				))}
 			</info>
-			<span>click on logo in taskbar to download resume</span>
 		</div>
 	);
 };
