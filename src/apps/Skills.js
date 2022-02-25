@@ -2,7 +2,7 @@ import Lottie from "react-lottie";
 import { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/apps/Skills.module.scss";
-import web from "../../public/animations/pentagramskillsofdeth.json";
+import web from "../../public/animations/web.json";
 import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
 import electronics from "../../public/animations/circuit.json";
@@ -24,7 +24,7 @@ const Skills = ({ services = [] }) => {
 		{
 			title: "web skills",
 			content: `HTML
-				CSS / SCSS
+				CSS & SCSS
 				JAVASCRIPT
 				Prototyping UI with Adobe XD
 				(Design practices: Responsive web design)
