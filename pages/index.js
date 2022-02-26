@@ -10,7 +10,6 @@ import avatar from "../public/animations/user.json";
 import skills from "../public/animations/dumbleiconfitnesshealth.json";
 import projects from "../public/animations/balanceloop.json";
 import contact from "../public/animations/contact.json";
-import Head from 'next/head'
 
 const Home = () => {
 	const [apps, setApps] = useState([

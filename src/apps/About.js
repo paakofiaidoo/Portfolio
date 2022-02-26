@@ -36,8 +36,10 @@ I work well with persons with different backgrounds and personalities in both re
 			<div className={`${styles.intro} card`}>
 				<img src="./brand/me2.png" alt="picture of me" className={`${styles.pic}`} />
 				<header className={`${styles.name}`}>
-					<h2>Hi,</h2>
-					I am Paa-Kofi Aidoo
+					<h2>Hi 👋,</h2>
+					I am Paa-Kofi Aidoo,
+					<br />
+					I am a Web Developer
 					<br />
 					and I live for the pursuit of knowledge
 					<a className={`${styles.sub}`}
