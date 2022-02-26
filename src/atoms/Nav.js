@@ -40,20 +40,13 @@ const Nav = ({ links = [], open }) => {
 			<div className={`links  ${styles.links}`}>
 				<>
 					<li>
-						<a
-							style={{ display: "flex" }}
-							href="./resume/Paa-Kofi Aidoo resume.pdf"
-							target="_blank"
-							download
-							title="Click to download Resume">
-							<Image
-								className={`icon ${styles.linksIcon}`}
-								src="/brand/vector/default-monochrome.svg"
-								alt="Paa-Kofi Aidoo logo"
-								width={60}
-								height={60}
-							/>
-						</a>
+						<Image
+							className={`icon ${styles.linksIcon}`}
+							src="/brand/vector/default-monochrome.svg"
+							alt="Paa-Kofi Aidoo logo"
+							width={60}
+							height={60}
+						/>
 					</li>
 
 					{links.map(({ title, isActive, id, fa, animation, speed }, i) => (
@@ -71,19 +64,19 @@ const Nav = ({ links = [], open }) => {
 								}
 							}}
 							onMouseLeave={() => {
-
 								setState({});
 							}}>
 							{animation ? (
-								<div className={`anim `}>
+								<div className={`${styles.anim}  ${styles.linksIcon}`}>
 									<Lottie
 										options={{ ...defaultOptions, animationData: animation }}
 										height={"100%"}
 										width={"100%"}
 										title={title}
+										className={styles.animation}
 										speed={speed ? speed : 1}
 										isStopped={state.id === id || isActive}
-										style={{ height: "2.5rem" }}
+										style={{ height: "2.2rem" }}
 										interactivity={interactivity}
 									/>
 								</div>
@@ -95,7 +88,7 @@ const Nav = ({ links = [], open }) => {
 						</li>
 					))}
 				</>
-				<a style={{ display: "none" }} href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpaakofiaidoo.tech&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
+				{/* <a style={{ display: "none" }} href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpaakofiaidoo.tech&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a> */}
 			</div>
 		</nav>
 	);
