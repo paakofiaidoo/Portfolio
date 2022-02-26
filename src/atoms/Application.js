@@ -2,6 +2,7 @@ import styles from "../../styles/Application.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Lottie from "react-lottie";
+import Head from "next/head"
 
 function Application({ style, children, close, layer, app = {} }) {
   const { title, icon, id, animation, fa } = app;
@@ -16,6 +17,9 @@ function Application({ style, children, close, layer, app = {} }) {
   const Window = (children) => {
     return (
       <div className={`glass1 ${styles.app}`} style={{ zIndex: layer + 2, ...style }}>
+        <Head>
+          <title>{title}</title>
+        </Head>
         <div className={styles.titleBar} draggable>
           <li className={styles.title}>
             {animation ? (
