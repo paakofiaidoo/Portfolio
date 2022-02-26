@@ -19,17 +19,10 @@ import linkedin from "../../public/animations/linkedin.json";
 import whatsapp from "../../public/animations/whatsapp.json";
 import github from "../../public/animations/githubtest.json";
 import call from "../../public/animations/phone-ringing.json";
-import Particles from "../components/Particles";
 
-class Intro extends Component {
-  constructor(props) {
-    super(props);
-    this.intro = React.createRef();
-    this.avatar = React.createRef();
-    this.state = {};
-    this.hover = null;
-  }
-  contacts = [
+const Intro = () => {
+
+  const contacts = [
     {
       name: "Facebook",
       src: "/contactIcons/facebook.svg",
@@ -47,7 +40,7 @@ class Intro extends Component {
     {
       name: "twitter",
       src: "/contactIcons/twitter.svg",
-      href: "https://twitter.com/PaaKofiaidoo2",
+      href: "https://twitter.com/PaaKofiaidoo",
       fa: faTwitter,
       animation: twitter,
     },
@@ -87,174 +80,78 @@ class Intro extends Component {
       animation: call,
     },
   ];
-  defaultOptions = {
+
+
+
+  return (
+    <div id="intro" className={styles.intro} >
+      <img
+        src="./brand/vector/default-monochrome.svg"
+        alt="profile pic"
+        className={`${styles.mobile} ${styles.avatar}`}
+        load="lazy"
+      />
+      <div className={styles.details}>
+        <div className={styles.contactName}>
+          {contacts
+            .slice(0, 3)
+            .map(({ href, name, fa, animation }, index) => {
+              return Icon(index, href, animation, name, fa);
+            })}
+        </div>
+        <div className={styles.contactName}>
+          {contacts
+            .slice(3, 6)
+            .map(({ href, name, fa, animation }, index) => {
+              return Icon(index, href, animation, name, fa);
+            })}
+        </div>
+        <div className={styles.contactName}>
+          {contacts
+            .slice(6)
+            .map(({ href, name, fa, animation }, index) => {
+              return Icon(index, href, animation, name, fa);
+            })}
+        </div>
+      </div>
+    </div>
+  );
+
+
+
+}
+
+export default Intro;
+const Icon = (index, href, animation, name, fa) => {
+  const defaultOptions = {
     loop: true,
     autoplay: true,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  componentDidMount() {
-    // this.intreact();
-  }
-
-  intreact = () => {
-    let container = this.intro.current;
-    let inner = this.avatar.current;
-    let newStyle = "rotateX(0.05deg) rotateY(-0.24deg)";
-
-    let mouse = {
-      _x: 0,
-      _y: 0,
-      x: 0,
-      y: 0,
-      updatePosition: function (event) {
-        let e = event || window.event;
-        this.x = e.clientX - this._x;
-        this.y = (e.clientY - this._y) * -1;
-      },
-      setOrigin: function (e) {
-        this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-        this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
-      },
-      show: function () {
-        return "(" + this.x + ", " + this.y + ")";
-      },
-    };
-
-    // Track the mouse position relative to the center of the container.
-    mouse.setOrigin(container);
-
-    //----------------------------------------------------
-
-    let counter = 0;
-    let refreshRate = 10;
-    let isTimeToUpdate = function () {
-      return counter++ % refreshRate === 0;
-    };
-
-    //----------------------------------------------------
-
-    let onMouseEnterHandler = function (event) {
-      update(event);
-    };
-
-    let onMouseLeaveHandler = function () {
-      inner.style = "";
-    };
-
-    let onMouseMoveHandler = function (event) {
-      if (isTimeToUpdate()) {
-        update(event);
-      }
-    };
-
-    //----------------------------------------------------
-
-    let update = function (event) {
-      mouse.updatePosition(event);
-      updateTransformStyle(
-        (mouse.y / inner.offsetHeight / 2).toFixed(2),
-        (mouse.x / inner.offsetWidth / 2).toFixed(2)
-      );
-    };
-
-    let updateTransformStyle = function (x, y) {
-      let style =
-        "rotateX(" +
-        angleTransform(x) +
-        "deg) rotateY(" +
-        angleTransform(y) +
-        "deg)";
-      newStyle = style;
-      setStyle(style);
-    };
-    let angleTransform = (val) => {
-      val = parseFloat(val) * 40;
-      if (val < 0) {
-        return val;
-      } else {
-        return val;
-      }
-    };
-
-    //--------------------------------------------------------
-    let setStyle = (newStyle) => {
-      this.setState({ transform: newStyle });
-    };
-
-    container.onmousemove = onMouseMoveHandler;
-    container.onmouseleave = onMouseLeaveHandler;
-    container.onmouseenter = onMouseEnterHandler;
-  };
-
-  render() {
-    return (
-      <div id="intro" className={styles.intro} ref={this.intro}>
-
-        <img
-          src="./brand/vector/default-monochrome.svg"
-          alt="profile pic"
-          className={`${styles.mobile} ${styles.avatar}`}
-          ref={this.avatar}
-          style={this.state}
-          load="lazy"
-        />
-        <Particles className={`${styles.desktop} ${styles.avatar}`} style={this.state} />
-        <div className={styles.details}>
-          <div className={styles.contactName}>
-            {this.contacts
-              .slice(0, 3)
-              .map(({ href, name, fa, animation }, index) => {
-                return this.Icon(index, href, animation, name, fa);
-              })}
-          </div>
-          <div className={styles.contactName}>
-            {this.contacts
-              .slice(3, 6)
-              .map(({ href, name, fa, animation }, index) => {
-                return this.Icon(index, href, animation, name, fa);
-              })}
-          </div>
-          <div className={styles.contactName}>
-            {this.contacts
-              .slice(6)
-              .map(({ href, name, fa, animation }, index) => {
-                return this.Icon(index, href, animation, name, fa);
-              })}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  Icon(index, href, animation, name, fa) {
-    return (
-      <li key={index}>
-        <a target="_blank" href={href} rel="noreferrer">
-          {animation ? (
-            <Lottie
-              options={{ ...this.defaultOptions, animationData: animation }}
-              height={"100%"}
-              width={"6rem"}
-              title={name}
-              className={styles.contact}
-              isPaused={this.hover === index}
-              style={{ overflow: "visible" }}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={fa}
-              className={styles.contact}
-              color="#25BBA8"
-              alt={name}
-              title={name}
-            />
-          )}
-        </a>
-      </li>
-    );
-  }
+  return (
+    <li key={index}>
+      <a target="_blank" href={href} rel="noreferrer">
+        {animation ? (
+          <Lottie
+            options={{ ...defaultOptions, animationData: animation }}
+            height={"100%"}
+            width={"6rem"}
+            title={name}
+            className={styles.contact}
+            // isPaused={hover === index}
+            style={{ overflow: "visible" }} />
+        ) : (
+          <FontAwesomeIcon
+            icon={fa}
+            className={styles.contact}
+            color="#25BBA8"
+            alt={name}
+            title={name} />
+        )}
+      </a>
+    </li>
+  );
 }
 
-export default Intro;

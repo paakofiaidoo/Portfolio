@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from 'react';
 import { detect } from 'detect-browser';
 import { getStrapiURL } from './api';
+import Head from 'next/head'
 
 let send = false
 function MyApp({ Component, pageProps }) {
@@ -59,8 +60,12 @@ function MyApp({ Component, pageProps }) {
     }
   }, [location, browser]);
 
-
-  return <Component {...pageProps} />
+  return <>
+    <Head>
+      <title>Paa-Kofi Aidoo</title>
+    </Head>
+    <Component {...pageProps} />
+  </>
 }
 
 export default MyApp
