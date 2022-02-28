@@ -10,7 +10,7 @@ import Head from 'next/head'
 import { initializeApp, getApps } from "firebase/app";
 // import { getAnalytics, logEvent } from "firebase/analytics";
 import 'firebase/analytics'
-import { analytics, logEventFun } from './firebase'
+import { analytics, logEventFun } from '../src/firebase'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
