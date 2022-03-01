@@ -12,7 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/apps/About.module.scss";
-import anim from "../../public/animations/avatar.json"
+// import anim from "../../public/animations/avatar.json"
+import { logEventFun } from "../firebase";
+
+
 const About = () => {
 	const about = [
 		{ fa: faCertificate, details: "Web developer, Electronics hobbist" },
@@ -47,6 +50,9 @@ I work well with persons with different backgrounds and personalities in both re
 						href="./resume/Paa-Kofi Aidoo resume.pdf"
 						target="_blank"
 						download
+						onClick={() => {
+							logEventFun('resume');
+						}}
 						title="Click to download Resume">
 						<FontAwesomeIcon fixedWidth icon={faFilePdf} className={`icon`} />
 						<p>Download resume</p>

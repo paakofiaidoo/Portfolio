@@ -1,6 +1,7 @@
 import AwesomeSlider from "react-awesome-slider";
 import styles from "../../styles/apps/Projects.module.scss";
 import stylesCos from "../../styles/apps/ProjectsCos.module.scss";
+import { logEventFun } from "../firebase";
 
 const Projects = () => {
   const projects = [
@@ -103,7 +104,11 @@ const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, 
       <div className={stylesCos.caption} data-type="caption">
 
         <h3>{name}</h3> ; <span>{description}</span>
-        <a href={href}>View work</a>
+        <a
+        onClick={() => {
+          logEventFun(`Projects: ${name}`);
+        }}
+        href={href}>View work</a>
 
       </div>
     </div>

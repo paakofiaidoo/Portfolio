@@ -7,6 +7,7 @@ import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
 import electronics from "../../public/animations/circuit.json";
 import { Recommendations } from "../atoms/Recommendations";
+import { logEventFun } from "../firebase";
 // import { faUser } from "@fortawesome/free-solid-svg-icons"
 
 const defaultOptions = {
@@ -72,7 +73,7 @@ const Skills = ({ services = [] }) => {
 								className={`${styles.option} ${i === active ? styles.active : ""}`}
 								key={i}
 								onClick={(e) => {
-									console.log("click");
+									logEventFun(`viewed skill ${title}`);
 									setActive(i);
 								}}>
 								<Lottie
