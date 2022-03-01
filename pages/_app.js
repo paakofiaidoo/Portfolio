@@ -30,10 +30,8 @@ function MyApp({ Component, pageProps }) {
 
     console.log(getApps());
 
-
-    getStrapiURL("/visitors")
-    logEventFun('vsited');
-    // analytics();
+    logEventFun('opened');
+    analytics
     const browser = detect();
     setBrowser(browser);
     axios.get('https://api.ipify.org?format=json')
