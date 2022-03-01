@@ -19,6 +19,7 @@ import linkedin from "../../public/animations/linkedin.json";
 import whatsapp from "../../public/animations/whatsapp.json";
 import github from "../../public/animations/githubtest.json";
 import call from "../../public/animations/phone-ringing.json";
+import { logEventFun } from "../firebase";
 
 const Intro = () => {
 
@@ -132,7 +133,11 @@ const Icon = (index, href, animation, name, fa) => {
   };
   return (
     <li key={index}>
-      <a target="_blank" href={href} rel="noreferrer">
+      <a target="_blank" href={href}
+        onClick={() => {
+          logEventFun(`used contact ${name}`);
+        }}
+        rel="noreferrer">
         {animation ? (
           <Lottie
             options={{ ...defaultOptions, animationData: animation }}
