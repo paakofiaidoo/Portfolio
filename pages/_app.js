@@ -6,16 +6,8 @@ import { useState, useEffect } from 'react';
 import { detect } from 'detect-browser';
 import { getStrapiURL } from './api';
 import Head from 'next/head'
-
-import { initializeApp, getApps } from "firebase/app";
-// import { getAnalytics, logEvent } from "firebase/analytics";
 import 'firebase/analytics'
 import { analytics, logEventFun } from '../src/firebase'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 
 let send = false
@@ -27,9 +19,6 @@ function MyApp({ Component, pageProps }) {
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-
-    console.log(getApps());
-
     logEventFun('opened');
     analytics
     const browser = detect();
