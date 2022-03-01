@@ -12,7 +12,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = analytics.isSupported() ? getAnalytics(app) : null;
+// const analytics = analytics.isSupported() ? getAnalytics(app) : null;
+const analytics = getAnalytics(app)
 console.log(analytics);
 const logEventFun = (opt) => {
     logEvent(analytics, opt);
