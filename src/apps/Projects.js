@@ -5,6 +5,12 @@ import stylesCos from "../../styles/apps/ProjectsCos.module.scss";
 const Projects = () => {
   const projects = [
     {
+      name: "nonymous-chat",
+      href: "https://nonymous-chat.vercel.app/",
+      description: "a chat where you can feel free to say whatever you want, no one knows it is you",
+      img: { imgDesk: "./projects/nonymous-chat.jpeg", imgMob: "/projects/nonymous (2).png" },
+    },
+    {
       name: "artisanHR",
       href: "https://artsan-hr.herokuapp.com",
       description: "artisan service center",
@@ -32,11 +38,6 @@ const Projects = () => {
       description: "a calculator to for problems in special relativity built with C++",
       img: { imgDesk: "./projects/special relativity.png", imgMob: "" },
       noMobile: true
-    }, {
-      name: "nonimous",
-      href: "https://github.com/paakofiaidoo/nonymous-chat",
-      description: "live web messenger with web socket ",
-      img: { imgDesk: "./projects/nonymous-chat.png", imgMob: "" },
     },
     , {
       name: "codepen",
