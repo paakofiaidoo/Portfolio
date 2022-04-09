@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') {
       // console.log("development");
-      if (location && browser && !send) {
+      if (location && browser && !send && location.org !== "AMAZON - 02") {
         // console.log("send");
         axios.post((getStrapiURL("/visitors")), {
           data: {
