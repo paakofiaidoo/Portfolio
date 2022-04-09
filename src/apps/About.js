@@ -37,7 +37,7 @@ I work well with persons with different backgrounds and personalities in both re
 	return (
 		<div className={`${styles.about}`}>
 			<div className={`${styles.intro} card`}>
-				<img src="./brand/me2.png" alt="picture of me" className={`${styles.pic}`} />
+				<img src="./brand/me3.png" alt="picture of me" className={`${styles.pic}`} />
 				<header className={`${styles.name}`}>
 					<h2>Hi 👋,</h2>
 					I am Paa-Kofi Aidoo,
