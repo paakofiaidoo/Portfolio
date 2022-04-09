@@ -1,6 +1,6 @@
 import Layout from "../src/components/Layout";
 import Application from "../src/atoms/Application";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "../src/apps/About";
 import Skills from "../src/apps/Skills";
 import Projects from "../src/apps/Projects";
@@ -52,6 +52,13 @@ const Home = () => {
 		},
 	]);
 	const [indexes, setIndexes] = useState([]);
+
+	useEffect(() => {
+		open(1)
+
+
+	}, [])
+
 
 	const open = (idn) => {
 		const newApps = apps.map((app) => {
