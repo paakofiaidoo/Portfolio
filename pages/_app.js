@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     logEventFun('opened');
-    analytics
+    // analytics
     const browser = detect();
     setBrowser(browser);
     axios.get('https://api.ipify.org?format=json')
