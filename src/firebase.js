@@ -1,3 +1,4 @@
+import 'firebase/analytics'
 import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 const firebaseConfig = {
@@ -11,9 +12,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = analytics.isSupported() ? getAnalytics(app) : {};
-// const analytics = getAnalytics(app)
+const app = initializeApp(firebaseConfig)
+// const analytics = analytics.isSupported() ? getAnalytics(app) : {};
+const analytics = getAnalytics(app)
 console.log(analytics);
 const logEventFun = (opt) => {
     logEvent(analytics, opt);

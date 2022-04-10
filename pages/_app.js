@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react';
 import { detect } from 'detect-browser';
 import { getStrapiURL } from './api';
 import Head from 'next/head'
-import 'firebase/analytics'
 import { analytics, logEventFun } from '../src/firebase'
+import 'firebase/analytics'
 
 
 let send = false
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     logEventFun('opened');
-    // analytics
+    analytics
     const browser = detect();
     setBrowser(browser);
     axios.get('https://api.ipify.org?format=json')
