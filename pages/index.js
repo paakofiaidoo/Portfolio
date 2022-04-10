@@ -56,8 +56,6 @@ const Home = () => {
 
 	useEffect(() => {
 		open(1)
-
-
 	}, [])
 
 

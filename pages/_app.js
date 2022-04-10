@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react';
 import { detect } from 'detect-browser';
 import { getStrapiURL } from './api';
 import Head from 'next/head'
-import 'firebase/analytics'
 import { analytics, logEventFun } from '../src/firebase'
+import 'firebase/analytics'
 
 
 let send = false
@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') {
       // console.log("development");
-      if (location && browser && !send && location.org !== "AMAZON - 02") {
+      if (location && browser && !send && location.org !== "AMAZON-02") {
         // console.log("send");
         axios.post((getStrapiURL("/visitors")), {
           data: {
