@@ -11,12 +11,13 @@ const firebaseConfig = {
     measurementId: process.env.MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig)
 // const analytics = analytics.isSupported() ? getAnalytics(app) : {};
-const analytics = getAnalytics(app)
-console.log(analytics);
+const analytics = typeof window !== 'undefined' ? getAnalytics(app) : {}
+
+// }
 const logEventFun = (opt) => {
     logEvent(analytics, opt);
+
 }
-export { analytics, logEventFun };
+export { analytics, logEventFun, app };
