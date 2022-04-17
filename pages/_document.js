@@ -11,7 +11,6 @@ export default function Document() {
 I am Paa-Kofi Aidoo,
 I am a Web Developer
 and I live for the pursuit of knowledge`} />
-                <meta name="robots" content="noindex,nofollow"></meta>
                 <meta name="google-site-verification" content="HYCtj1fXyFWpicxWAGkerf1QQmfGML5KlrYk5qe6q9o" />
             </Head>
             <body>
