@@ -11,7 +11,7 @@ export default function Document() {
 I am Paa-Kofi Aidoo,
 I am a Web Developer
 and I live for the pursuit of knowledge`} />
-                <meta name="robots" content="noindex,nofollow"></meta>
+                {/* <meta name="robots" content="noindex,nofollow"></meta> */}
             </Head>
             <body>
                 <Main />
