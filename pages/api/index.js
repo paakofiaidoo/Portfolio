@@ -1,5 +1,5 @@
 export function getStrapiURL(path = "") {
-  console.log("getStrapiURL", process.env.REST_URL);
+  // console.log("getStrapiURL", process.env.REST_URL);
   return `${process.env.REST_URL || "https://personal-strapi-api.herokuapp.com/api"
     }${path}`;
 }

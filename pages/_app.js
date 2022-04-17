@@ -55,10 +55,10 @@ function MyApp({ Component, pageProps }) {
           }
         })
           .then(res => {
-            console.log(res);
+            // console.log(res);
           })
           .catch(err => {
-            console.log(err);
+            // console.log(err);
           })
         send = true;
       }
