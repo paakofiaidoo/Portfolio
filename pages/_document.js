@@ -7,6 +7,7 @@ export default function Document() {
 
                 <meta charSet="utf-8"></meta>
                 <link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
+                <title>Paa-Kofi Aidoo's Portfolio</title>
                 <meta name="description" content={`Hi 👋,
 I am Paa-Kofi Aidoo,
 I am a Web Developer
