@@ -13,14 +13,6 @@ I am a Web Developer
 and I live for the pursuit of knowledge`} />
                 <meta name="google-site-verification" content="HYCtj1fXyFWpicxWAGkerf1QQmfGML5KlrYk5qe6q9o" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219339413-1">
-                </script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date());
-                    gtag('config', 'UA-219339413-1');
-                </script>
             </Head>
             <body>
                 <Main />
