@@ -24,26 +24,41 @@ import { logEventFun } from "../firebase";
 const Intro = () => {
 
   const contacts = [
-    {
-      name: "Facebook",
-      src: "/contactIcons/facebook.svg",
-      href: "https://web.facebook.com/paakofi.aidoo",
-      fa: faFacebook,
-      animation: fb,
-    },
-    {
-      name: "instagram",
-      src: "/contactIcons/instagram.svg",
-      href: "https://www.instagram.com/pk_aidoo",
-      fa: faInstagram,
-      animation: instagram,
-    },
+    // {
+    //   name: "Facebook",
+    //   src: "/contactIcons/facebook.svg",
+    //   href: "https://web.facebook.com/paakofi.aidoo",
+    //   fa: faFacebook,
+    //   animation: fb,
+    // },
+    // {
+    //   name: "instagram",
+    //   src: "/contactIcons/instagram.svg",
+    //   href: "https://www.instagram.com/pk_aidoo",
+    //   fa: faInstagram,
+    //   animation: instagram,
+    // },
     {
       name: "twitter",
       src: "/contactIcons/twitter.svg",
       href: "https://twitter.com/PaaKofiaidoo",
       fa: faTwitter,
       animation: twitter,
+    },
+    ,
+    {
+      name: "Email",
+      src: "/contactIcons/mail.svg",
+      href: "mailto:paakofiaidoo17@gmail.com",
+      fa: faMailBulk,
+      animation: email,
+    },
+    {
+      name: "call",
+      src: "/contactIcons/telephone.svg",
+      href: "tel:+233553214812",
+      fa: faPhone,
+      animation: call,
     },
     {
       name: "linkedin",
@@ -65,21 +80,7 @@ const Intro = () => {
       href: "https://github.com/paakofiaidoo",
       fa: faGithub,
       animation: github,
-    },
-    {
-      name: "Email",
-      src: "/contactIcons/mail.svg",
-      href: "mailto:paakofiaidoo17@gmail.com",
-      fa: faMailBulk,
-      animation: email,
-    },
-    {
-      name: "call",
-      src: "/contactIcons/telephone.svg",
-      href: "tel:+233553214812",
-      fa: faPhone,
-      animation: call,
-    },
+    }
   ];
 
 
@@ -95,21 +96,21 @@ const Intro = () => {
       <div className={styles.details}>
         <div className={styles.contactName}>
           {contacts
-            .slice(0, 3)
+            .slice(0, 1)
             .map(({ href, name, fa, animation }, index) => {
               return Icon(index, href, animation, name, fa);
             })}
         </div>
         <div className={styles.contactName}>
           {contacts
-            .slice(3, 6)
+            .slice(1, 4)
             .map(({ href, name, fa, animation }, index) => {
               return Icon(index, href, animation, name, fa);
             })}
         </div>
         <div className={styles.contactName}>
           {contacts
-            .slice(6)
+            .slice(4)
             .map(({ href, name, fa, animation }, index) => {
               return Icon(index, href, animation, name, fa);
             })}

@@ -7,13 +7,20 @@ const Projects = () => {
   const projects = [
     {
       name: "nonymous-chat",
-      href: "https://nonymous-chat.vercel.app/",
+      href: "nonymous-chat.vercel.app/",
       description: "a chat where you can feel free to say whatever you want, no one knows it is you",
       img: { imgDesk: "./projects/nonymous-chat.jpeg", imgMob: "/projects/nonymous (2).png" },
+    }, {
+      name: "juki-audio",
+      href: "juki-audio-player.vercel.app/",
+      description: "an audio player using the File System Access API",
+      img: {
+        imgDesk: "./projects/juki-aud.png", imgMob: "/projects/juki-aud-m.jpeg"
+      },
     },
     {
       name: "artisanHR",
-      href: "https://artsan-hr.herokuapp.com",
+      href: "artsan-hr.herokuapp.com",
       description: "artisan service center",
       img: { imgDesk: "./projects/artisan-hr.png", imgMob: "./projects/artsan-hr-mob.jpg" },
       scrollDesk: true,
@@ -48,7 +55,6 @@ const Projects = () => {
       img: { imgDesk: "./projects/codepen.jpeg", imgMob: "./projects/codepenMobi.jpeg" },
     },
   ];
-  //https://codepen.io/paakofiaidoo
   return (
     <div>
       <AwesomeSlider fillParent bullets={false} organicArrows mobileTouch cssModule={[styles]} media={[]}>
