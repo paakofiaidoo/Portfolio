@@ -32,7 +32,7 @@ const Skills = ({ services = [] }) => {
 			animation: web,
 		},
 		{
-			title: "frame works and libraries",
+			title: "frameworks and libraries",
 			content: `React
 				Next.js
 				Svelte`,
