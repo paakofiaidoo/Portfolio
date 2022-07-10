@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/apps/About.module.scss";
-import Browsers from "../atoms/Browsers";
+
 
 const About = () => {
   const about = [

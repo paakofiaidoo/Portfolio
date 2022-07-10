@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../styles/apps/Contact.module.scss";
 import { Toaster } from "react-hot-toast";
 import { Icon } from "../atoms/Icon";

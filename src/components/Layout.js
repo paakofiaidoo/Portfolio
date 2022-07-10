@@ -1,5 +1,4 @@
 import Nav from "../atoms/Nav";
-import Head from "next/head";
 import styles from "../../styles/Layout.module.scss";
 
 const Layout = ({ children, apps, open }) => {

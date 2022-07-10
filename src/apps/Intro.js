@@ -59,7 +59,7 @@ class Intro extends Component {
   intreact = () => {
     var container = this.intro.current;
     var inner = this.avatar.current;
-    let newStyle = "rotateX(0.05deg) rotateY(-0.24deg)";
+    // let newStyle = "rotateX(0.05deg) rotateY(-0.24deg)";
 
     var mouse = {
       _x: 0,
