@@ -5,7 +5,7 @@ import Lottie from "react-lottie";
 import Head from "next/head"
 
 function Application({ style, children, close, layer, app = {} }) {
-  const { title, icon, id, animation, fa } = app;
+  const { title, id, animation, fa } = app;
   const defaultOptions = {
     loop: true,
     autoplay: true,

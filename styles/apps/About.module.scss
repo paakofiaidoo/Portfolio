@@ -1,91 +1,95 @@
 @import "../mixin.scss";
 .about {
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  gap: 1rem;
+  color: #fff;
+  .intro {
     margin: auto;
-    gap: 1rem;
-    color: #fff;
-    .intro {
-        margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1.5rem;
+    flex-direction: row;
+    .pic {
+      max-height: 25rem;
+      @include prefix(
+        (
+          border-radius: 1rem,
+        )
+      );
+      // aspect-ratio: 1;
+      object-fit: cover;
+      object-position: top;
+      max-width: max-content;
+    }
+    .name {
+      font-size: 2rem;
+      margin-left: 1rem;
+      width: 100%;
+      align-items: center;
+      @include prefix(
+        (
+          display: flex,
+        )
+      );
+      flex-direction: column;
+      .sub {
+        font-size: 1rem;
+        @include prefix(
+          (
+            display: flex,
+          )
+        );
         align-items: center;
-        justify-content: center;
-        margin: auto;
-        padding: 1.5rem;
-        flex-direction: row;
-        .pic {
-            max-height: 25rem;
-            @include prefix((border-radius: 1rem));
-            // aspect-ratio: 1;
-            object-fit: cover;
-            object-position: top;
-            max-width: max-content;
-        }
-        .name {
-            font-size: 2rem;
-            margin-left: 1rem;
-            width: 100%;
-            align-items: center;
-            @include prefix(
-                (
-                    display: flex,
-                )
-            );
-            flex-direction: column;
-            .sub {
-                font-size: 1rem;
-                @include prefix(
-                    (
-                        display: flex,
-                    )
-                );
-                align-items: center;
-                // width: 100%;
-                font-family: monospace;
-                margin-top: 1rem;
-                svg {
-                    min-width: 2rem !important;
-                    height: 2rem !important;
-                }
-
-                &:hover {
-                    cursor: pointer;
-
-                    color: aquamarine;
-                }
-            }
-        }
-    }
-    .info {
-        gap: 1rem;
-        width: 100%;
-        flex-direction: column;
-        padding-bottom: 2rem;
-        .text {
-            @include prefix(
-                (
-                    display: flex,
-                )
-            );
-            align-items: center;
-            width: 100%;
-            font-family: monospace;
-            svg {
-                min-width: 2rem !important;
-                height: 2rem !important;
-            }
-        }
-    }
-    span {
-        font-size: small;
+        // width: 100%;
+        font-family: monospace;
         margin-top: 1rem;
-        text-transform: capitalize;
-    }
-    @media only screen and (max-width: 760px) {
-        .intro {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        svg {
+          min-width: 2rem !important;
+          height: 2rem !important;
         }
+
+        &:hover {
+          cursor: pointer;
+
+          color: aquamarine;
+        }
+      }
     }
+  }
+  .info {
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    .text {
+      @include prefix(
+        (
+          display: flex,
+        )
+      );
+      align-items: center;
+      width: 100%;
+      font-family: monospace;
+      svg {
+        min-width: 2rem !important;
+        height: 2rem !important;
+      }
+    }
+  }
+  span {
+    font-size: small;
+    margin-top: 1rem;
+    text-transform: capitalize;
+  }
+  @media only screen and (max-width: 760px) {
+    .intro {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
 }

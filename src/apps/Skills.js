@@ -71,7 +71,7 @@ const Skills = ({ services = [] }) => {
 							<div
 								className={`${styles.option} ${i === active ? styles.active : ""}`}
 								key={i}
-								onClick={(e) => {
+								onClick={() => {
 									console.log("click");
 									setActive(i);
 								}}>
