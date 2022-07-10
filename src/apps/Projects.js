@@ -75,14 +75,14 @@ const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, 
                         {name}{" "}
                     </a>
                 </h3>{" "}
-                <span></span> : <span>{description}</span>
+                <span /> : <span>{description}</span>
             </div>
             <div className={stylesCos.img}>
                 <div id={stylesCos.phone} style={{ display: noMobile ? "none" : "" }}>
-                    <div id={stylesCos.back}></div>
-                    <div id={stylesCos.front}></div>
-                    <div id={stylesCos.camera}></div>
-                    <div id={stylesCos.button}></div>
+                    <div id={stylesCos.back} />
+                    <div id={stylesCos.front} />
+                    <div id={stylesCos.camera} />
+                    <div id={stylesCos.button} />
                     <div id={stylesCos.display}>
                         <span className={stylesCos.upperbefore}>
                             <img className={`${scrollMob ? stylesCos.scrollMin : ""}`} src={imgMob ? imgMob : imgDesk} alt={name} />
@@ -95,7 +95,7 @@ const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, 
                             <img className={`${scrollDesk ? stylesCos.scroll : ""}`} src={imgDesk} alt={name} />
                         </span>
                     </div>
-                    <div className={stylesCos.lower}></div>
+                    <div className={stylesCos.lower} />
                 </div>
             </div>
         </div>
