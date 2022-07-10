@@ -57,8 +57,8 @@ I work well with persons with different backgrounds and personalities in both re
 				{about.map(({ fa, details }, i) => (
 					<div className={`${styles.text} `} key={i} >
 						<FontAwesomeIcon fixedWidth icon={fa} className={`icon`} />
-						<p>{details.split("\n").map((text) => {
-							return <p>{text}</p>
+						<p>{details.split("\n").map((text, ii) => {
+							return <p key={ii}>{text}</p>
 						})}</p>
 					</div>
 				))}
