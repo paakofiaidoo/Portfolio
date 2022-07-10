@@ -1,6 +1,7 @@
 import AwesomeSlider from "react-awesome-slider";
 import styles from "../../styles/apps/Projects.module.scss";
 import stylesCos from "../../styles/apps/ProjectsCos.module.scss";
+import Browsers from "../atoms/Browsers";
 
 const Projects = () => {
   const projects = [
@@ -77,7 +78,9 @@ const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, 
                 </h3>{" "}
                 <span></span> : <span>{description}</span>
             </div>
-            <div className={stylesCos.img}>
+
+            <Browsers mobile={imgMob ? imgMob : imgDesk} desktop={imgDesk}/>
+            {/* <div className={stylesCos.img}>
                 <div id={stylesCos.phone} style={{ display: noMobile ? "none" : "" }}>
                     <div id={stylesCos.back}></div>
                     <div id={stylesCos.front}></div>
@@ -97,7 +100,7 @@ const ProjectSlide = (name, description, href, { imgDesk, imgMob }, scrollDesk, 
                     </div>
                     <div className={stylesCos.lower}></div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
