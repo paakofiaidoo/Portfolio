@@ -2,6 +2,8 @@ import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/apps/About.module.scss";
 import { useState } from "react";
+// import anim from "../../public/animations/avatar.json"
+import { logEventFun } from "../firebase";
 
 const About = () => {
   const [about, setAbout] = useState([])

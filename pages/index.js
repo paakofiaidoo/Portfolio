@@ -10,6 +10,7 @@ import avatar from "../public/animations/user.json";
 import skills from "../public/animations/dumbleiconfitnesshealth.json";
 import projects from "../public/animations/balanceloop.json";
 import contact from "../public/animations/contact.json";
+import { logEventFun } from "../src/firebase";
 
 const Home = () => {
 	const [apps, setApps] = useState([
@@ -59,12 +60,14 @@ const Home = () => {
 
 
 	const open = (idn) => {
+
 		const newApps = apps.map((app) => {
 			const newApp = { ...app };
 			const { isActive, id } = newApp;
 			if (id === idn) {
 				if (!isActive) {
 					newApp.isActive = true;
+					logEventFun(newApp.title)
 					setIndexes((cur) => {
 						return [...cur, newApp];
 					});
