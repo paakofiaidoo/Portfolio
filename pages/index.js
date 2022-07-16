@@ -87,7 +87,7 @@ const Home = () => {
             return indexes.includes(app.id) ? { ...app, isActive: true } : app;
         });
     return (
-        <Layout open={open} navApps={navApps}>
+        <Layout open={open} apps={apps} navApps={navApps}>
             {indexes.map((index, i) => (
                 <Application close={close} app={apps[index]} layer={i} key={i}>
                     <>{apps[index].content}</>

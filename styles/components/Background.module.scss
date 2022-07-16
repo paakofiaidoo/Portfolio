@@ -1,8 +1,27 @@
-.back{
+.back {
     object-fit: cover;
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    padding: 2rem;
+
+    .links {
+        flex-direction: column;
+        // justify-content: space-evenly;
+        .link {
+            margin: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            &:hover {
+                cursor: pointer;
+                background-color: #ffffff30;
+            }
+        }
+    }
 }
