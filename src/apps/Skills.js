@@ -73,7 +73,7 @@ const Skills = ({ services = [] }) => {
 								className={`${styles.option} ${i === active ? styles.active : ""}`}
 								key={i}
 								onClick={(e) => {
-									console.log("click");
+									
 									logEventFun(`viewed skill ${title}`);
 									setActive(i);
 								}}>

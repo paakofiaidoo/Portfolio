@@ -10,7 +10,7 @@ const Intro = () => {
       .then((res) => res.json())
       .then((data) => {
         setContacts(data);
-        console.log(data);
+        
       });
 
     return () => {};
