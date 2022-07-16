@@ -13,100 +13,88 @@ import contact from "../public/animations/contact.json";
 import { logEventFun } from "../src/firebase";
 
 const Home = () => {
-	const [apps, setApps] = useState([
-		{
-			id: 1,
-			title: "About Me",
-			isActive: false,
-			icon: "/navIcons/man.svg",
-			fa: faUserAstronaut,
-			animation: avatar,
-			content: <About />,
-		},
-		{
-			id: 2,
-			title: "Skills",
-			isActive: false,
-			icon: "/navIcons/competence.svg",
-			content: <Skills />,
-			fa: faLaptopCode,
-			animation: skills,
-		},
-		{
-			id: 3,
-			title: "Projects",
-			isActive: false,
-			icon: "/navIcons/project.svg",
-			fa: faProjectDiagram,
-			content: <Projects />,
-			animation: projects,
-		},
-		{
-			id: 4,
-			title: "Contact",
-			isActive: false,
-			icon: "/navIcons/contact.svg",
-			content: <Contact />,
-			fa: faAddressBook,
-			animation: contact,
-			speed: 0.4,
-		},
-	]);
-	const [indexes, setIndexes] = useState([]);
+    const [apps, setApps] = useState([
+        {
+            id: 0,
+            title: "About Me",
+            isActive: false,
+            icon: "/navIcons/man.svg",
+            fa: faUserAstronaut,
+            animation: avatar,
+            content: <About />,
+            nav: true,
+        },
+        {
+            id: 1,
+            title: "Skills",
+            isActive: false,
+            icon: "/navIcons/competence.svg",
+            content: <Skills />,
+            fa: faLaptopCode,
+            animation: skills,
+            nav: true,
+        },
+        {
+            id: 2,
+            title: "Projects",
+            isActive: false,
+            icon: "/navIcons/project.svg",
+            fa: faProjectDiagram,
+            content: <Projects />,
+            animation: projects,
+            nav: true,
+        },
+        {
+            id: 3,
+            title: "Contact",
+            isActive: false,
+            icon: "/navIcons/contact.svg",
+            content: <Contact />,
+            fa: faAddressBook,
+            animation: contact,
+            speed: 0.4,
+            nav: true,
+        },
+    ]);
+    const [indexes, setIndexes] = useState([]);
 
-	useEffect(() => {
-		open(1)
-	}, [])
+    useEffect(() => {
+        open(0);
+    }, []);
 
-
-	const open = (idn) => {
-
-		const newApps = apps.map((app) => {
-			const newApp = { ...app };
-			const { isActive, id } = newApp;
-			if (id === idn) {
-				if (!isActive) {
-					newApp.isActive = true;
-					logEventFun(newApp.title)
-					setIndexes((cur) => {
-						return [...cur, newApp];
-					});
-				} else {
-					setIndexes((cur) => {
-						return [...cur.filter(({ id }) => id !== idn), newApp];
-					});
-				}
-			}
-			return newApp;
-		});
-		setApps(newApps);
-	};
-	const close = (idn) => {
-		const newApps = apps.map((app) => {
-			const newApp = { ...app };
-			const { isActive, id } = newApp;
-			if (id === idn) {
-				if (isActive) {
-					newApp.isActive = false;
-					setIndexes((cur) => {
-						return cur.filter(({ id }) => id !== idn);
-					});
-				}
-			}
-			return newApp;
-		});
-		setApps(newApps);
-	};
-
-	return (
-		<Layout open={open} apps={apps}>
-			{indexes.map((app, i) => (
-				<Application close={close} app={app} layer={i} key={i}>
-					<>{app.content}</>
-				</Application>
-			))}
-		</Layout>
-	);
+    const open = (idn) => {
+        // if app is in index remove it from list and add it to the end or just push it to the list
+        if (indexes.includes(idn)) {
+            setIndexes((cur) => {
+                return [...cur.filter((id) => id !== idn), idn];
+            });
+        } else {
+            setIndexes((cur) => {
+                return [...cur, idn];
+            });
+        }
+    };
+    // logEventFun(newApp.title);
+    const close = (idn) => {
+        //remove id from list
+        setIndexes((cur) => {
+            return [...cur.filter((id) => id !== idn)];
+        });
+    };
+    const navApps = apps
+        .filter(({ nav }) => nav)
+        .map((app) => {
+            return indexes.includes(app.id) ? { ...app, isActive: true } : app;
+        });
+    return (
+        <Layout open={open} navApps={navApps}>
+            {indexes.map((index, i) => (
+                <Application close={close} app={apps[index]} layer={i} key={i}>
+                    <>{apps[index].content}</>
+                </Application>
+            ))}
+        </Layout>
+    );
 };
 
 // export async function getStaticProps(context) {
