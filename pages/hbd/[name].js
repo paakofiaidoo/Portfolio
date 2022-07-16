@@ -25,14 +25,14 @@ const Home = () => {
 					<div className={styles.text}>
 						<div className={styles.cake} >
 							<div className={styles.velas} >
-								<div className={styles.fuego} ></div>
-								<div className={styles.fuego} ></div>
-								<div className={styles.fuego} ></div>
-								<div className={styles.fuego} ></div>
-								<div className={styles.fuego} ></div>
+								<div className={styles.fuego}  />
+								<div className={styles.fuego}  />
+								<div className={styles.fuego}  />
+								<div className={styles.fuego}  />
+								<div className={styles.fuego}  />
 							</div>
-							<div className={styles.cobertura} ></div>
-							<div className={styles.bizcocho} ></div>
+							<div className={styles.cobertura}  />
+							<div className={styles.bizcocho}  />
 						</div>
 
 						<h1>Happy Birthday!🥳{name}🥳</h1>

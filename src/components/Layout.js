@@ -13,7 +13,7 @@ const Layout = ({ children, navApps, open }) => {
             <div className={`${styles.body}`}>
                 <div className={`${styles.night}`}>
                     {stars.map((star, i) => (
-                        <div key={i} className={`${styles.shooting_star}`}></div>
+                        <div key={i} className={`${styles.shooting_star}`} />
                     ))}
                 </div>
                 <main className={`main ${styles.main}`}>{children}</main>
