@@ -17,6 +17,7 @@ const About = () => {
         return () => {};
     }, []);
 
+    
     return (
         <div className={`${styles.about}`}>
             <div className={`${styles.intro} card`}>
