@@ -20,7 +20,7 @@ const About = () => {
     return (
         <div className={`${styles.about}`}>
             <div className={`${styles.intro} card`}>
-                <img src="./brand/me3.png" alt="picture of me" className={`${styles.pic}`} />
+                <img style={{ backgroundImage: "url('./blob.svg')" }} src="./brand/me3.png" alt="picture of me" className={`${styles.pic}`} />
                 <header className={`${styles.name}`}>
                     <h2>Hi 👋,</h2>
                     I am Paa-Kofi Aidoo,
@@ -46,11 +46,12 @@ const About = () => {
                     <div className={`${styles.text} `} key={i}>
                         <FontAwesomeIcon fixedWidth icon={fa} className={`icon`} />
                         <p>
-                            {details.
-// @ts-ignore
-                            split("\n").map((text, ii) => {
-                                return <p key={ii}>{text}</p>;
-                            })}
+                            {details
+                                // @ts-ignore
+                                .split("\n")
+                                .map((text, ii) => {
+                                    return <p key={ii}>{text}</p>;
+                                })}
                         </p>
                     </div>
                 ))}

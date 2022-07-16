@@ -21,7 +21,7 @@ const Nav = ({ links = [], open }) => {
                     </li>
 
                     {links.map((link, i) => (
-                        <NavIcon {...{ ...link, open, i, state, setState }} />
+                        <NavIcon key={i} {...{ ...link, open, i, state, setState }} />
                     ))}
                 </>
                 {/* <a style={{ display: "none" }} href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpaakofiaidoo.tech&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a> */}
