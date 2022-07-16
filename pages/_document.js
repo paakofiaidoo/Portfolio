@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <meta charSet="utf-8"></meta>
+                <meta charSet="utf-8" />
                 <link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
                 <title>Paa-Kofi Aidoo's Portfolio</title>
                 <meta name="description" content={`Hi 👋,
