@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import React from 'react'
 
 export default function Document() {
     return (
@@ -6,7 +7,6 @@ export default function Document() {
             <Head>
                 <meta charSet="utf-8" />
                 <link rel="icon" href="/brand/logo.svg" height="100%" width="100%" />
-                <title>Paa-Kofi Aidoo's Portfolio</title>
                 <meta name="description" content={`Hi 👋,
 I am Paa-Kofi Aidoo,
 I am a Web Developer
