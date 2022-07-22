@@ -10,7 +10,7 @@ function Application({ style, children, close, layer, app = { fa: faSpinner, id:
 
     const Window = (children) => {
         return (
-            <div className={`glass1 ${styles.app}`} style={{ zIndex: layer + 2, ...style }}>
+            <div className={`glass2 ${styles.app}`} style={{ zIndex: layer + 2, ...style }}>
                 <Head>
                     <title>{title}</title>
                 </Head>

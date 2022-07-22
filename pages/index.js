@@ -6,11 +6,10 @@ import Skills from "../src/apps/Skills";
 import Projects from "../src/apps/Projects";
 import Contact from "../src/apps/Contact";
 import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
-import avatar from "../public/animations/user.json";
-import skills from "../public/animations/dumbleiconfitnesshealth.json";
-import projects from "../public/animations/balanceloop.json";
-import contact from "../public/animations/contact.json";
+import {  faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { logEventFun } from "../src/firebase";
+import React from "react";
+import Message from "../src/apps/Message";
 
 const Home = () => {
     const [apps, setApps] = useState([
@@ -20,7 +19,6 @@ const Home = () => {
             isActive: false,
             icon: "/navIcons/man.svg",
             fa: faUserAstronaut,
-            animation: avatar,
             content: <About />,
             nav: true,
         },
@@ -31,7 +29,6 @@ const Home = () => {
             icon: "/navIcons/competence.svg",
             content: <Skills />,
             fa: faLaptopCode,
-            animation: skills,
             nav: true,
         },
         {
@@ -41,7 +38,6 @@ const Home = () => {
             icon: "/navIcons/project.svg",
             fa: faProjectDiagram,
             content: <Projects />,
-            animation: projects,
             nav: true,
         },
         {
@@ -51,15 +47,22 @@ const Home = () => {
             icon: "/navIcons/contact.svg",
             content: <Contact />,
             fa: faAddressBook,
-            animation: contact,
             speed: 0.4,
             nav: true,
+        },
+        {
+            id: 4,
+            title: "Message Me",
+            isActive: false,
+            icon: "/navIcons/contact.svg",
+            content: <Message />,
+            fa: faTelegram,
         },
     ]);
     const [indexes, setIndexes] = useState([]);
 
     useEffect(() => {
-        open(0);
+        // open(0);
     }, []);
 
     const open = (idn) => {
