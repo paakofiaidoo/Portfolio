@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"dev-api": "api.cmd",
 		"build": "next build",
 		"start": "next start -p $PORT",
 		"export": "next export"
