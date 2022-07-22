@@ -1,4 +1,16 @@
 @import "./mixin.scss";
+@import "open-props/style";
+
+/* optional imports that use the props */
+@import "open-props/normalize";
+@import "open-props/buttons";
+
+/* individual imports */
+@import "open-props/colors";
+@import "open-props/easings";
+@import "open-props/animations";
+@import "open-props/sizes";
+@import "open-props/gradients";
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -92,7 +104,11 @@ button {
     font-weight: 700;
     font-size: 0.7rem;
     border: 0px;
-    @include prefix((border-radius: 2rem));
+    @include prefix(
+        (
+            border-radius: 2rem,
+        )
+    );
     @include prefix(
         (
             display: flex,
@@ -225,7 +241,11 @@ img {
         height: 1rem;
         background-color: #fec200;
         position: relative;
-        @include prefix((border-radius: 50%));
+        @include prefix(
+            (
+                border-radius: 50%,
+            )
+        );
         margin-right: 0.2rem;
     }
 }
@@ -236,17 +256,33 @@ img {
     margin-bottom: 1rem;
 }
 .card {
-    @include prefix((border-radius: 2rem));
+    @include prefix(
+        (
+            border-radius: 2rem,
+        )
+    );
     padding: 1rem;
 }
 .card1 {
-    @include prefix((border-radius: 1rem));
-    @include prefix((border-radius: 27px));
+    @include prefix(
+        (
+            border-radius: 1rem,
+        )
+    );
+    @include prefix(
+        (
+            border-radius: 27px,
+        )
+    );
     // background: rgba(#dddddd, 0.2);
     // box-shadow: 50px 50px 100px rgba(#bcbcbc, 0.2), -50px -50px 100px rgba(#fefefe, 0.2);
 }
 .card2 {
-    @include prefix((border-radius: 1rem));
+    @include prefix(
+        (
+            border-radius: 1rem,
+        )
+    );
     background: rgba(#dddddd, 0.2);
     box-shadow: 5px 5px 24px rgba(#d0d0d0, 0.2), -5px -5px 24px rgba(#eaeaea, 0.2);
     :hover {
@@ -259,7 +295,23 @@ img {
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     background-color: rgba(#16346b, 0.75);
     color: #00f8e8 !important;
-    @include prefix((border-radius: 12px));
+    @include prefix(
+        (
+            border-radius: 12px,
+        )
+    );
+    border: 1px solid rgba(#00f8e8, 0.125);
+}
+.glass2 {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(#16346b, 0.1);
+    color: #00f8e8 !important;
+    @include prefix(
+        (
+            border-radius: 12px,
+        )
+    );
     border: 1px solid rgba(#00f8e8, 0.125);
 }
 .anim {
