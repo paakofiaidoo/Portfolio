@@ -1,0 +1,32 @@
+.message {
+    width: 100%;
+    input,
+    textarea {
+        width: 100%;
+        background-color: #00000010;
+        border-bottom: 2px solid #00f8e8;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin: 1rem;
+        height: 3rem;
+        padding: 1rem;
+        color: #fff;
+        &:hover,
+        &:focus,
+        &:focus-within {
+            background-color: #00000030;
+        }
+    }
+    textarea {
+        height: 10rem;
+    }
+    div {
+        flex-direction: column;
+    }
+    button {
+        display: flex;
+        margin-left: auto;
+        margin-right: 0;
+        padding: var(--size-fluid-3) var(--size-fluid-5);
+    }
+}
