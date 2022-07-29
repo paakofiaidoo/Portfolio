@@ -32,12 +32,12 @@ export default (req, res) => {
       scrollDesk: true,
       scrollMob: false,
     },
-    // {
-    //   name: "uv sterilizer",
-    //   href: "https://artsan-hr.herokuapp.com",
-    //   description: "",
-    //   img: { imgDesk: "/projects/artisan-hr.png", imgMob: "" },
-    // },
+    {
+      name: "uv sterilizer",
+      href: "https://www.hackster.io/paakofiaidoo17/alphene-f84a69",
+      description: "This is a device that makes the most inescapable source of germs safe to use anytime, I mean door handles using uv light eliminate germs",
+      img: { imgDesk: "/projects/uv.webp", imgMob: "" },
+    },
     {
       name: "Special relativity calculator",
       href: "https://github.com/paakofiaidoo/Special-reletivity-app",
