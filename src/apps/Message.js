@@ -9,14 +9,15 @@ function Message() {
     const {
         register,
         handleSubmit,
-        formState: { errors },setValue
+        formState: { errors },
+        setValue,
     } = useForm();
     const [sending, setSending] = useState(false);
     const onSubmit = (data) => {
         setSending(true);
 
         axios
-            .post(getStrapiURL("/messages"), { data })
+            .post(getStrapiURL("/messages"), { ...data })
             .then(() => {
                 toast.success("Message sent");
                 setValue("name", "");
