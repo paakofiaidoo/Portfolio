@@ -8,10 +8,10 @@ const Browsers = ({ mobile, desktop }) => {
                 <div className={styles.desktop}>
                     <div className={styles.deskIn}>
                         <div className={styles.top}>
-                            <div className={styles.dot}></div>
-                            <div className={styles.dot}></div>
-                            <div className={styles.dot}></div>
-                            <div className={styles.bar}></div>
+                            <div className={styles.dot} />
+                            <div className={styles.dot} />
+                            <div className={styles.dot} />
+                            <div className={styles.bar} />
                         </div>
                         <div className={styles.content}>
                             <img alt="Laptop screenshot" src={desktop} className={styles.img} />

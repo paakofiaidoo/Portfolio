@@ -10,7 +10,6 @@ const Intro = () => {
             .then((res) => res.json())
             .then((data) => {
                 setContacts(data);
-                console.log(data);
             });
 
         return () => {};
@@ -21,9 +20,13 @@ const Intro = () => {
             <div>
                 <Toaster />
             </div>
-            <img src="./brand/vector/default-monochrome.svg" alt="profile pic" className={`${styles.mobile} ${styles.avatar}`} 
-// @ts-ignore
-            load="lazy" />
+            <img
+                src="./brand/vector/default-monochrome.svg"
+                alt="profile pic"
+                className={`${styles.mobile} ${styles.avatar}`}
+                // @ts-ignore
+                load="lazy"
+            />
             <div className={styles.details}>
                 {/* <div className={styles.contactName}>
           {contacts
