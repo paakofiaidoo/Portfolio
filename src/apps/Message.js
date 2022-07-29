@@ -17,7 +17,7 @@ function Message() {
         setSending(true);
 
         axios
-            .post(getStrapiURL("/messages"), { ...data })
+            .post(getStrapiURL("/messages"), { data })
             .then(() => {
                 toast.success("Message sent");
                 setValue("name", "");
