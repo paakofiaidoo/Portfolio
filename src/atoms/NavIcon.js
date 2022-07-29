@@ -1,10 +1,8 @@
 import styles from "../../styles/atoms/Nav.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Lottie from "react-lottie";
 import React from "react";
 
 export default function NavIcon({ isActive, open, id, i, state, setState, title, fa, classN }) {
- 
     return (
         <li
             className={` ${classN}  ${isActive ? styles.isActive : ""}`}
@@ -23,9 +21,8 @@ export default function NavIcon({ isActive, open, id, i, state, setState, title,
                 setState({});
             }}
         >
-            <FontAwesomeIcon className={` ${styles.linksIcon}`} title={title} icon={fa} color="#25BBA8" />
-
-            <a href="#">{title}</a>
+            <FontAwesomeIcon className={`${styles.linksIcon}`} title={title} icon={fa} color="#25BBA8" />
+            <a>{title}</a>
         </li>
     );
 }

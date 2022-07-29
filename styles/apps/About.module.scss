@@ -1,5 +1,118 @@
+// @import "../mixin.scss";
+// .about {
+//     flex-direction: column;
+//     width: 100%;
+//     height: 100%;
+//     margin: auto;
+//     gap: 1rem;
+//     color: #fff;
+//     .intro {
+//         margin: auto;
+//         align-items: center;
+//         justify-content: center;
+//         margin: auto;
+//         padding: 1.5rem;
+//         flex-direction: row;
+//         .pic {
+//             max-height: 25rem;
+//             @include prefix(
+//                 (
+//                     border-radius: 1rem,
+//                 )
+//             );
+//             // aspect-ratio: 1;
+//             object-fit: cover;
+//             object-position: top;
+//             max-width: max-content;
+//             background-repeat: no-repeat;
+//             background-size: cover;
+//             background-position: center;
+//             padding: 0 5rem;
+//         }
+
+//         .name {
+//             font-size: 2rem;
+//             margin-left: 1rem;
+//             width: 100%;
+//             align-items: center;
+//             @include prefix(
+//                 (
+//                     display: flex,
+//                 )
+//             );
+//             flex-direction: column;
+//             .sub {
+//                 font-size: 1rem;
+//                 @include prefix(
+//                     (
+//                         display: flex,
+//                     )
+//                 );
+//                 align-items: center;
+//                 // width: 100%;
+//                 font-family: monospace;
+//                 margin-top: 1rem;
+//                 svg {
+//                     min-width: 2rem !important;
+//                     height: 2rem !important;
+//                 }
+
+//                 &:hover {
+//                     cursor: pointer;
+
+//                     color: aquamarine;
+//                 }
+//             }
+//         }
+//     }
+//     .info {
+//         gap: 1rem;
+//         width: 100%;
+//         flex-direction: column;
+//         padding-bottom: 2rem;
+//         .text {
+//             @include prefix(
+//                 (
+//                     display: flex,
+//                 )
+//             );
+//             align-items: center;
+//             width: 100%;
+//             font-family: monospace;
+//             svg {
+//                 min-width: 2rem !important;
+//                 height: 2rem !important;
+//             }
+//         }
+//     }
+//     span {
+//         font-size: small;
+//         margin-top: 1rem;
+//         text-transform: capitalize;
+//     }
+//     @media only screen and (max-width: 760px) {
+//         .intro {
+//             flex-direction: column;
+//             align-items: center;
+//             text-align: center;
+//             .pic {
+//                 padding: 0 3rem;
+//             }
+//         }
+//     }
+// }
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import "../mixin.scss";
 .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -8,10 +121,17 @@
     color: #fff;
     .intro {
         margin: auto;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         margin: auto;
         padding: 1.5rem;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         .pic {
             max-height: 25rem;
@@ -20,9 +140,14 @@
                     border-radius: 1rem,
                 )
             );
-            // aspect-ratio: 1;
+
+            -o-object-fit: cover;
+
             object-fit: cover;
+            -o-object-position: top;
             object-position: top;
+            max-width: -webkit-max-content;
+            max-width: -moz-max-content;
             max-width: max-content;
             background-repeat: no-repeat;
             background-size: cover;
@@ -33,13 +158,18 @@
         .name {
             font-size: 2rem;
             margin-left: 1rem;
-            width: 100%;
+            
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             @include prefix(
                 (
                     display: flex,
                 )
             );
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             .sub {
                 font-size: 1rem;
@@ -48,8 +178,9 @@
                         display: flex,
                     )
                 );
+                -webkit-box-align: center;
+                -ms-flex-align: center;
                 align-items: center;
-                // width: 100%;
                 font-family: monospace;
                 margin-top: 1rem;
                 svg {
@@ -68,6 +199,9 @@
     .info {
         gap: 1rem;
         width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         padding-bottom: 2rem;
         .text {
@@ -76,6 +210,8 @@
                     display: flex,
                 )
             );
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             width: 100%;
             font-family: monospace;
@@ -92,7 +228,12 @@
     }
     @media only screen and (max-width: 760px) {
         .intro {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             text-align: center;
             .pic {
