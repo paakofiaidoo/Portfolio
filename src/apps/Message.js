@@ -1,4 +1,3 @@
-// @ts-nocheck
 import axios from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -10,12 +9,11 @@ function Message() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors },setValue
     } = useForm();
     const [sending, setSending] = useState(false);
     const onSubmit = (data) => {
         setSending(true);
-        console.log(data, errors);
 
         axios
             .post(getStrapiURL("/messages"), { data })
@@ -49,7 +47,7 @@ function Message() {
                 <label htmlFor="content">Content*</label> <p style={{ color: "red", fontSize: "0.8rem" }}>{errors.content?.message}</p>
                 <textarea id="content" {...register("content", { required: "Content for message is required" })} placeholder="Wanted to say Hi👋" />
             </div>
-            <button disabled={setSending}>{!sending ? "Send" : "Sending"}</button>
+            <button disabled={sending}>{!sending ? "Send" : "Sending"}</button>
         </form>
     );
 }

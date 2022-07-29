@@ -8,7 +8,7 @@ export const ProjectSlide = (name, description, href, { imgDesk, imgMob }, i) =>
             <Browsers mobile={imgMob ? imgMob : imgDesk} desktop={imgDesk} />
             <div className={stylesCos.caption} data-type="caption">
                 <h3>
-                    <a target="_blank" href={href}>
+                    <a target="_blank" rel='noreferrer' href={href}>
                         {name}
                     </a>
                 </h3>
