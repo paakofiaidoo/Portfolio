@@ -11,7 +11,11 @@
     backdrop-filter: blur(6px) saturate(180%);
     -webkit-backdrop-filter: blur(6px) saturate(180%);
     background-color: rgba(#16346b, 0.75);
-    @include prefix((border-radius: 12px));
+    @include prefix(
+        (
+            border-radius: 12px,
+        )
+    );
     border: 1px solid rgba(255, 255, 255, 0.125);
     margin: 5px;
     width: 95%;
@@ -38,7 +42,11 @@
             cursor: pointer;
             align-items: center;
             //width: 100%;
-            @include prefix((border-radius: 10px));
+            @include prefix(
+                (
+                    border-radius: 10px,
+                )
+            );
             &:hover {
                 background-color: rgba(#fff, 0.1);
             }
@@ -81,17 +89,27 @@
             li {
                 width: auto;
                 background-color: rgba(#000, 0.4);
-                @include prefix((border-radius: 3rem));
+                @include prefix(
+                    (
+                        border-radius: 3rem,
+                    )
+                );
                 margin: 5px;
                 flex-direction: column;
                 padding: 1rem;
+                text-align: center;
 
                 &:nth-child(1) {
                     order: 3;
                 }
                 &:nth-child(2) {
                     order: 1;
+                    .linksIcon,
+                    a {
+                        margin-bottom: -0.3rem;
+                    }
                 }
+
                 &:nth-child(3) {
                     order: 2;
                 }
