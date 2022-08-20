@@ -12,7 +12,7 @@ const loader = () => {
         return {
             images: {
                 loader: "imgix",
-                path: "https://paakofiaidoo.github.io/Portfolio",
+                path: "/Portfolio/",
             },
         };
     }
