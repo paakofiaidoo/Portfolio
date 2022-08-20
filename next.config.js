@@ -13,7 +13,7 @@ const loader = () => {
         return {
             images: {
                 loader: "imgix",
-                // path: "/",
+                path: "/",
             },
         };
     }
