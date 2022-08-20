@@ -1,4 +1,5 @@
 const loader = () => {
+  console.log(process.env.HOST);
     if (process.env.VERCEL_URL) {
         return {};
     } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
