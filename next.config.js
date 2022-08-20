@@ -11,8 +11,7 @@ const loader = () => {
     } else {
         return {
             images: {
-                loader: "imgix",
-                path: "/Portfolio/",
+              unoptimized: true
             },
         };
     }
