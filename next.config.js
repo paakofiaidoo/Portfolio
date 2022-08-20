@@ -1,5 +1,4 @@
 const loader = () => {
-  console.log(process.env.HOST);
     if (process.env.VERCEL_URL) {
         return {};
     } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
@@ -13,7 +12,7 @@ const loader = () => {
         return {
             images: {
                 loader: "imgix",
-                path: "/",
+                path: process.env.HOST,
             },
         };
     }
