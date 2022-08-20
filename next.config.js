@@ -11,7 +11,8 @@ const loader = () => {
     } else {
         return {
             images: {
-              unoptimized: true
+                loader: "akamai",
+                path: "https://paakofiaidoo.github.io/Portfolio",
             },
         };
     }
