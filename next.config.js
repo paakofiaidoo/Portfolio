@@ -12,7 +12,7 @@ const loader = () => {
         return {
             images: {
                 loader: "imgix",
-                path: process.env.HOST,
+                path: "https://paakofiaidoo.github.io/Portfolio",
             },
         };
     }
