@@ -20,8 +20,8 @@ const loader = () => {
 
 module.exports = {
     // ...loader(),
-    basePath: "/Portfolio",
-    assetPrefix: "/Portfolio",
+    // basePath: "/Portfolio",
+    // assetPrefix: "/Portfolio",
     env: {
         // declare here all your variables
         // BASE_URL: process.env.BASE_URL,
