@@ -6,7 +6,7 @@ export default function Document() {
         <Html lang="en">
             <Head>
                 <meta charSet="utf-8" />
-                <link rel="icon" href="/brand/logo.svg"  />
+                <link rel="icon" href="/brand/logo.svg" />
                 <meta
                     name="description"
                     content={`Hi 👋,
@@ -17,6 +17,7 @@ and I live for the pursuit of knowledge`}
                 <meta name="google-site-verification" content="HYCtj1fXyFWpicxWAGkerf1QQmfGML5KlrYk5qe6q9o" />
             </Head>
             <body>
+                {console.log(process.env)}
                 <Main />
                 <NextScript />
             </body>
