@@ -25,6 +25,7 @@ module.exports = {
     env: {
         // declare here all your variables
         // BASE_URL: process.env.BASE_URL,
+        
         REST_URL: process.env.REST_URL,
         API_KEY: process.env.API_KEY,
         APP_ID: process.env.APP_ID,
