@@ -32,7 +32,7 @@ const About = () => {
                     <a
                         className={`${styles.sub}`}
                         // style={{ display: "flex" }}
-                        href="./resume/Paa-Kofi Aidoo resume.pdf"
+                        href="https://docs.google.com/document/d/e/2PACX-1vQCOBKxJvjE-Br8B25EnZFQR9iyyz41WBvV1_Yt7sleXpdthsfVUj4w88g3IWNulnkxl9UQMgwMzkA6/pub"
                         target="_blank"
                         download
                         title="Click to download Resume"
