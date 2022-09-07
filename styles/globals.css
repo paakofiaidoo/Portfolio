@@ -33,3 +33,4 @@ img{
   transition-delay:0s;
   animation-delay: 0s;
 }
+iframe{display:none;visibility:hidden}
