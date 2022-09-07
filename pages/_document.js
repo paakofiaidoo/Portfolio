@@ -14,10 +14,9 @@ I am Paa-Kofi Aidoo,
 I am a Web Developer
 and I live for the pursuit of knowledge`}
                 />
-                <meta name="google-site-verification" content="HYCtj1fXyFWpicxWAGkerf1QQmfGML5KlrYk5qe6q9o" />
+                <meta name="google-site-verification" content="j1IX5sg3yUGLD73PULPJ4hsk8iFWR145MmStStQXUZI" />
             </Head>
             <body>
-                {console.log(process.env)}
                 <Main />
                 <NextScript />
             </body>
