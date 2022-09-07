@@ -15,7 +15,6 @@ function MyApp({ Component, pageProps }) {
         if (process.env.NODE_ENV !== "development") {
             logEventFun("opened");
             analytics;
-
             axios
                 .get("https://api.ipify.org?format=json")
                 .then((res) => {
@@ -46,7 +45,6 @@ function MyApp({ Component, pageProps }) {
         <>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
                 <title>Paa-Kofi Aidoo</title>
             </Head>
             <Component {...pageProps} />
