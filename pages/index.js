@@ -8,7 +8,6 @@ import Contact from "../src/apps/Contact";
 import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 import {  faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { logEventFun } from "../src/firebase";
-import React from "react";
 import Message from "../src/apps/Message";
 
 const Home = () => {

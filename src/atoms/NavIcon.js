@@ -5,7 +5,7 @@ import React from "react";
 export default function NavIcon({ isActive, open, id, i, state, setState, title, fa, classN }) {
     return (
         <li
-            className={` ${classN}  ${isActive ? styles.isActive : ""}`}
+            className={`${classN} ${isActive ? styles.isActive : ""}`}
             onClick={() => {
                 open(id);
             }}

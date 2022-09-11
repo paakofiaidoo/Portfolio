@@ -29,8 +29,5 @@ canvas {
   right: 0;
   z-index: 1;
 }
-img{
-  transition-delay:0s;
-  animation-delay: 0s;
-}
+
 iframe{display:none;visibility:hidden}
