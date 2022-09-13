@@ -28,7 +28,7 @@ export default (req, res) => {
     },
     {
       name: "whatsapp",
-      href: "https://wa.me/233202396856",
+      href: "https://wa.me/233202396858",
       fa: faWhatsapp,
     },
     {
