@@ -11,21 +11,11 @@ const loader = () => {
             },
         };
         return config;
-    }
-    if (process.env.VERCEL_URL) {
-        return {};
     } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
         return {
             images: {
                 loader: "imgix",
                 path: `${process.env.HOST}/${process.env.NEXT_PUBLIC_BASE_PATH}`,
-            },
-        };
-    } else {
-        return {
-            images: {
-                loader: "akamai",
-                path: "https://paakofiaidoo.github.io/Portfolio",
             },
         };
     }
