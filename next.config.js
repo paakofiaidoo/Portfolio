@@ -2,7 +2,7 @@ const loader = () => {
     console.log(process.env);
     let config = {};
     if (process.env.GITHUB_REPOSITORY_OWNER) {
-        config = { basePath: "/Portfolio/", assetPrefix: "/Portfolio/" };
+        config = { basePath: "/Portfolio", assetPrefix: "/Portfolio/" };
         return config;
     }
     if (process.env.VERCEL_URL) {
