@@ -19,7 +19,7 @@ const loader = () => {
 };
 
 module.exports = {
-    // ...loader(),
+    ...loader(),
     // basePath: "/Portfolio",
     // assetPrefix: "/Portfolio",
     env: {
