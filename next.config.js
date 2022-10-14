@@ -1,29 +1,29 @@
-// const loader = () => {
-//     let config = {};
-//     if (process.env.GITHUB_REPOSITORY_OWNER) {
-//         config = {
-//             publicRuntimeConfig: {
-//                 basePath: "/Portfolio" ,
-//             },
-//             basePath: "/Portfolio",
-//             assetPrefix: "/Portfolio",
-//             images: {
-//                 loader: "imgix",
-//             },
-//         };
-//         return config;
-//     } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
-//         return {
-//             images: {
-//                 loader: "imgix",
-//                 path: `${process.env.HOST}/${process.env.NEXT_PUBLIC_BASE_PATH}`,
-//             },
-//         };
-//     }
-// };
+const loader = () => {
+    let config = {};
+    if (process.env.GITHUB_REPOSITORY_OWNER) {
+        config = {
+            publicRuntimeConfig: {
+                basePath: "/Portfolio" ,
+            },
+            basePath: "/Portfolio",
+            assetPrefix: "/Portfolio",
+            images: {
+                loader: "imgix",
+            },
+        };
+        return config;
+    } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
+        return {
+            images: {
+                loader: "imgix",
+                // path: `${process.env.HOST}/${process.env.NEXT_PUBLIC_BASE_PATH}`,
+            },
+        };
+    }
+};
 
 module.exports = {
-    // ...loader(),
+    ...loader(),
     images: {
         unoptimized: true,
     },
