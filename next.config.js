@@ -24,7 +24,9 @@
 
 module.exports = {
     // ...loader(),
-
+    images: {
+        unoptimized: true,
+    },
     env: {
         // declare here all your variables
         // BASE_URL: process.env.BASE_URL,
