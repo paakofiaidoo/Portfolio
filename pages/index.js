@@ -6,7 +6,7 @@ import Skills from "../src/apps/Skills";
 import Projects from "../src/apps/Projects";
 import Contact from "../src/apps/Contact";
 import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
-import {  faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { logEventFun } from "../src/firebase";
 import Message from "../src/apps/Message";
 
@@ -61,7 +61,7 @@ const Home = () => {
     const [indexes, setIndexes] = useState([]);
 
     useEffect(() => {
-        // open(0);
+        open(0);
     }, []);
 
     const open = (idn) => {

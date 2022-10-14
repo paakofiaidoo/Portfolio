@@ -21,7 +21,7 @@ const Intro = () => {
                 <Toaster />
             </div>
             <img
-                src="./brand/vector/default-monochrome.svg"
+                src="brand/vector/default-monochrome.svg"
                 alt="profile pic"
                 className={`${styles.mobile} ${styles.avatar}`}
                 // @ts-ignore

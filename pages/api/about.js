@@ -24,7 +24,7 @@ export default (req, res) => {
             details: `René Descartes said, "cogito, ergo sum",  (Latin: “I think, therefore I am),	
         so firstly I am thinking thing and a good thinker if I might add,
         I am a passionate person who loves to learn and seek to apply knowledge in to solutions.
-        I'm a Full Stack Developer with experienced building with divers libraires and frameworks in multiple programing languages really passionate about building solutions and tools. 
+        I'm a Full Stack Developer with experienced building with divers libraries and frameworks in multiple programing languages really passionate about building solutions and tools. 
         I am also a skilled Cloud DevOps Engineer , deploying applications to multiple platforms like AWS, Heroku and Digital Ocean.
         always trying to be in step with the latest technology and looking for new ways to improve myself and my work.
         I work well with persons with different backgrounds and personalities in both remote and physical work environments.
