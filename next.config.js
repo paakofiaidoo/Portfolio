@@ -1,4 +1,5 @@
 const loader = () => {
+    console.log(process.env.HOST);
     if (process.env.VERCEL_URL) {
         return {};
     } else if (process.env.NEXT_PUBLIC_BASE_PATH) {
@@ -20,8 +21,8 @@ const loader = () => {
 
 module.exports = {
     ...loader(),
-    // basePath: "/Portfolio",
-    // assetPrefix: "/Portfolio",
+    basePath: "/Portfolio",
+    assetPrefix: "/Portfolio",
     env: {
         // declare here all your variables
         // BASE_URL: process.env.BASE_URL,
