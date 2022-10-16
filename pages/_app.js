@@ -4,12 +4,11 @@ import "../styles/index.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { detect } from "detect-browser";
-import { getStrapiURL } from "./api";
 import Head from "next/head";
 import { analytics, logEventFun, db } from "../src/firebase";
 import { ref, set, push } from "firebase/database";
 // import "firebase/analytics";
-import React from "react";
+
 
 function MyApp({ Component, pageProps }) {
     const MessageListRef = ref(db, "users");

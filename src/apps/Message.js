@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { getStrapiURL } from "../../pages/api";
 import styles from "../../styles/apps/Message.module.scss";
 import { useForm } from "react-hook-form";
 import { ref, set, push } from "firebase/database";
