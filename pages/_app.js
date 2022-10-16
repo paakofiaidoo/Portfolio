@@ -41,7 +41,6 @@ function MyApp({ Component, pageProps }) {
                             location,
                             browser: detect(),
                         });
-                        console.log("sent");
                     }
                 })
                 .catch((err) => {
