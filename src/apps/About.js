@@ -21,7 +21,7 @@ const About = () => {
     return (
         <div className={`${styles.about}`}>
             <div className={`${styles.intro} card`}>
-                <img style={{ backgroundImage: "url('blob.svg')" }} src="brand/me3.png" alt="picture of me" className={`${styles.pic}`} />
+                <img style={{ backgroundImage: "url('blob.svg')" }} src="brand/me3.png" alt="profile pic" className={`${styles.pic}`} />
                 <header className={`${styles.name}`}>
                     <h2>Hi 👋,</h2>
                     I am Paa-Kofi Aidoo,
