@@ -1,4 +1,4 @@
-import "firebase/analytics";
+// import "firebase/analytics";
 import { initializeApp, getApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 // import { getMessaging } from "firebase/messaging";
