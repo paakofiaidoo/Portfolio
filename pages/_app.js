@@ -9,7 +9,6 @@ import { analytics, logEventFun, db } from "../src/firebase";
 import { ref, set, push } from "firebase/database";
 // import "firebase/analytics";
 
-
 function MyApp({ Component, pageProps }) {
     const MessageListRef = ref(db, "users");
 
@@ -35,9 +34,32 @@ function MyApp({ Component, pageProps }) {
                     });
                 })
                 .then((location) => {
-                    if (location.org !== "AMAZON-02"||location.org !== "AMAZON-AES") {
+                    if (location.org !== "AMAZON-02" || location.org !== "AMAZON-AES") {
+                        const {
+                            city,
+                            country_name,
+                            ip,
+                            languages,
+                            latitude,
+                            longitude,
+                            network,
+                            org,
+                            postal,
+                            region,
+                            timezone
+                        } = location;
                         writeMessageData({
-                            location,
+                            city,
+                            country_name,
+                            ip,
+                            languages,
+                            latitude,
+                            longitude,
+                            network,
+                            org,
+                            postal,
+                            region,
+                            timezone,
                             browser: detect(),
                         });
                     }
