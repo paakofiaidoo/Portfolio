@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
                     });
                 })
                 .then((location) => {
-                    if (location.org !== "AMAZON-02") {
+                    if (location.org !== "AMAZON-02"||location.org !== "AMAZON-AES") {
                         writeMessageData({
                             location,
                             browser: detect(),
