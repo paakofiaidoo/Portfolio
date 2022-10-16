@@ -4,6 +4,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { getStrapiURL } from "../../pages/api";
 import styles from "../../styles/apps/Message.module.scss";
 import { useForm } from "react-hook-form";
+import { ref, set, push } from "firebase/database";
+import { analytics, logEventFun, db } from "../firebase";
 
 function Message() {
     const {
@@ -15,20 +17,28 @@ function Message() {
     const [sending, setSending] = useState(false);
     const onSubmit = (data) => {
         setSending(true);
+        // logEventFun("new message");
+        writeMessageData(data);
+    };
+    const MessageListRef = ref(db, "message");
 
-        axios
-            .post(getStrapiURL("/messages"), { data })
+    const writeMessageData = (message) => {
+        const newMessageRef = push(MessageListRef);
+        set(newMessageRef, {
+            ...message,
+        })
             .then(() => {
                 toast.success("Message sent");
-                setValue("name", "");
+                setValue("content", "");
                 setSending(false);
             })
             .catch(() => {
                 toast.error("Error sending message");
                 setSending(false);
             });
+        return newMessageRef.key;
     };
-    console.log(errors);
+    // console.log(errors);
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.message}>
             <Toaster />
