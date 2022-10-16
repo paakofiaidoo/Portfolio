@@ -2,15 +2,25 @@ import "../styles/globals.css";
 import "../styles/Normalizer.css";
 import "../styles/index.scss";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { detect } from "detect-browser";
 import { getStrapiURL } from "./api";
 import Head from "next/head";
-import { analytics, logEventFun } from "../src/firebase";
-import "firebase/analytics";
+import { analytics, logEventFun, db } from "../src/firebase";
+import { ref, set, push } from "firebase/database";
+// import "firebase/analytics";
 import React from "react";
 
 function MyApp({ Component, pageProps }) {
+    const MessageListRef = ref(db, "users");
+
+    const writeMessageData = (message) => {
+        const newMessageRef = push(MessageListRef);
+        set(newMessageRef, {
+            ...message,
+        });
+        return newMessageRef.key;
+    };
     useEffect(() => {
         if (process.env.NODE_ENV !== "development") {
             logEventFun("opened");
@@ -27,12 +37,11 @@ function MyApp({ Component, pageProps }) {
                 })
                 .then((location) => {
                     if (location.org !== "AMAZON-02") {
-                        axios.post(getStrapiURL("/visitors"), {
-                            data: {
-                                location,
-                                browser: detect(),
-                            },
+                        writeMessageData({
+                            location,
+                            browser: detect(),
                         });
+                        console.log("sent");
                     }
                 })
                 .catch((err) => {
