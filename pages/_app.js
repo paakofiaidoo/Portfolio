@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "../styles/Normalizer.css";
 import "../styles/index.scss";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { detect } from "detect-browser";
 import Head from "next/head";
 import { analytics, logEventFun, db } from "../src/firebase";

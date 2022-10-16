@@ -1,10 +1,9 @@
-import axios from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import styles from "../../styles/apps/Message.module.scss";
 import { useForm } from "react-hook-form";
 import { ref, set, push } from "firebase/database";
-import { analytics, logEventFun, db } from "../firebase";
+import {  db } from "../firebase";
 
 function Message() {
     const {
