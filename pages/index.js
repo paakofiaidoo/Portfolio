@@ -61,7 +61,7 @@ const Home = () => {
     const [indexes, setIndexes] = useState([]);
 
     useEffect(() => {
-        open(0);
+        // open(0);
     }, []);
 
     const open = (idn) => {
