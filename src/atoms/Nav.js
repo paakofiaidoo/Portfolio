@@ -14,9 +14,9 @@ const Nav = ({ links = [], open }) => {
             <ul className={`links ${styles.links}`}>
                 <>
                     <li>
-                        <a href="./">
-                            <Image className={`icon ${styles.linksIcon}`} src="brand/vector/default-monochrome.svg" alt="Paa-Kofi Aidoo logo" width={60} height={60} />
-                        </a>
+                        {/* <a href="./"> */}
+                            <Image className={`icon ${styles.linksIcon}`} src="/brand/vector/default-monochrome.svg" alt="Paa-Kofi Aidoo logo" width={60} height={60} />
+                        {/* </a> */}
                     </li>
 
                     {links.map((link, i) => (
