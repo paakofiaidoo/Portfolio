@@ -5,9 +5,10 @@ import axios from "axios";
 import { useEffect } from "react";
 import { detect } from "detect-browser";
 import Head from "next/head";
+import { Analytics } from '@vercel/analytics/react';
 import { analytics, logEventFun, db } from "../src/firebase";
 import { ref, set, push } from "firebase/database";
-// import "firebase/analytics";
+
 
 function MyApp({ Component, pageProps }) {
     const MessageListRef = ref(db, "users");
@@ -76,6 +77,7 @@ function MyApp({ Component, pageProps }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Paa-Kofi Aidoo</title>
             </Head>
+            <Analytics />
             <Component {...pageProps} />
         </>
     );
