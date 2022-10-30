@@ -12,7 +12,7 @@ export default function Document() {
                     name="description"
                     content={`Hi 👋,
 I am Paa-Kofi Aidoo,
-I am a Web Developer
+A Full Stack Developer, Cloud DevOps Engineer
 and I live for the pursuit of knowledge`}
                 />
                 <meta name="google-site-verification" content="j1IX5sg3yUGLD73PULPJ4hsk8iFWR145MmStStQXUZI" />
