@@ -13,6 +13,10 @@ const Background = ({ apps, open }) => {
                 {apps.map((app, i) => (
                     <NavIcon key={i} {...{ ...app, open, i, state, setState, animation: false, classN: styles.link }} />
                 ))}
+                <a href="https://www.canva.com/design/DAFR92_dtkg/ZoB3bGimK1zqx9GqxS1ZRA/view" target={"_blank"} className={styles.link}      >
+                    <img src="/efems.png" style={{ width: "3rem", height: "100%" }} className={`${styles.linksIcon}`} />
+                    <p>{"FEMSBOOTCAMP22"}</p>
+                </a>
             </div>
         </div>
     );
