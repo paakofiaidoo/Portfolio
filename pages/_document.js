@@ -8,6 +8,7 @@ export default function Document() {
             <Head>
                 <meta charSet="utf-8" />
                 <link rel="icon" href="/brand/logo.svg" />
+                <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
                 <meta
                     name="description"
                     content={`Hi 👋,
@@ -47,7 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </Head>
             <body>
                 <noscript>
-                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BW662B" height="0" width="0" ></iframe>
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BW662B" height="0" width="0"></iframe>
                 </noscript>
                 <Main />
                 <NextScript />
