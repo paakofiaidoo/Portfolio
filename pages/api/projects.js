@@ -1,7 +1,12 @@
-export default (req, res) => {
+export default ( req, res ) => {
   res.statusCode = 200;
-  res.json([
+  res.json( [
     {
+      name: "WorkShop Speaker at  FeMS Bootcamp22",
+      href: "https://www.canva.com/design/DAFR92_dtkg/ZoB3bGimK1zqx9GqxS1ZRA/view",
+      description: "In the workshop I focused on Problem-Solving with code and was an excellent opportunity to share my knowledge and experiences with the attendees",
+      img: { imgDesk: "./projects/workshop1.jpg", imgMob: "/projects/workshop2.jpg" },
+    }, {
       name: "nonymous-chat",
       href: "https://nonymous-chat.vercel.app/",
       description: "a chat where you can feel free to say whatever you want, no one knows it is you",
@@ -51,5 +56,5 @@ export default (req, res) => {
       description: " this contains my playground of works",
       img: { imgDesk: "./projects/codepen.jpeg", imgMob: "./projects/codepenMobi.jpeg" },
     },
-  ]);
+  ] );
 };

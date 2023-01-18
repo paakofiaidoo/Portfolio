@@ -109,6 +109,7 @@
 */
 
 @import "../mixin.scss";
+
 .about {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -119,6 +120,7 @@
     margin: auto;
     gap: 1rem;
     color: #fff;
+
     .intro {
         margin: auto;
         -webkit-box-align: center;
@@ -133,13 +135,11 @@
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
+
         .pic {
             max-height: 25rem;
-            @include prefix(
-                (
-                    border-radius: 1rem,
-                )
-            );
+            @include prefix((border-radius: 1rem,
+                ));
 
             -o-object-fit: cover;
 
@@ -158,31 +158,27 @@
         .name {
             font-size: 2rem;
             margin-left: 1rem;
-            
+
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
-            @include prefix(
-                (
-                    display: flex,
-                )
-            );
+            @include prefix((display: flex,
+                ));
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;
             flex-direction: column;
+
             .sub {
                 font-size: 1rem;
-                @include prefix(
-                    (
-                        display: flex,
-                    )
-                );
+                @include prefix((display: flex,
+                    ));
                 -webkit-box-align: center;
                 -ms-flex-align: center;
                 align-items: center;
                 font-family: monospace;
                 margin-top: 1rem;
+
                 svg {
                     min-width: 2rem !important;
                     height: 2rem !important;
@@ -196,6 +192,7 @@
             }
         }
     }
+
     .info {
         gap: 1rem;
         width: 100%;
@@ -204,28 +201,33 @@
         -ms-flex-direction: column;
         flex-direction: column;
         padding-bottom: 2rem;
+
         .text {
-            @include prefix(
-                (
-                    display: flex,
-                )
-            );
+            @include prefix((display: flex,
+                ));
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
             width: 100%;
             font-family: monospace;
+
+            p {
+                max-inline-size: 100%;
+            }
+
             svg {
                 min-width: 2rem !important;
                 height: 2rem !important;
             }
         }
     }
+
     span {
         font-size: small;
         margin-top: 1rem;
         text-transform: capitalize;
     }
+
     @media only screen and (max-width: 760px) {
         .intro {
             -webkit-box-orient: vertical;
@@ -236,6 +238,7 @@
             -ms-flex-align: center;
             align-items: center;
             text-align: center;
+
             .pic {
                 padding: 0 3rem;
             }
