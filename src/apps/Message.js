@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import styles from "../../styles/apps/Message.module.scss";
 import { useForm } from "react-hook-form";
 import { ref, set, push } from "firebase/database";
-import {  db } from "../firebase";
+import { db } from "../firebase";
 
 function Message() {
     const {
@@ -13,28 +13,29 @@ function Message() {
         setValue,
     } = useForm();
     const [sending, setSending] = useState(false);
-    const onSubmit = (data) => {
-        setSending(true);
-        // logEventFun("new message");
-        writeMessageData(data);
+    const keepCopy = (message) => {
+        try {
+            set(push(ref(db, "message")), { ...message, at: Date.now() }).catch(() => {});
+        } catch (e) {}
     };
-    const MessageListRef = ref(db, "message");
 
-    const writeMessageData = (message) => {
-        const newMessageRef = push(MessageListRef);
-        set(newMessageRef, {
-            ...message,
-        })
-            .then(() => {
-                toast.success("Message sent");
-                setValue("content", "");
-                setSending(false);
-            })
-            .catch(() => {
-                toast.error("Error sending message");
-                setSending(false);
+    const onSubmit = async (data) => {
+        setSending(true);
+        try {
+            const r = await fetch("/api/message", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
             });
-        return newMessageRef.key;
+            if (!r.ok) throw new Error("send");
+            keepCopy(data);
+            toast.success("Message sent");
+            setValue("content", "");
+        } catch (e) {
+            toast.error("Could not send, please email me directly");
+        } finally {
+            setSending(false);
+        }
     };
     // console.log(errors);
     return (

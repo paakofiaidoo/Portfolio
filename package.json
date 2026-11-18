@@ -23,6 +23,7 @@
 		"detect-browser": "^5.3.0",
 		"firebase": "^9.12.1",
 		"next": "^12.3.1",
+		"nodemailer": "6",
 		"open-props": "^1.4.16",
 		"primeicons": "^6.0.1",
 		"primereact": "^8.7.0",
