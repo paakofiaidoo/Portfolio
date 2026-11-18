@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../../styles/components/Layout.module.scss";
 
-const COUNT = 36;
+const COUNT = 70;
+const TOUCH = 10; // two star heads closer than this collide
 const GM = 1500; // px^3 / frame^2: a star passing 150px away at cruise speed bends about 90 degrees
 const R = 13; // planet radius: closer than this is an impact
 const SOFT = 30;
@@ -12,7 +13,8 @@ const rnd = (a, b) => a + Math.random() * (b - a);
 /* The shooting stars are bodies in free flight and the pointer is a planet: inverse-square gravity,
    no damping. A star on a collision course falls in and crashes; the rest swing past on a curved
    (hyperbolic) path and fly on. Each streak is the path the star flew, drawn on the canvas, so it
-   curves with the flight. Static under prefers-reduced-motion. */
+   curves with the flight. A star that hits the planet, or another star, explodes into sparks that
+   the planet's gravity then pulls on too. Static under prefers-reduced-motion. */
 const Night = () => {
     const root = useRef(null);
     const planet = useRef(null);
@@ -50,6 +52,29 @@ const Night = () => {
             }
             if (s.hist.length > 120) s.hist.length = 120;
         };
+        let sparks = [], rings = [];
+        const explode = (x, y, vx, vy, n) => {
+            for (let i = 0; i < n; i++) {
+                const a = Math.random() * Math.PI * 2, v = rnd(1.2, 6.5);
+                sparks.push({ x, y, vx: vx * 0.35 + Math.cos(a) * v, vy: vy * 0.35 + Math.sin(a) * v, life: 1, decay: rnd(0.018, 0.04), hot: Math.random() < 0.3 });
+            }
+            rings.push({ x, y, r: 4, life: 1 });
+            if (sparks.length > 700) sparks.splice(0, sparks.length - 700);
+        };
+        const drawBlasts = () => {
+            ctx.lineCap = "round";
+            for (const r of rings) {
+                ctx.beginPath(); ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(190,220,255,${r.life * 0.8})`; ctx.lineWidth = 1 + 3 * r.life; ctx.stroke();
+                ctx.beginPath(); ctx.arc(r.x, r.y, r.r * 0.45, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(230,240,255,${r.life * r.life * 0.55})`; ctx.fill();
+            }
+            for (const p of sparks) {
+                ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * 2.2, p.y - p.vy * 2.2);
+                ctx.strokeStyle = p.hot ? `rgba(254,194,0,${p.life})` : `rgba(170,205,255,${p.life})`;
+                ctx.lineWidth = 1 + 1.6 * p.life; ctx.stroke();
+            }
+        };
         const drawTails = () => {
             ctx.clearRect(0, 0, w, h);
             ctx.lineCap = "butt";
@@ -65,6 +90,7 @@ const Night = () => {
                     ctx.strokeStyle = `rgba(95,145,255,${a})`; ctx.lineWidth = 1.4 + 2.6 * k; ctx.stroke();
                 }
             }
+            drawBlasts();
         };
         const stars = Array.from(el.querySelectorAll("[data-star]")).map((node, i) => {
             const s = { node, alpha: 0.5 + ((i * 37) % 50) / 100 };
@@ -82,8 +108,14 @@ const Night = () => {
         const m = { on: false, x: 0, y: 0, px: 0, py: 0 };
         let raf = 0, last = performance.now();
 
+        const destroy = (s) => {
+            s.dead = true;
+            s.node.classList.add(styles.crash);
+            setTimeout(() => { s.node.classList.remove(styles.crash); launch(s); paint(s); }, 420);
+        };
         const tick = (t) => {
             const dt = Math.min(3, (t - last) / 16.7) / SUB; last = t;
+            const step = dt * SUB;
             if (m.on) { m.px += (m.x - m.px) * 0.3; m.py += (m.y - m.py) * 0.3; }
             for (const s of stars) {
                 if (s.dead) { s.hist.splice(-4); continue; }
@@ -91,7 +123,7 @@ const Night = () => {
                     if (m.on) {
                         const dx = m.px - s.x, dy = m.py - s.y;
                         const r2 = dx * dx + dy * dy, r = Math.sqrt(r2);
-                        if (r < R) { s.dead = true; break; }
+                        if (r < R) { s.hit = true; break; }
                         const a = GM / (r2 + SOFT);
                         s.vx += (dx / r) * a * dt; s.vy += (dy / r) * a * dt;
                         const sp = Math.hypot(s.vx, s.vy);
@@ -99,20 +131,49 @@ const Night = () => {
                     }
                     s.x += s.vx * dt; s.y += s.vy * dt;
                 }
-                if (s.dead) {
-                    s.x = m.px; s.y = m.py; paint(s); remember(s);
-                    s.node.classList.add(styles.crash);
+                if (s.hit) {
+                    s.hit = false;
+                    // debris sprays back off the surface, away from the planet's centre
+                    const nx = (s.x - m.px) / R, ny = (s.y - m.py) / R;
+                    explode(s.x, s.y, nx * 6 - s.vx * 0.4, ny * 6 - s.vy * 0.4, 26);
+                    paint(s); remember(s);
+                    destroy(s);
                     if (planet.current) {
                         planet.current.classList.remove(styles.hit);
                         void planet.current.offsetWidth;
                         planet.current.classList.add(styles.hit);
                     }
-                    setTimeout(() => { s.node.classList.remove(styles.crash); launch(s); paint(s); }, 420);
                     continue;
                 }
                 if (s.x < -360 || s.x > w + 360 || s.y < -360 || s.y > h + 360) launch(s);
                 paint(s); remember(s);
             }
+            for (let i = 0; i < stars.length; i++) {
+                const a = stars[i];
+                if (a.dead || a.x < 0 || a.y < 0 || a.x > w || a.y > h) continue;
+                for (let j = i + 1; j < stars.length; j++) {
+                    const b = stars[j];
+                    if (b.dead) continue;
+                    const dx = a.x - b.x, dy = a.y - b.y;
+                    if (dx * dx + dy * dy > TOUCH * TOUCH) continue;
+                    explode((a.x + b.x) / 2, (a.y + b.y) / 2, (a.vx + b.vx) / 2, (a.vy + b.vy) / 2, 34);
+                    destroy(a); destroy(b);
+                    break;
+                }
+            }
+            for (const p of sparks) {
+                if (m.on) {
+                    const dx = m.px - p.x, dy = m.py - p.y, r2 = dx * dx + dy * dy, r = Math.sqrt(r2) || 1;
+                    if (r < R) { p.life = 0; continue; }
+                    const g = GM / (r2 + SOFT);
+                    p.vx += (dx / r) * g * step; p.vy += (dy / r) * g * step;
+                }
+                p.vx *= 0.985; p.vy *= 0.985;
+                p.x += p.vx * step; p.y += p.vy * step; p.life -= p.decay * step;
+            }
+            sparks = sparks.filter((p) => p.life > 0);
+            for (const r of rings) { r.r += 3.2 * step; r.life -= 0.045 * step; }
+            rings = rings.filter((r) => r.life > 0);
             drawTails();
             if (planet.current) {
                 planet.current.style.opacity = m.on ? "1" : "0";
