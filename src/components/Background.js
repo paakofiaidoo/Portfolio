@@ -7,7 +7,7 @@ import NavIcon from "../atoms/NavIcon";
 const shortcuts = [
     { title: "Fittaa", href: "https://fittaa.com", icon: "/shortcuts/fittaa.svg" },
     { title: "Ownaz", href: "https://ownaz.tech", icon: "/shortcuts/ownaz.png" },
-    { title: "cowtree", href: "https://github.com/paakofiaidoo/cowtree", icon: "/shortcuts/cowtree.svg" },
+    { title: "cowtree", href: "https://paakofiaidoo.github.io/cowtree/", icon: "/shortcuts/cowtree.svg" },
     // { title: "Lyk Africa", href: "https://lykafrica.com", icon: "/shortcuts/lykafrica.svg" },
     // { title: "SignalHive", href: "https://signalhive.net", icon: "/shortcuts/signalhive.svg" },
     // { title: "Sonarox", href: "https://sonarox.tech", icon: "/shortcuts/sonarox.svg" },
