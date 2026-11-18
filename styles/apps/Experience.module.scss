@@ -17,6 +17,14 @@
         padding: 0;
     }
 
+    li,
+    p,
+    h3,
+    h4 {
+        max-inline-size: 100%;
+        padding-inline-start: 0;
+    }
+
     .timeline {
         display: flex;
         flex-direction: column;
