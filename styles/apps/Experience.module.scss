@@ -1,0 +1,167 @@
+@import "../mixin.scss";
+
+.experience {
+    width: 100%;
+    color: #fff;
+    font-family: monospace;
+    padding: 1rem 1.5rem 2rem;
+    display: block;
+
+    ol,
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        border-left: 2px solid rgba(#25bba8, 0.5);
+        margin-left: 0.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .company {
+        position: relative;
+        background: rgba(#16346b, 0.35);
+        border: 1px solid rgba(#00f8e8, 0.125);
+        padding: 1.25rem 1.5rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: calc(-1.5rem - 7px);
+            top: 1.6rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #25bba8;
+            box-shadow: 0 0 0 4px rgba(#25bba8, 0.25);
+        }
+    }
+
+    .head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem 1rem;
+
+        h3 {
+            margin: 0;
+            font-size: 1.35rem;
+            color: #00f8e8;
+        }
+    }
+
+    .where {
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    .product {
+        margin: 0.5rem 0 0.25rem;
+        color: #fec200;
+        font-size: 0.9rem;
+    }
+
+    .role {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px dashed rgba(#fff, 0.15);
+
+        &:first-of-type {
+            border-top: 0;
+        }
+    }
+
+    .roleHead {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.25rem 1rem;
+
+        h4 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        time {
+            font-size: 0.85rem;
+            color: #25bba8;
+            white-space: nowrap;
+        }
+    }
+
+    .role ul {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: 0.9rem;
+            line-height: 1.45;
+
+            &::before {
+                content: "▹";
+                position: absolute;
+                left: 0;
+                color: #25bba8;
+            }
+        }
+    }
+
+    .eduTitle {
+        margin: 2rem 0 0.75rem;
+        font-size: 1.35rem;
+        color: #00f8e8;
+    }
+
+    .edu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 1rem;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            background: rgba(#16346b, 0.35);
+            border: 1px solid rgba(#00f8e8, 0.125);
+            padding: 1rem 1.25rem;
+
+            span {
+                font-size: 0.85rem;
+                opacity: 0.85;
+            }
+
+            time {
+                font-size: 0.85rem;
+                color: #25bba8;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 760px) {
+        padding: 0.75rem;
+
+        .timeline {
+            margin-left: 0.25rem;
+            padding-left: 1rem;
+        }
+
+        .company {
+            padding: 1rem;
+
+            &::before {
+                left: calc(-1rem - 7px);
+            }
+        }
+    }
+}

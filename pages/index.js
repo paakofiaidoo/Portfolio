@@ -5,7 +5,8 @@ import About from "../src/apps/About";
 import Skills from "../src/apps/Skills";
 import Projects from "../src/apps/Projects";
 import Contact from "../src/apps/Contact";
-import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import Experience from "../src/apps/Experience";
+import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { logEventFun } from "../src/firebase";
 import Message from "../src/apps/Message";
@@ -41,6 +42,15 @@ const Home = () => {
         },
         {
             id: 3,
+            title: "Experience",
+            isActive: false,
+            icon: "/navIcons/resume.svg",
+            fa: faBriefcase,
+            content: <Experience />,
+            nav: true,
+        },
+        {
+            id: 4,
             title: "Contact",
             isActive: false,
             icon: "/navIcons/contact.svg",
@@ -50,7 +60,7 @@ const Home = () => {
             nav: true,
         },
         {
-            id: 4,
+            id: 5,
             title: "Message Me",
             isActive: false,
             icon: "/navIcons/contact.svg",

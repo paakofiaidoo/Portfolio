@@ -26,7 +26,9 @@ const About = () => {
                     <h2>Hi 👋,</h2>
                     I am Paa-Kofi Aidoo,
                     <br />
-                    A Full Stack Developer, Cloud DevOps Engineer
+                    Technical Lead and Product Developer,
+                    <br />
+                    Full Stack Software Engineer and Cloud DevOps Engineer,
                     <br />
                     and I live for the pursuit of knowledge
                     <a

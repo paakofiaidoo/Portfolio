@@ -6,6 +6,8 @@ import web from "../../public/animations/web.json";
 import react from "../../public/animations/reactnative.json";
 import pro from "../../public/animations/programmingcomputer.json";
 import electronics from "../../public/animations/circuit.json";
+import cloud from "../../public/animations/isometriclaptop.json";
+import data from "../../public/animations/cpuprocessor.json";
 import { Recommendations } from "../atoms/Recommendations";
 import { logEventFun } from "../firebase";
 // import { faUser } from "@fortawesome/free-solid-svg-icons"
@@ -22,44 +24,50 @@ const Skills = ({ services = [] }) => {
     const [active, setActive] = useState(0);
     services = [
         {
-            title: "web skills",
-            content: `- HTML
-			- CSS & SCSS
-			- JAVASCRIPT
-			- Prototyping UI with Adobe XD
-			(Design practices: Responsive web design)
-`,
-            animation: web,
-        },
-        {
-            title: "frameworks and libraries",
-            content: `- React
-			- Next.js
-			- Svelte
-			- Jmix (Spiring Boot)`,
-            animation: react,
-        },
-        {
-            title: "programing stack and other skills",
-            content: `- C++
-				- Python
-				- Java
-				- PostgreSQL
-				- Git
-				- Googling
-				- Building of Chrome extensions
-				- Basic Networking
-			`,
+            title: "languages & backend",
+            content: `- Go, Rust, Java, JavaScript/TypeScript
+			- Python, C++, C#, Dart, SQL
+			- Spring Boot, Jmix, Node.js, Strapi
+			- REST and event-driven microservices`,
             animation: pro,
         },
         {
-            title: "electronics",
-            content: `Arduino
-				- Digital Circuitry
-				- Working with sensors and actuators
-				- IOT`,
-            icon: "",
+            title: "frontend & mobile",
+            content: `- Angular, React, Next.js, Svelte
+			- PrimeReact
+			- Flutter
+			- Responsive web design, prototyping UI`,
+            animation: react,
+        },
+        {
+            title: "cloud & devops",
+            content: `- Azure (AKS), AWS, GCP, DigitalOcean
+			- Docker, Kubernetes, Helm, ArgoCD, Istio, GitOps
+			- Azure DevOps, CircleCI, GitHub Actions, GitLab CI`,
+            animation: cloud,
+        },
+        {
+            title: "data & identity",
+            content: `- PostgreSQL, MySQL, MongoDB
+			- Firebase, Elasticsearch, Kibana
+			- Keycloak`,
+            animation: data,
+        },
+        {
+            title: "iot & field",
+            content: `- Smart-meter and gateway installation and commissioning
+			- On-site deployment
+			- Embedded prototyping: Arduino, ESP32, sensors and actuators
+			- Digital circuitry`,
             animation: electronics,
+        },
+        {
+            title: "practices",
+            content: `- Product development, agile delivery
+			- Technical mentorship
+			- Tiered customer support management
+			- Technical sales support, Jira`,
+            animation: web,
         },
     ];
 

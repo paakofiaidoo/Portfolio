@@ -2,6 +2,30 @@ export default ( req, res ) => {
   res.statusCode = 200;
   res.json( [
     {
+      name: "Fittaa",
+      href: "https://fittaa.com",
+      description: "Car care for Ghana: book vetted mechanics, washes and tyres, buy parts that fit your plate, call roadside help and keep your car papers current. Web, user app and vendor app.",
+      img: { imgDesk: "/projects/fittaa.jpg", imgMob: "/projects/fittaa-m.jpg" },
+    },
+    {
+      name: "Probably a Scam",
+      href: "https://probably-a-scam.vercel.app",
+      description: "AI analysis that flags scams, phishing and social engineering in texts and URLs before you act on them",
+      img: { imgDesk: "/projects/probably-a-scam.jpg", imgMob: "/projects/probably-a-scam-m.jpg" },
+    },
+    {
+      name: "Intelligence Web Interaction Protocol (IWIP)",
+      href: "https://github.com/paakofiaidoo/iwip-protocol",
+      description: "An open, vendor-neutral application-layer protocol that lets LLMs interact with web applications in a standardised, secure way",
+      img: { imgDesk: "/projects/iwip.jpg", imgMob: "/projects/iwip-m.jpg" },
+    },
+    {
+      name: "cowtree",
+      href: "https://github.com/paakofiaidoo/cowtree",
+      description: "Copy-on-write git worktrees for parallel AI coding sessions and humans, built on APFS clonefile; ships as a CLI, Homebrew tap and Claude Code plugin",
+      img: { imgDesk: "/projects/cowtree.jpg", imgMob: "/projects/cowtree-m.jpg" },
+    },
+    {
       name: "WorkShop Speaker at  FeMS Bootcamp22",
       href: "https://www.canva.com/design/DAFR92_dtkg/ZoB3bGimK1zqx9GqxS1ZRA/view",
       description: "In the workshop I focused on Problem-Solving with code and was an excellent opportunity to share my knowledge and experiences with the attendees",
@@ -38,9 +62,9 @@ export default ( req, res ) => {
     //   scrollMob: false,
     // },
     {
-      name: "uv sterilizer",
+      name: "Alphene steriliser",
       href: "https://www.hackster.io/paakofiaidoo17/alphene-f84a69",
-      description: "This is a device that makes the most inescapable source of germs safe to use anytime, I mean door handles using uv light eliminate germs",
+      description: "An Arduino device that UV-sterilises door handles automatically using object-detection sensors",
       img: { imgDesk: "/projects/uv.webp", imgMob: "" },
     },
     {
