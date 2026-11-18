@@ -2,19 +2,13 @@ import Nav from "../atoms/Nav";
 import styles from "../../styles/components/Layout.module.scss";
 import React from "react";
 import Background from "./Background";
+import Starfield from "./Starfield";
 
 const Layout = ({ children, navApps, open, apps }) => {
-    let stars = [];
-    for (let i = 0; i < 20; i++) {
-        stars.push(i);
-    }
-
     return (
         <div className={`${styles.body}`}>
             <div className={`${styles.night}`}>
-                {stars.map((star, i) => (
-                    <div key={i} className={`${styles.shooting_star}`}></div>
-                ))}
+                <Starfield />
             </div>
             <Background apps={apps} open={open} />
             <main className={`main ${styles.main}`}>{children}</main>

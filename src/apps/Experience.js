@@ -22,7 +22,7 @@ const Experience = () => {
         <div className={styles.experience}>
             <ol className={styles.timeline}>
                 {jobs.map(({ company, location, product, roles }, i) => (
-                    <li className={`${styles.company} card`} key={i}>
+                    <li className={styles.company} key={i}>
                         <header className={styles.head}>
                             <h3>
                                 <FontAwesomeIcon fixedWidth icon={faBuilding} className="icon" /> {company}
@@ -53,7 +53,7 @@ const Experience = () => {
             </h3>
             <ul className={styles.edu}>
                 {education.map(({ school, award, period }, i) => (
-                    <li className="card" key={i}>
+                    <li key={i}>
                         <strong>{award}</strong>
                         <span>{school}</span>
                         <time>{period}</time>
