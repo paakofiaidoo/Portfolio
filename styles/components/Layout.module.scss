@@ -64,8 +64,8 @@ $shooting-time: 3000ms;
     position: absolute;
     top: 0;
     left: 0;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: radial-gradient(circle, #070b16 52%, rgba(95, 145, 255, 0.7) 58%, rgba(95, 145, 255, 0) 76%);
     box-shadow: 0 0 22px rgba(95, 145, 255, 0.45);
@@ -74,22 +74,32 @@ $shooting-time: 3000ms;
     will-change: transform;
 }
 
+.hit {
+    animation: hit 420ms ease-out;
+}
+
+@keyframes hit {
+    0% { box-shadow: 0 0 22px rgba(95, 145, 255, 0.45); }
+    30% { box-shadow: 0 0 46px 10px rgba(170, 210, 255, 0.95); }
+    100% { box-shadow: 0 0 22px rgba(95, 145, 255, 0.45); }
+}
+
 @keyframes crash {
-    0% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1)); }
-    40% { transform: scale(1.8); opacity: 1; filter: drop-shadow(0 0 16px rgba(170, 210, 255, 1)); }
-    100% { transform: scale(0); opacity: 0; }
+    0% { opacity: 1; filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1)); }
+    35% { opacity: 1; filter: drop-shadow(0 0 18px rgba(190, 220, 255, 1)); }
+    100% { opacity: 0; width: 0; }
 }
 
 .shooting_star {
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 0;
+    top: -1px;
     width: 100px;
     height: 2px;
     background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-    animation: tail $shooting-time ease-in-out infinite, shooting $shooting-time ease-in-out infinite, var(--animation-blink);
+    transition: width 200ms linear;
 
     &::before {
         content: "";
