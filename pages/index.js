@@ -6,10 +6,13 @@ import Skills from "../src/apps/Skills";
 import Projects from "../src/apps/Projects";
 import Contact from "../src/apps/Contact";
 import Experience from "../src/apps/Experience";
-import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode, faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { faUserAstronaut, faProjectDiagram, faAddressBook, faLaptopCode, faBriefcase, faStaffSnake, faTableCellsLarge, faHashtag } from "@fortawesome/free-solid-svg-icons";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { logEventFun } from "../src/firebase";
 import Message from "../src/apps/Message";
+import Snake from "../src/apps/games/Snake";
+import Game2048 from "../src/apps/games/Game2048";
+import TicTacToe from "../src/apps/games/TicTacToe";
 
 const Home = () => {
     const [apps, setApps] = useState([
@@ -67,6 +70,9 @@ const Home = () => {
             content: <Message />,
             fa: faTelegram,
         },
+        { id: 6, title: "Snake", isActive: false, content: <Snake />, fa: faStaffSnake, game: true },
+        { id: 7, title: "2048", isActive: false, content: <Game2048 />, fa: faTableCellsLarge, game: true },
+        { id: 8, title: "Tic-tac-toe", isActive: false, content: <TicTacToe />, fa: faHashtag, game: true },
     ]);
     const [indexes, setIndexes] = useState([]);
 

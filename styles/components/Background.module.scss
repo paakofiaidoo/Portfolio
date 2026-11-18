@@ -7,21 +7,91 @@
     left: 0;
     padding: 2rem;
 
-    .links {
+    .link {
+        margin: 0.35rem;
+        width: 5.5rem;
+        align-items: center;
+        justify-content: center;
+        display: flex;
         flex-direction: column;
-        // justify-content: space-evenly;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        color: inherit;
+        text-decoration: none;
+        font-size: 0.95rem;
+        &:hover {
+            cursor: pointer;
+            background-color: #ffffff10;
+        }
+    }
+
+    .links {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        bottom: 5.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .shortcuts {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        bottom: 5.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        align-content: flex-start;
+    }
+
+    .shot {
+        position: relative;
+        display: block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0.3rem;
+
+        img {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+    }
+
+    .out {
+        position: absolute;
+        right: -7px;
+        bottom: -5px;
+        width: 11px;
+        height: 11px;
+        padding: 2px;
+        border-radius: 3px;
+        background: #0b1730;
+        color: #25bba8;
+    }
+
+    @media only screen and (max-width: 760px) {
+        padding: 1rem;
+
+        .links {
+            top: 1rem;
+            left: 0.5rem;
+        }
+
+        .shortcuts {
+            top: 1rem;
+            right: 0.5rem;
+        }
+
         .link {
-            margin: 0.5rem;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            &:hover {
-                cursor: pointer;
-                background-color: #ffffff10;
-            }
+            width: 4.6rem;
+            margin: 0.2rem;
+            font-size: 0.8rem;
         }
     }
 }

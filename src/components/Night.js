@@ -11,16 +11,25 @@ const rnd = (a, b) => a + Math.random() * (b - a);
 
 /* The shooting stars are bodies in free flight and the pointer is a planet: inverse-square gravity,
    no damping. A star on a collision course falls in and crashes; the rest swing past on a curved
-   (hyperbolic) path and fly on. Static under prefers-reduced-motion. */
+   (hyperbolic) path and fly on. Each streak is the path the star flew, drawn on the canvas, so it
+   curves with the flight. Static under prefers-reduced-motion. */
 const Night = () => {
     const root = useRef(null);
     const planet = useRef(null);
+    const sky = useRef(null);
 
     useEffect(() => {
         const el = root.current;
         if (!el) return;
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         let w = window.innerWidth, h = window.innerHeight;
+        const canvas = sky.current, ctx = canvas.getContext("2d");
+        const fit = () => {
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            canvas.width = w * dpr; canvas.height = h * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        fit();
 
         const launch = (s, anywhere) => {
             const a = Math.PI / 4 + rnd(-0.32, 0.32);
@@ -28,20 +37,46 @@ const Night = () => {
             if (anywhere) { s.x = rnd(-0.1, 1) * w; s.y = rnd(-0.1, 1) * h; }
             else if (Math.random() < w / (w + h)) { s.x = rnd(-0.3, 0.9) * w; s.y = -220; }
             else { s.x = -220; s.y = rnd(-0.3, 0.9) * h; }
-            s.vx = Math.cos(a) * v; s.vy = Math.sin(a) * v; s.dead = false; s.tail = -1;
+            s.vx = Math.cos(a) * v; s.vy = Math.sin(a) * v; s.dead = false; s.hist = [];
         };
-        const stars = Array.from(el.querySelectorAll("[data-star]")).map((node) => {
-            const s = { node, streak: node.firstElementChild };
+        // The tail is the path the star actually flew, so it bends wherever gravity bent the flight.
+        const remember = (s) => {
+            s.hist.unshift({ x: s.x, y: s.y });
+            const max = Math.min(320, 90 + Math.hypot(s.vx, s.vy) * 34);
+            let len = 0;
+            for (let i = 1; i < s.hist.length; i++) {
+                len += Math.hypot(s.hist[i].x - s.hist[i - 1].x, s.hist[i].y - s.hist[i - 1].y);
+                if (len > max) { s.hist.length = i + 1; break; }
+            }
+            if (s.hist.length > 120) s.hist.length = 120;
+        };
+        const drawTails = () => {
+            ctx.clearRect(0, 0, w, h);
+            ctx.lineCap = "butt";
+            for (const s of stars) {
+                const n = s.hist.length;
+                if (n < 2) continue;
+                for (let i = 0; i < n - 1; i++) {
+                    const k = 1 - i / (n - 1), a = Math.pow(k, 1.4) * s.alpha;
+                    ctx.beginPath();
+                    ctx.moveTo(s.hist[i].x, s.hist[i].y);
+                    ctx.lineTo(s.hist[i + 1].x, s.hist[i + 1].y);
+                    ctx.strokeStyle = `rgba(105,155,255,${a * 0.2})`; ctx.lineWidth = 11; ctx.stroke();
+                    ctx.strokeStyle = `rgba(95,145,255,${a})`; ctx.lineWidth = 1.4 + 2.6 * k; ctx.stroke();
+                }
+            }
+        };
+        const stars = Array.from(el.querySelectorAll("[data-star]")).map((node, i) => {
+            const s = { node, alpha: 0.5 + ((i * 37) % 50) / 100 };
             launch(s, true);
+            for (let j = 0; j < 40; j++) s.hist.push({ x: s.x - s.vx * j * 1.6, y: s.y - s.vy * j * 1.6 });
             return s;
         });
         const paint = (s) => {
-            const sp = Math.hypot(s.vx, s.vy);
             s.node.style.transform = `translate3d(${s.x}px, ${s.y}px, 0) rotate(${Math.atan2(s.vy, s.vx)}rad) scale(2)`;
-            const tail = Math.round(Math.min(150, 36 + sp * 16) / 4) * 4;
-            if (tail !== s.tail) { s.tail = tail; s.streak.style.width = tail + "px"; }
         };
         stars.forEach(paint);
+        drawTails();
         if (reduce) return;
 
         const m = { on: false, x: 0, y: 0, px: 0, py: 0 };
@@ -51,7 +86,7 @@ const Night = () => {
             const dt = Math.min(3, (t - last) / 16.7) / SUB; last = t;
             if (m.on) { m.px += (m.x - m.px) * 0.3; m.py += (m.y - m.py) * 0.3; }
             for (const s of stars) {
-                if (s.dead) continue;
+                if (s.dead) { s.hist.splice(-4); continue; }
                 for (let i = 0; i < SUB; i++) {
                     if (m.on) {
                         const dx = m.px - s.x, dy = m.py - s.y;
@@ -65,7 +100,7 @@ const Night = () => {
                     s.x += s.vx * dt; s.y += s.vy * dt;
                 }
                 if (s.dead) {
-                    s.x = m.px; s.y = m.py; paint(s);
+                    s.x = m.px; s.y = m.py; paint(s); remember(s);
                     s.node.classList.add(styles.crash);
                     if (planet.current) {
                         planet.current.classList.remove(styles.hit);
@@ -75,9 +110,10 @@ const Night = () => {
                     setTimeout(() => { s.node.classList.remove(styles.crash); launch(s); paint(s); }, 420);
                     continue;
                 }
-                if (s.x < -320 || s.x > w + 320 || s.y < -320 || s.y > h + 320) launch(s);
-                paint(s);
+                if (s.x < -360 || s.x > w + 360 || s.y < -360 || s.y > h + 360) launch(s);
+                paint(s); remember(s);
             }
+            drawTails();
             if (planet.current) {
                 planet.current.style.opacity = m.on ? "1" : "0";
                 if (m.on) planet.current.style.transform = `translate3d(${m.px - 11}px, ${m.py - 11}px, 0)`;
@@ -90,7 +126,11 @@ const Night = () => {
             m.x = p.clientX; m.y = p.clientY;
         };
         const onLeave = () => { m.on = false; };
-        const onResize = () => { w = window.innerWidth; h = window.innerHeight; };
+        const onResize = () => {
+            const tiny = w < 200 || h < 200;
+            w = window.innerWidth; h = window.innerHeight; fit();
+            if (tiny) stars.forEach((s) => launch(s, true));
+        };
         const onVis = () => { if (document.hidden) cancelAnimationFrame(raf); else { last = performance.now(); raf = requestAnimationFrame(tick); } };
 
         raf = requestAnimationFrame(tick);
@@ -113,6 +153,7 @@ const Night = () => {
 
     return (
         <div ref={root} className={styles.night} aria-hidden="true">
+            <canvas ref={sky} className={styles.sky} />
             {Array.from({ length: COUNT }, (_, i) => (
                 <div key={i} data-star className={styles.star}>
                     <div className={styles.shooting_star} style={{ animationDelay: `${(i * 487) % 3000}ms`, opacity: 0.5 + ((i * 37) % 50) / 100 }} />
